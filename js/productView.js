@@ -10,15 +10,26 @@ modal.style.display = "none";
 const productID = params.get("id");
 
 const fetchProducts = async () => {
+    const cacheKey = `product-${productID}`;
+    const cached = sessionStorage.getItem(cacheKey);
+
+    if (cached) {
+        console.log("🔁 Loaded single product from cache");
+        return JSON.parse(cached);
+    }
+
     try {
         const response = await fetch(`https://dummyjson.com/products/${productID}`);
         if (!response.ok) throw new Error(`${response.status}`);
-        const data = await response.json(); 
+        const data = await response.json();
+
+        sessionStorage.setItem(cacheKey, JSON.stringify(data));
         return data;
     } catch (error) {
         console.error("Failed to fetch product:", error);
     }
 };
+
 
 const displayProduct = async () => {
     const product = await fetchProducts();

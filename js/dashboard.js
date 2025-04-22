@@ -1,19 +1,29 @@
 import createProduct from "./components/product.js";
 
 const fetchAPI = async () => {
-  let data;
+  const cacheKey = "all-products";
+  const cached = sessionStorage.getItem(cacheKey);
+
+  if (cached) {
+    console.log("🔁 Loaded all products from cache");
+    return JSON.parse(cached);
+  }
+
   try {
     const response = await fetch(`https://dummyjson.com/products`);
     if (!response.ok) {
       throw new Error(`${response.status}`);
     }
-    data = await response.json();
+    const data = await response.json();
+
+    sessionStorage.setItem(cacheKey, JSON.stringify(data));
+    return data;
   } catch (error) {
-    console.error(error);
-    return [];
+    console.error("❌ Error fetching all products:", error);
+    return { products: [] };
   }
-  return data;
 };
+
 
 
 const displayProducts = async () => {

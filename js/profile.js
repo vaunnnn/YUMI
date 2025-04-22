@@ -85,14 +85,11 @@ function initProfilePage() {
         const oldUsername = localStorage.getItem("currentUser");
         const credentials = JSON.parse(localStorage.getItem("user-credentials")) || {};
     
-        // 🚫 Don't proceed if newUsername is the same or empty
         if (!newUsername || newUsername === oldUsername) return;
     
-        // ✅ Check if newUsername is already in use (by someone else)
         if (credentials.hasOwnProperty(newUsername)) {
             alert("This username is already taken. Keeping your current username.");
             
-            // 🧹 Reset the input field back to old username in the UI
             const usernameDisplay = document.getElementById("username");
             if (usernameDisplay) {
                 usernameDisplay.value = oldUsername;
@@ -100,14 +97,12 @@ function initProfilePage() {
             return;
         }
     
-        // ✅ Move credentials to newUsername
         if (credentials.hasOwnProperty(oldUsername)) {
             credentials[newUsername] = credentials[oldUsername];
             delete credentials[oldUsername];
             localStorage.setItem("user-credentials", JSON.stringify(credentials));
         }
-    
-        // ✅ Move saved profile data
+
         const profileData = localStorage.getItem(`${oldUsername}-profile`);
         const addressData = localStorage.getItem(`${oldUsername}-address`);
         const profilePic = localStorage.getItem(`${oldUsername}-profile-pic`);
@@ -116,15 +111,12 @@ function initProfilePage() {
         if (addressData) localStorage.setItem(`${newUsername}-address`, addressData);
         if (profilePic) localStorage.setItem(`${newUsername}-profile-pic`, profilePic);
     
-        // 🧹 Clean up old keys
         localStorage.removeItem(`${oldUsername}-profile`);
         localStorage.removeItem(`${oldUsername}-address`);
         localStorage.removeItem(`${oldUsername}-profile-pic`);
     
-        // 🆕 Set new current user
         localStorage.setItem("currentUser", newUsername);
-    
-        // 🔁 Reload to apply changes
+
         location.reload();
     }
     
