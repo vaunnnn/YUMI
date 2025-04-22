@@ -72,12 +72,15 @@ body {
 /*----------------CATEGORIES--------------------*/
 #categories {
     display: flex;
+    flex-wrap: wrap;
     align-items: center; 
-    padding: 0 18px; column-gap: 15px;
+    padding: 10 18px; column-gap: 15px;
     border-bottom: 2px solid rgb(0, 0, 0);
 }
 
 #categories a {
+    overflow-wrap: break-word;
+    flex: 1 1 auto;
     width: 50px;
     min-width: 42px; max-width: 5%;
     padding: 10px 0; margin: 0;
@@ -207,7 +210,7 @@ body {
     transform: scale(1.03);
   }
   
-.viewCart {
+.view {
     border: none;
     background-color: transparent;
     cursor: pointer;

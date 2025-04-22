@@ -20,39 +20,32 @@
     <!-- <button class="viewCart" onclick="window.location.href='cart.html'">Cart</button> -->
     <div id="header">
       <div id="yumi">
-        <div id="logo"></div>
-        <div id="title">YUMI</div>
+        <div id="logo" onclick="window.location.href='/html/dashboard.html'" style="cursor: pointer;"></div>
+        <div id="title" onclick="window.location.href='/html/dashboard.html'" style="cursor: pointer;">YUMI</div>
     </div>
 
 
-      <div id="icons">
-        <div id="wishlist">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                <path fill="#080606" fill-rule="evenodd" d="M11.823 4.771L12 4.95l.177-.178a5.754 5.754 0 0 1 8.138 8.138l-6.724 6.723a2.25 2.25 0 0 1-3.182 0L3.685 12.91a5.754 5.754 0 1 1 8.138-8.138m-1.061 1.06a4.254 4.254 0 1 0-6.016 6.017l6.724 6.724a.75.75 0 0 0 1.06 0l6.724-6.724a4.254 4.254 0 0 0-6.016-6.016l-.708.708a.75.75 0 0 1-1.06 0z" clip-rule="evenodd" stroke-width="1.2" stroke="#080606" />
-            </svg>  
-        </div>
-        <div id="cart"><button class="viewCart" onclick="window.location.href='cart.html'">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                <path fill="#080606" d="M4.142 4L6.01 16.136A1 1 0 0 0 7.016 17H18a1 1 0 0 0 .958-.713l3-10A1 1 0 0 0 21 5H6.32l-.33-2.138a1 1 0 0 0-.346-.627A1 1 0 0 0 4.984 2H3a1 1 0 1 0 0 2zm3.716 11l-1.23-8h13.028l-2.4 8zM10 20a2 2 0 1 1-4 0a2 2 0 0 1 4 0m9 0a2 2 0 1 1-4 0a2 2 0 0 1 4 0" stroke-width="0.5" stroke="#080606" />
-            </svg>
-          </button>
-        </div>
-        <div id="user">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                <path fill="#080606" d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8M6 8a6 6 0 1 1 12 0A6 6 0 0 1 6 8m2 10a3 3 0 0 0-3 3a1 1 0 1 1-2 0a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5a1 1 0 1 1-2 0a3 3 0 0 0-3-3z" stroke-width="0.8" stroke="#080606" />
-            </svg>
-        </div>
-    </div>
-    </div>
 
-    <div id="categories">
-      <a href="#">Women</a>
-      <a href="#">Men</a>
-      <a href="#">Kids</a>
-      <a href="#">Sports</a>
-      <a href="#">Brands</a>
-      <a href="#">New</a>
-      <a href="#">Sale</a>
+    <div id="icons">
+      <div id="wishlist"> <button class="view" onclick="window.location.href='wishlist.html'">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path fill="#080606" fill-rule="evenodd" d="M11.823 4.771L12 4.95l.177-.178a5.754 5.754 0 0 1 8.138 8.138l-6.724 6.723a2.25 2.25 0 0 1-3.182 0L3.685 12.91a5.754 5.754 0 1 1 8.138-8.138m-1.061 1.06a4.254 4.254 0 1 0-6.016 6.017l6.724 6.724a.75.75 0 0 0 1.06 0l6.724-6.724a4.254 4.254 0 0 0-6.016-6.016l-.708.708a.75.75 0 0 1-1.06 0z" clip-rule="evenodd" stroke-width="1.2" stroke="#080606" />
+          </svg>  
+      </button>
+      </div>
+      <div id="cart"><button class="view" onclick="window.location.href='cart.html'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+            <path fill="#080606" d="M4.142 4L6.01 16.136A1 1 0 0 0 7.016 17H18a1 1 0 0 0 .958-.713l3-10A1 1 0 0 0 21 5H6.32l-.33-2.138a1 1 0 0 0-.346-.627A1 1 0 0 0 4.984 2H3a1 1 0 1 0 0 2zm3.716 11l-1.23-8h13.028l-2.4 8zM10 20a2 2 0 1 1-4 0a2 2 0 0 1 4 0m9 0a2 2 0 1 1-4 0a2 2 0 0 1 4 0" stroke-width="0.5" stroke="#080606" />
+        </svg>
+      </button>
+    </div>
+      <div id="user"> <button class="view" onclick="window.location.href='profile.html'">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path fill="#080606" d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8M6 8a6 6 0 1 1 12 0A6 6 0 0 1 6 8m2 10a3 3 0 0 0-3 3a1 1 0 1 1-2 0a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5a1 1 0 1 1-2 0a3 3 0 0 0-3-3z" stroke-width="0.8" stroke="#080606" />
+          </svg>
+      </div>
+    </button>
+  </div>
     </div>
 
       <div class="product">
@@ -62,9 +55,14 @@
             <button id="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <path fill="currentColor" d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1m-9-1a2 2 0 0 1 4 0v1h-4Zm8 13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2Z" />
             </svg></button>
-            <button id="add-to-wishlist"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-	          <path fill="currentColor" d="m12.1 18.55l-.1.1l-.11-.1C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5c0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5C22 5.41 19.58 3 16.5 3" />
-            </svg></button>
+            <button id="add-to-wishlist"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+                       2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09
+                       C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5
+                       c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" 
+                    fill="currentColor"/>
+            </svg>
+            </button>
           </div>
             <div class="cart"></div>
 

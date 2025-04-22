@@ -20,7 +20,7 @@ function renderCart() {
         const subtractBtn = cartItem.querySelector(".subtract-btn");
         const removeBtn = cartItem.querySelector(".remove-btn");
 
-        img.src = item.images;
+        img.src = item.images[0];
         title.textContent = item.title;
         quantity.textContent = `${item.quantity}`;
         total.textContent = `$${(item.price * item.quantity).toFixed(2)}`;

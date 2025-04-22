@@ -2,6 +2,7 @@ import createProduct from "./components/singleProduct.js";
 
 const params = new URLSearchParams(window.location.search);
 const showModalBtn = document.getElementById("add-to-cart");   
+const addToWishlistBtn = document.getElementById("add-to-wishlist");  
 const addToCartBtn = document.getElementById("added-to-cart");   
 const quantityInput = document.getElementById("quantity");       
 const modal = document.getElementById("cartModal");              
@@ -21,10 +22,20 @@ const fetchProducts = async () => {
 
 const displayProduct = async () => {
     const product = await fetchProducts();
+    const currentUser = localStorage.getItem("currentUser");
+    const btn = document.getElementById("add-to-wishlist");
+
     if (product) {
         createProduct(product);
+
+        const existingWishlist = JSON.parse(localStorage.getItem(`${currentUser}-wishlist`)) || [];
+        const exists = existingWishlist.find(p => p.id === product.id);
+        if (exists) {
+            btn.classList.add("heart-active"); 
+        }
     }
 };
+
 
 const addToCart = async () => {
     const data = await fetchProducts();
@@ -54,17 +65,38 @@ const addToCart = async () => {
     quantityInput.value = 1;
 };
 
+const addToWishlist = async () => {
+    const data = await fetchProducts();
+    const currentUser = localStorage.getItem("currentUser");
+    const btn = document.getElementById("add-to-wishlist");
+
+    let existingWishlist = JSON.parse(localStorage.getItem(`${currentUser}-wishlist`)) || [];
+
+    const existingProductIndex = existingWishlist.findIndex(p => p.id === data.id);
+
+    if (existingProductIndex !== -1) {
+        existingWishlist.splice(existingProductIndex, 1);
+        localStorage.setItem(`${currentUser}-wishlist`, JSON.stringify(existingWishlist));
+        btn.classList.remove("heart-active");
+    } else {
+        existingWishlist.push(data);
+        localStorage.setItem(`${currentUser}-wishlist`, JSON.stringify(existingWishlist));
+        btn.classList.add("heart-active");
+    }
+};
+
+
 showModalBtn.addEventListener("click", () => {
     modal.style.display = "flex";
 });
 
 window.addEventListener("click", (e) => {
     if (e.target === modal) {
-      modal.style.display = "none";
+        modal.style.display = "none";
     }
 });
 
 addToCartBtn.addEventListener("click", addToCart);
-
+addToWishlistBtn.addEventListener("click", addToWishlist);
 
 document.addEventListener("DOMContentLoaded", displayProduct);
