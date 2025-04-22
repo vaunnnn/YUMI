@@ -1,0 +1,139 @@
+/* THIS CSS FILE IS A SHARED STYLING FOR THE FOLLOWING FILES:
+- profile.html
+- recent.html
+- history.html
+- wishlist.html */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+body {
+    display: flex; flex-direction: column;
+    height: 100vh; width: 100vw;
+    margin: 0; padding: 0; gap: 0;
+    font-family: 'Inter';
+}
+
+/*----------------HEADER--------------------*/
+#header {
+    display: flex;
+    justify-content: space-between;    
+    height: 4%; margin: 0;
+    padding: 12px 18px; border-radius: 2px;
+    border-bottom: 3px solid rgb(0, 0, 0, 0.9);
+}
+
+#logo {
+    height: 24px; width: 24px;
+    background-color: black;
+}
+
+#title {
+    font-family: 'Poetsen One', sans-serif;
+    font-weight: 400; font-size: 22px;
+    letter-spacing: 2px;
+}
+
+#yumi {
+    display: flex; align-items: center;
+    width: auto; column-gap: 5px;
+    margin: 0; padding-right: 15px;
+}
+
+#icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0; gap: 15px;
+    margin-left: 15px;
+}
+
+/*----------------CONTAINER--------------------*/
+#container {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    box-sizing: border-box; 
+    min-width: fit-content; max-width: 100%;
+    height: 96%; 
+    margin: 0; padding: 0; gap: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/*----------------SIDEBAR--------------------*/
+#sidebar {
+    display: flex; flex-direction: column;
+    width: 25%; height: 100%; 
+    min-width: 132px; max-width: 25%;
+    margin: 0; padding: 0; row-gap: 48px;
+
+    border: 1px solid black;
+}
+
+#sb-title {
+    display: flex; column-gap: 5px;
+    align-items: center;
+    width: auto; height: auto;
+    margin: 16px 0 0 16px; padding: 0;
+}
+
+#sb-logo {
+    display: flex;
+    align-items: center; justify-content: center;
+    width: 16px; height: 16px;
+    background-color: black;
+}
+
+#sb-name {
+    width: 90%; 
+    letter-spacing: 3px;
+    font-size: 14px; font-weight: 300;
+    font-family: 'Poetsen One', sans-serif;
+}
+
+#sb-options {
+    display: flex; flex-direction: column;
+    width: 100%; height: auto;
+    margin: 0; padding: 0; gap: 0;
+}
+
+/*----------------TABS--------------------*/
+.tab {
+    display: flex; margin: 0;
+    align-items: center; column-gap: 16px;
+    padding: 24px 0 24px 24px;
+    transition: all 0.3 ease-in-out;
+}
+
+.tab:hover, #active {
+    background-color: rgb(189, 189, 189);
+    border-right: 3px solid black;
+    font-weight: bold;
+}
+
+.tab svg {padding: 0; margin: 0;}
+.tab p {margin: 0; font-size: clamp(10px, 1vw, 16px);}
+
+/*----------------MAIN--------------------*/
+#main {
+    display: flex;
+    align-self: center; justify-content: center;
+    width: 75%; height: 100%;
+    margin: 0; padding: 0;
+}
+
+#main-box {
+    display: flex; flex-direction: column;
+    align-items: center;
+    width: 90%; height: 100%;
+    margin: 0; padding: 0;
+}
+
+#box-title {
+    display: flex; align-items: center;
+    width: 100%; height: fit-content; 
+    margin: 16px 0 24px 0; padding: 8px 0; 
+    border-bottom: 2px solid rgb(0, 0, 0, 0.6);
+    font-size: 28px; 
+}

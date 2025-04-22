@@ -1,0 +1,122 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh; width: 100vw;
+    margin: 0; padding: 0;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+/*-----------------MODAL--------------------*/
+#modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+}
+
+#modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    gap: 0; margin: 0; padding: 0;
+    width: 55%; height: 60%;
+    min-width: 395px; min-height: 483px;
+    max-width: 55%; max-height: 60%;
+
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 30px;
+}
+
+/*-----------------OVERLAY--------------------*/
+#overlay {
+    position: absolute;
+    top: 0; left: 50%;
+    width: 50%; height: 100%;
+    background-color: rgb(255, 192, 203);
+    border-radius: 70px 0 0 70px;
+    transition: all 0.9s ease;
+    z-index: 3;
+}
+
+#overlay.move-left {left: 0; border-radius: 0 70px 70px 0;}
+
+/*-----------------MAIN--------------------*/
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0; padding: 0;
+    width: 50%; height: 100%;
+    min-width: 50%; max-width: 50%;
+    z-index: 2;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content; width: 85%;
+    padding: 0; margin: 0; gap: 0;
+}
+
+.header {
+    width: 100%; height: fit-content;
+    padding: 0; margin: 0; gap: 0;
+}
+
+#title {
+    font-size: 35px; margin: 0; padding: 0;
+    font-weight: 500; font-style: normal;
+    font-family: 'Poetsen One', sans-serif;
+}
+
+#text {font-size: 12px; font-style: italic;}
+
+/*-----------------FORM--------------------*/
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; height: fit-content;
+    padding: 0; margin: 0; gap: 0;
+}
+
+input {
+    width: 80%;; height: auto;
+    padding: 10px; margin-top: 20px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 15px;
+}
+
+/*-----------------BUTTONS & TEXT--------------------*/
+button {
+    width: 25%; height: fit-content;
+    min-width: 65px; max-width: 25%;
+    margin-top: 30px; padding: 6px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 8px;
+}
+
+a {
+    text-decoration: none; color: black; 
+    margin-top: 50px; padding: 0; gap: 0;
+    transition: all 0.3s ease-in-out;
+    font-size: 12px;
+}
+
+a:hover {font-size: 13px; font-weight: bold;}

@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+/* div {border: 1px solid black;} */
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/*----------------HEADER--------------------*/
+#header {
+    display: flex;
+    justify-content: space-between;    
+    height: 4%; margin: 0;
+    padding: 12px 18px; border-radius: 2px;
+}
+
+#logo {
+    height: 24px; width: 24px;
+    background-color: black;
+}
+
+#title {
+    font-family: 'Poetsen One', sans-serif;
+    font-weight: 400; font-size: 22px;
+    letter-spacing: 2px;
+}
+
+#yumi {
+    display: flex; align-items: center;
+    width: auto; column-gap: 5px;
+    margin: 0; padding-right: 15px;
+}
+
+#icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0; gap: 15px;
+    margin-left: 15px;
+}
+
+#search-bar {
+    display: flex;
+    height: auto;
+    width: 16rem;
+    margin: 0; border: none;
+    background-color: rgb(228, 228, 228);
+    border-radius: 5px;
+
+}
+
+.search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+#search {
+    border: none; outline: none;
+    background-color: rgb(228, 228, 228);
+}
+
+#search-bar #search-icon {width: 10%;}
+#search-bar input {width: 100%; padding: 8px 0;}
+
+/*----------------CATEGORIES--------------------*/
+#categories {
+    display: flex;
+    align-items: center; 
+    padding: 0 18px; column-gap: 15px;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+#categories a {
+    width: 50px;
+    min-width: 42px; max-width: 5%;
+    padding: 10px 0; margin: 0;
+    text-decoration: none; text-align: center;
+    font-size: 13px; color: black;
+}
+
+/*----------------MAIN--------------------*/
+#main {
+    height: 100lvh;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(0, 0, 0, 0.1);
+}
+
+#productSection {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-image {
+    width: 100%;
+    background-color: lightgray;
+    max-width: 250px;
+    height: auto;
+    border-radius: 12px 12px 0px 0px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.product-card {
+    text-decoration: none;
+}
+
+.product-title {
+    margin: 0;
+    font-size: 10px;
+    color: black;
+    padding: 10px;
+    padding-top: 0;
+}
+
+.product-price {
+    margin: 0;
+    color: black;
+    padding: 10px;
+    padding-top: 0;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+}
+
+/*----------------MAIN--------------------*/
+#main {
+    height: 100lvh;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(0, 0, 0, 0.1);
+}
+
+#productSection {
+  display: grid;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px;
+  max-width: 100%;
+  margin: 0;
+}
+
+.product-image {
+  width: 100%;
+  background-color: lightgray;  
+  max-width: 250px;
+  height: auto;
+  border-radius:  12px 12px 0px 0px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.product-card {
+    text-decoration: none;
+}
+.product-title {
+    margin: 0;
+    font-size: 10px;
+    color: black;
+    padding: 10px;
+    padding-top: 0;
+}   
+
+.product-price {
+    margin: 0;
+    color: black;
+    padding: 10px;
+    padding-top: 0;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.03);
+  }
+  
+.viewCart {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
