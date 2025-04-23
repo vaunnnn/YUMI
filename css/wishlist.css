@@ -1,3 +1,62 @@
+
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  /* === YUMI Branding === */
+  #yumi {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #logo {
+    width: 40px;
+    height: 40px;
+    background: url('/images/sia.jpg') no-repeat center center/cover;
+    border-radius: 50%;
+  }
+  
+  #title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: 2px;
+  }
+  
+  
+  /* === Header Icons === */
+  #icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .view {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .view:hover {
+    transform: scale(1.1);
+  }
+  
+  #icons svg {
+    width: 20px;
+    height: 20px;
+  }
+
 a {
     text-decoration: none;
     color: black;
@@ -85,5 +144,8 @@ button {
     border: none;
     background-color: transparent;
     cursor: pointer;
+}
+
+.remove-wishlist-btn {
     padding-right: 1rem;
 }

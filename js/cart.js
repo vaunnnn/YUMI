@@ -29,6 +29,7 @@ function renderCart() {
             item.quantity++;
             updateLocalStorage();
             renderCart();
+            updateSummary();
         });
 
         subtractBtn.addEventListener("click", () => {
@@ -36,6 +37,7 @@ function renderCart() {
                 item.quantity--;
                 updateLocalStorage();
                 renderCart();
+                updateSummary();
             }
         });
 
@@ -43,12 +45,14 @@ function renderCart() {
             cartItems.splice(index, 1);
             updateLocalStorage();
             renderCart();
+            updateSummary();
         });
 
         cartContainer.appendChild(cartItem);
     });
 
     document.querySelector("#item-count").textContent = `Total ${cartItems.reduce((sum, item) => sum + item.quantity, 0)} Item(s)`;
+    updateSummary();
 }
 
 // ----------------------SUMMARY---------------------------
