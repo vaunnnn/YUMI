@@ -208,19 +208,12 @@ changePasswordForm.addEventListener("submit", function (event) {
 document.addEventListener("DOMContentLoaded", function () {
     const logoutTab = document.getElementById("logout-tab");
     const logoutModal = document.getElementById("logout-modal");
-    const closeLogoutModal = document.getElementById("close-logout-modal");
     const confirmLogout = document.getElementById("confirm-logout");
     const cancelLogout = document.getElementById("cancel-logout");
 
     logoutTab.addEventListener("click", function () {
-        logoutModal.style.display = "block";
+        logoutModal.style.display = "flex";
     });
-
-    closeLogoutModal.addEventListener("click", function () {
-        logoutModal.style.display = "none";
-    });
-
-    logoutModal
 
     cancelLogout.addEventListener("click", function () {
         logoutModal.style.display = "none";
