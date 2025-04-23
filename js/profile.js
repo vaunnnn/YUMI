@@ -155,17 +155,12 @@ document.getElementById("delete-pic").addEventListener("click", () => {
 // -----------------------MODAL------------------------------
 const modal = document.getElementById("password-modal");
 const openModalBtn = document.querySelector(".s-input button"); 
-const closeModalBtn = document.getElementById("close-modal");
 const savePasswordBtn = document.getElementById("save-password");
 const changePasswordForm = document.getElementById("change-password-form");
 
 openModalBtn.addEventListener("click", function (event) {
     event.preventDefault();
-    modal.style.display = "block";
-});
-
-closeModalBtn.addEventListener("click", function () {
-    modal.style.display = "none";
+    modal.style.display = "flex";
 });
 
 window.addEventListener("click", function (event) {
@@ -224,6 +219,8 @@ document.addEventListener("DOMContentLoaded", function () {
     closeLogoutModal.addEventListener("click", function () {
         logoutModal.style.display = "none";
     });
+
+    logoutModal
 
     cancelLogout.addEventListener("click", function () {
         logoutModal.style.display = "none";

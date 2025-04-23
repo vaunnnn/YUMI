@@ -185,89 +185,75 @@ button:hover {
     cursor: pointer;
 }
 
-/* --------------MODAL------------------- */
-/* Modal container */
+/* --------------PASSWORD MODAL------------------- */
 .modal {
     display: none;
-    /* Hidden by default */
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    /* Stay in place */
     z-index: 1000;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Modal content box */
 .modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #fefefe;
-    margin: 10% auto;
-    /* 10% from the top and centered */
-    padding: 20px;
+    padding: 2rem 1.5rem;
     border: 1px solid #888;
-    width: 400px;
-    /* Could be more or less, depending on screen size */
+    width: 20%;
     border-radius: 8px;
     position: relative;
 }
 
-/* Close button */
-.close {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+#change-password-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-}
-
-/* Form styles */
 .modal-content h2 {
     margin-top: 0;
     text-align: center;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin: 0; padding: 0;
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: .5rem;
     font-weight: 600;
 }
 
 .form-group input {
     width: 100%;
-    padding: 8px;
+    padding: 1rem;
     box-sizing: border-box;
 }
 
 #save-password {
-    width: 100%;
-    padding: 10px;
-    background-color: #065492;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    width: 50%;
+    padding: .5rem;
+    background-color: #a8b2b9;
+    border: 1px solid rgb(0, 0, 0, 0.3);
+    margin-top: 1rem;
+    border-radius: 8px;
     cursor: pointer;
+    align-self: center;
+    transition: all 0.3 ease-in-out;
 }
 
 #save-password:hover {
-    background-color: #054272;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
