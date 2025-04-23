@@ -5,7 +5,7 @@ const fetchAPI = async () => {
   const cached = sessionStorage.getItem(cacheKey);
 
   if (cached) {
-    console.log("🔁 Loaded all products from cache");
+    console.log("Loaded all products from cache");
     return JSON.parse(cached);
   }
 
@@ -19,7 +19,7 @@ const fetchAPI = async () => {
     sessionStorage.setItem(cacheKey, JSON.stringify(data));
     return data;
   } catch (error) {
-    console.error("❌ Error fetching all products:", error);
+    console.error("Error fetching all products:", error);
     return { products: [] };
   }
 };
@@ -66,6 +66,8 @@ const filterByCategory = (category) => {
     }
   });
 };
+
+// HI SYBEL YADEEN
 
 document.getElementById("search").addEventListener("keyup", searchProduct);
 
