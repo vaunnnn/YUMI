@@ -1,184 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
-
-body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+/* Reset and base styles */
+* {
     margin: 0;
     padding: 0;
-    gap: 0;
-    font-family: 'Inter';
+    box-sizing: border-box;
 }
 
-/*----------------HEADER--------------------*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    line-height: 1.6;
+}
+
+body::-webkit-scrollbar {
+    width: 0px; background: none;
+}
+
+/* Header */
 #header {
     display: flex;
     justify-content: space-between;
-    height: 4%;
-    margin: 0;
-    padding: 12px 18px;
-    border-radius: 2px;
-    border-bottom: 3px solid rgb(0, 0, 0, 0.9);
-}
-
-#logo {
-    height: 24px;
-    width: 24px;
-    background-color: black;
-}
-
-#title {
-    font-family: 'Poetsen One', sans-serif;
-    font-weight: 400;
-    font-size: 22px;
-    letter-spacing: 2px;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
 }
 
 #yumi {
     display: flex;
     align-items: center;
-    width: auto;
-    column-gap: 5px;
-    margin: 0;
-    padding-right: 15px;
+    cursor: pointer;
+}
+
+#logo {
+    width: 40px;
+    height: 40px;
+    background-image: url('/images/logo.png');
+    background-size: cover;
+    background-position: center;
+    margin-right: 0.5rem;
+}
+
+#title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
 }
 
 #icons {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
-    gap: 15px;
-    margin-left: 15px;
+    gap: 1rem;
 }
 
-/*----------------CONTAINER--------------------*/
+#icons .view {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+#icons .view svg {
+    transition: transform 0.3s ease;
+}
+
+#icons .view:hover svg {
+    transform: scale(1.2);
+}
+
+/* Container */
 #container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    min-width: fit-content;
-    max-width: 100%;
-    height: 96%;
-    margin: 0;
-    padding: 0;
-    gap: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
+    min-height: calc(100vh - 80px);
 }
 
-/*----------------SIDEBAR--------------------*/
+/* Sidebar */
 #sidebar {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    height: 100%;
-    min-width: 132px;
-    max-width: 25%;
-    margin: 0;
-    padding: 0;
-    row-gap: 48px;
-
-    border: 1px solid black;
-}
-
-#sb-title {
-    display: flex;
-    column-gap: 5px;
-    align-items: center;
-    width: auto;
-    height: auto;
-    margin: 16px 0 0 16px;
-    padding: 0;
+    width: 250px;
+    background-color: #ffffff;
+    padding: 2rem 1rem;
+    border-right: 1px solid #e0e0e0;
 }
 
 #sb-logo {
+    width: 30px;
+    height: 30px;
+    background-image: url('/images/sia.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-right: 0.5rem;
+}
+
+#sb-options .tab {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    background-color: black;
-}
-
-#sb-name {
-    width: 90%;
-    letter-spacing: 3px;
-    font-size: 14px;
-    font-weight: 300;
-    font-family: 'Poetsen One', sans-serif;
-}
-
-#sb-options {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    gap: 0;
-}
-
-/*----------------TABS--------------------*/
-.tab {
-    display: flex;
-    margin: 0;
-    align-items: center;
-    column-gap: 16px;
-    padding: 24px 0 24px 24px;
-    transition: all 0.3 ease-in-out;
-}
-
-.tab:hover,
-#active {
-    background-color: rgb(189, 189, 189);
-    border-right: 3px solid black;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #67177e;
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-.tab svg {
-    padding: 0;
+#sb-options .tab:hover {
+    transform: scale(1.03);
+    background-color: rgb(224, 213, 237);
+}
+
+#sb-options .tab svg {
+    margin-right: 0.75rem;
+}
+
+#sb-options .tab p {
     margin: 0;
+    font-size: 1rem;
 }
 
-.tab p {
-    margin: 0;
-    font-size: clamp(10px, 1vw, 16px);
+#sb-options #active {
+    background-color: rgb(224, 213, 237);
 }
 
-/*----------------MAIN--------------------*/
+/* Main Content */
 #main {
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    width: 75%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    flex: 1;
+    padding: 2rem;
+    background-color: rgb(249, 244, 255, 0.6);
 }
 
 #main-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 #box-title {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: fit-content;
-    margin: 16px 0 24px 0;
-    padding: 8px 0;
-    border-bottom: 2px solid rgb(0, 0, 0, 0.6);
-    font-size: 28px;
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(103, 23, 126, 0.8);
+    padding-bottom: .3rem;
+    margin-bottom: 2rem ;
+    color: #67177e;
 }
 
 /* ------------------LOG OUT MODAL--------------------- */
@@ -197,27 +158,33 @@ body {
 }
 
 .logout-modal-content {
-    background-color: #fefefe;
+    background-color: #e0e0e0;
     margin: 15% auto;
     padding: .7rem;
     border: 1px solid #888;
     width: 20%; height: fit-content;
     text-align: center;
     border-radius: 8px;
-}
-
-.logout-close {
-    color: #aaa;
-    float: right;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 0; margin: 0;
+    border-bottom: 8px solid #67177e;
 }
 
 #confirm-logout, #cancel-logout {
+    background-color: #67177e   ;
+    border-radius: 8px;
+    border: 1px solid #67177e;
+    color: white;
+    font-weight: 500;
     margin: 1rem 0.5rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#confirm-logout:hover, #cancel-logout:hover {
+    color: #67177e;
+    background-color: #f7f5ec;
+    box-shadow: 0 2px 6px rgba(103, 23, 126, 0.2);
+    transform: scale(1.01);
 }
 
 .logout-modal-content p {

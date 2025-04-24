@@ -1,188 +1,181 @@
-/*----------------PROFILE IMG--------------------*/
+/* Profile Image Settings */
 #image-settings {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 0;
-    margin-bottom: 32px;
-    width: 100%;
-    height: 20%;
-    min-width: fit-content;
-    max-width: 100%;
-    min-height: fit-content;
-    max-height: 20%;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.img-container {
-    width: 160px;
-    height: 160px;
-    margin: 0;
-    padding: 0;
-    border: none;
+#profile-pic {
+    width: 20%;
+    height: 20%;
     border-radius: 50%;
-    background-color: rgb(153, 148, 149);
+    object-fit: cover;
+    margin: 0;
+    border: 2px solid rgb(103, 23, 126, 0.8);
 }
 
 #img-buttons {
     display: flex;
-    justify-content: right;
-    align-items: end;
-    min-width: fit-content;
-    max-width: 70%;
-    width: 70%;
-    height: 100%;
+    gap: 0.5rem;
 }
 
+#img-buttons label,
 #img-buttons button {
-    width: 25%;
-    height: fit-content;
-    margin-left: 24px;
-    padding: 10px;
-    font-size: clamp(10px, 1vw, 14px);
-    border-radius: 8px;
-    border: 1px solid rgb(128, 128, 128, 0.7);
+    background-color: #ad1ad2;
+    font-size: .9rem;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
-/*----------------FORM CONTAINER--------------------*/
+#img-buttons label:hover,
+#img-buttons button:hover {
+    color: #67177e;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(157, 40, 163, 0.4);
+}
+
+#img-buttons input[type="file"] {
+    display: none;
+}
+
+/* Forms */
 .box {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 35%;
-    min-width: fit-content;
-    max-width: 100%;
-    min-height: fit-content;
-    max-height: 35%;
-    margin-bottom: 20px;
-    padding: 0;
+    background-color: #eed0f5;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1 );
+    transition: all 0.3s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.005);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2)
 }
 
 .box p {
-    margin: 2px 0 12px 0;
-    padding: 0;
-    font-size: 15px;
+    font-size: 1.2rem;
     font-weight: bold;
+    margin-bottom: .5rem;
+    color: #67177e;
 }
 
 .form {
     display: flex;
-    width: 100%;
-    height: fit-content;
     justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
-    row-gap: 16px;
+    gap: .8rem;
 }
 
-/*----------------INPUTS--------------------*/
-.info-input {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 42%;
-    height: fit-content;
-    margin: 0;
-    padding: 0;
-}
-
+.info-input,
 .address-input {
+    /* flex: 1 1 50%; */
+    width: 45%;
     display: flex;
     flex-direction: column;
-    width: 30%;
-    height: fit-content;
-    margin: 0;
-    padding: 0;
+}
+
+.info-input label,
+.address-input label {
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #67177e;
+}
+
+.info-input input,
+.address-input input,
+.s-input input,
+.s-input select {
+    padding: 0.5rem;
+    border: 1px solid rgb(103, 23, 126, 0.6);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: rgb(103, 23, 126, 0.4);
+    transition: all 0.3s ease;
+}
+
+.info-input input:hover,
+.address-input input:hover,
+.s-input input:hover,
+.s-input select:hover {
+    border-color: #67177e;
+    color: #67177e;
+    box-shadow: 0 2px 6px rgb(103, 23, 126, 0.1);
+    outline: none;
+}
+
+.info-input input:focus,
+.address-input input:focus,
+.s-input input:focus,
+.s-input select:focus {
+    border-color: #67177e;
+    color: #67177e;
+    outline: none;
 }
 
 .small-input {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 42%;
-    height: fit-content;
-    margin: 0;
-    padding: 0;
+    gap: .8rem;
 }
 
 .s-input {
+    flex: 1;
     display: flex;
     flex-direction: column;
     width: 45%;
-    height: fit-content;
-    margin: 0;
-    padding: 0;
 }
 
-input,
-select {
-    width: 100%;
-    height: 40px;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 10px;
-    border: 1px solid rgb(128, 128, 128, 0.9);
-    border-radius: 8px;
-    transition: all 0.3 ease-in-out;
+.s-input label {
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #67177e;
 }
 
-input:hover {
-    border: 1px solid rgb(0, 0, 0);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-label {
-    font-size: 14px;
-    margin: 0 0 5px 3px;
-    color: rgba(99, 96, 96, 0.9);
-}
-
-#save {
-    align-self: flex-end;
-    min-height: fit-content;
-    max-height: fit-content;
-    min-width: fit-content;
-    max-width: fit-content;
-    margin-top: 16px;
-    padding: 8px 12px;
-    border: 1px solid rgb(128, 128, 128, 0.8);
-    border-radius: 8px;
-    font-size: clamp(10px, 1vw, 13px);
-    transition: all 0.3 ease-in-out;
-}
-
-button:hover {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* --------------------------------------- */
-#edit-password {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 40px;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 10px;
-    border: 1px solid rgb(128, 128, 128, 0.9);
-    background-color: rgb(231, 229, 229);
-    border-radius: 8px;
-    transition: all 0.3 ease-in-out;
-}
-
-#edit-password:hover {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* --------------------------------------- */
-#input-file {
-    display: none;
-}
-
-.view {
+.s-input button {
+    background-color: #ad1ad2;
+    color: #ffffff;
     border: none;
-    background-color: transparent;
+    padding: .6rem;
+    border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+.s-input button:hover {
+    color: #67177e;
+    background-color: white;
+    box-shadow: 0 2px 6px rgb(103, 23, 126, 0.3);
+}
+
+/* Save Button */
+#save {
+    background-color: #ad1ad2;
+    font-size: .9rem;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    float: right;
+}
+
+#save:hover {
+    color: #67177e;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(157, 40, 163, 0.3);
 }
 
 /* --------------PASSWORD MODAL------------------- */
@@ -205,12 +198,14 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fefefe;
-    padding: 2rem 1.5rem;
+    background-color: #e2c1ea;
+    padding: 1.5rem 3rem;
     border: 1px solid #888;
-    width: 20%;
+    width: 25%;
     border-radius: 8px;
     position: relative;
+    border-bottom: 8px solid #77258d;
+    color: #67177e;
 }
 
 #change-password-form {
@@ -221,39 +216,62 @@ button:hover {
 
 .modal-content h2 {
     margin-top: 0;
+    margin-bottom: 0.8rem;
     text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 .form-group {
     margin: 0; padding: 0;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .form-group label {
     display: block;
     margin-bottom: .5rem;
-    font-weight: 600;
+    font-size: .9rem;
+    font-weight: 500;
 }
 
 .form-group input {
-    width: 100%;
-    padding: 1rem;
     box-sizing: border-box;
+    background-color: #f7f5ec;
+    width: 100%;
+    padding: .5rem;
+    border-radius: 8px;
+    border: 1px solid #f7f5ec;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-group input:hover {
+    border: 1px solid #77258d;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input:focus {
+    outline: none;
+    border: 1px solid #77258d;
 }
 
 #save-password {
     width: 50%;
     padding: .5rem;
-    background-color: #a8b2b9;
-    border: 1px solid rgb(0, 0, 0, 0.3);
-    margin-top: 1rem;
+    color: #f7f5ec;
+    background-color: rgb(119, 37, 141, 0.9);
+    border: 1px solid rgb(103, 23, 126, 0.7);
+    margin-top: .5rem;
     border-radius: 8px;
     cursor: pointer;
     align-self: center;
-    transition: all 0.3 ease-in-out;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
 }
 
 #save-password:hover {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: #67177e;
+    background-color: #f7f5ec;
+    box-shadow: 0 2px 6px rgba(103, 23, 126, 0.2);
+    transform: scale(1.005);
 }
