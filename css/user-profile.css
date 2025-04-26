@@ -1,4 +1,3 @@
-/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -15,15 +14,16 @@ body::-webkit-scrollbar {
     width: 0px; background: none;
 }
 
-/* Header */
+/* ------------------HEADER------------------- */
 #header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    padding: 1rem 2rem;
+    background-color: #ffefd8;
+    padding: .8rem 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+    border-top: none;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.3);
 }
 
 #yumi {
@@ -35,7 +35,7 @@ body::-webkit-scrollbar {
 #logo {
     width: 40px;
     height: 40px;
-    background-image: url('/images/logo.png');
+    background-image: url('/images/yumi-1.png');
     background-size: cover;
     background-position: center;
     margin-right: 0.5rem;
@@ -43,8 +43,10 @@ body::-webkit-scrollbar {
 
 #title {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #2c3e50;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    color: #ed9f49;
+    color: #584c1b;
 }
 
 #icons {
@@ -65,30 +67,27 @@ body::-webkit-scrollbar {
 }
 
 #icons .view:hover svg {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
-/* Container */
+#icons .view:hover {
+    background-color: rgb(237, 159, 73, 0.1);
+    border-radius: 50%;
+}
+
+/* ----------------CONTAINER------------------- */
 #container {
     display: flex;
     min-height: calc(100vh - 80px);
 }
 
-/* Sidebar */
+/* -------------SIDEBAR----------------  */
 #sidebar {
     width: 250px;
-    background-color: #ffffff;
+    background-color: #fcf8e3;
     padding: 2rem 1rem;
-    border-right: 1px solid #e0e0e0;
-}
-
-#sb-logo {
-    width: 30px;
-    height: 30px;
-    background-image: url('/images/sia.jpg');
-    background-size: cover;
-    background-position: center;
-    margin-right: 0.5rem;
+    border-right: 1px solid rgb(0, 0, 0, 0.3);
+    color: #584c1b;
 }
 
 #sb-options .tab {
@@ -98,14 +97,13 @@ body::-webkit-scrollbar {
     margin-bottom: 1rem;
     border-radius: 8px;
     cursor: pointer;
-    color: #67177e;
     font-weight: bold;
     transition: all 0.3s ease;
 }
 
 #sb-options .tab:hover {
     transform: scale(1.03);
-    background-color: rgb(224, 213, 237);
+    background-color: rgb(237, 159, 73, 0.3);
 }
 
 #sb-options .tab svg {
@@ -118,14 +116,16 @@ body::-webkit-scrollbar {
 }
 
 #sb-options #active {
-    background-color: rgb(224, 213, 237);
+    border: 2px solid #584c1b;
+    border-style: dashed;
+    background-color: rgb(237, 159, 73, 0.3);
 }
 
-/* Main Content */
+/* -------------MAIN---------------- */
 #main {
     flex: 1;
     padding: 2rem;
-    background-color: rgb(249, 244, 255, 0.6);
+    background-color: #fdfbf4;
 }
 
 #main-box {
@@ -134,15 +134,15 @@ body::-webkit-scrollbar {
 }
 
 #box-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
-    border-bottom: 2px solid rgb(103, 23, 126, 0.8);
+    border-bottom: 2.5px solid rgb(88, 76, 27, 0.9);
     padding-bottom: .3rem;
     margin-bottom: 2rem ;
-    color: #67177e;
+    color: #584c1b;
 }
 
-/* ------------------LOG OUT MODAL--------------------- */
+/* -------------LOG OUT MODAL------------ */
 .logout-modal {
     display: none; 
     justify-content: center;
@@ -158,21 +158,22 @@ body::-webkit-scrollbar {
 }
 
 .logout-modal-content {
-    background-color: #e0e0e0;
+    background-color: #fdfbf4;
     margin: 15% auto;
     padding: .7rem;
     border: 1px solid #888;
     width: 20%; height: fit-content;
     text-align: center;
     border-radius: 8px;
-    border-bottom: 8px solid #67177e;
+    border-bottom: 8px solid #584c1b;
+    color: #584c1b;
 }
 
 #confirm-logout, #cancel-logout {
-    background-color: #67177e   ;
+    background-color: #7c6610;
     border-radius: 8px;
-    border: 1px solid #67177e;
-    color: white;
+    border: none;
+    color: #f7f5eb;
     font-weight: 500;
     margin: 1rem 0.5rem;
     padding: 0.5rem 1rem;
@@ -181,9 +182,9 @@ body::-webkit-scrollbar {
 }
 
 #confirm-logout:hover, #cancel-logout:hover {
-    color: #67177e;
-    background-color: #f7f5ec;
-    box-shadow: 0 2px 6px rgba(103, 23, 126, 0.2);
+    color: #ed9f49;
+    background-color: #f7f5eb;
+    box-shadow: 0 2px 6px rgba(88, 76, 27, 0.2);
     transform: scale(1.01);
 }
 

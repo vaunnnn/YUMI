@@ -11,6 +11,11 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+body::-webkit-scrollbar {
+    width: 0px;
+    background-color: transparent;
+}
+
 /*----------------HEADER--------------------*/
 #header {
     display: flex;
@@ -103,6 +108,10 @@ body {
     padding: 40px;
     max-width: 1200px;
     margin: 0 auto;
+    
+    /* background-image: url(/images/main-bg.png);
+    background-size: contain;
+    background-repeat: repeat; */
 }
 
 .product-image {
