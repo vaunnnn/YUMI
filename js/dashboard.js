@@ -10,7 +10,7 @@ const fetchAPI = async () => {
   }
 
   try {
-    const response = await fetch(`https://dummyjson.com/products`);
+    const response = await fetch(`https://dummyjson.com/products?limit=0`);
     if (!response.ok) {
       throw new Error(`${response.status}`);
     }

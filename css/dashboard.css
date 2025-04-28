@@ -9,11 +9,9 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f7f7f7;
     color: #333;
+
   }
-  body::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
+  
   
   /* === Header === */
   #header {
@@ -157,6 +155,8 @@
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 12px;
+    background-color: #e0e0e0;
+    display: block;
   }
   
   .product-title {

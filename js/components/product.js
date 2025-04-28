@@ -12,6 +12,11 @@ const createProduct = (product) => {
     anchor.href = `product.html?id=${id}`;
     image.src = thumbnail;
     image.alt = `Image of ${title}`;
+    image.loading = "lazy"; 
+    image.onerror = () => {
+        image.src = "/images/edwinchan.jpg"; 
+        image.alt = "Image not available";
+    }
     productTitle.textContent = title;
     productPrice.textContent = `$${price}`;
   

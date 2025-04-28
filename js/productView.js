@@ -96,7 +96,6 @@ const addToWishlist = async () => {
     }
 };
 
-
 showModalBtn.addEventListener("click", () => {
     modal.style.display = "flex";
 });
