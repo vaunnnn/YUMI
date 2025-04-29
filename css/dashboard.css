@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 /* div {border: 1px solid black;} */
 
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -19,41 +24,64 @@ body::-webkit-scrollbar {
 /*----------------HEADER--------------------*/
 #header {
     display: flex;
-    justify-content: space-between;    
-    height: 4%; margin: 0;
-    padding: 12px 18px; border-radius: 2px;
+    justify-content: space-between;
+    height: 7%;
+    margin: 0;
+    padding: 12px 18px;
+    border-radius: 2px;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.3);
+    background-color: white;
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
 }
 
 #logo {
-    height: 24px; width: 24px;
+    height: 24px;
+    width: 24px;
     background-color: black;
 }
 
 #title {
     font-family: 'Poetsen One', sans-serif;
-    font-weight: 400; font-size: 22px;
+    font-weight: 400;
+    font-size: 22px;
     letter-spacing: 2px;
 }
 
 #yumi {
-    display: flex; align-items: center;
-    width: auto; column-gap: 5px;
-    margin: 0; padding-right: 15px;
+    display: flex;
+    align-items: center;
+    width: auto;
+    column-gap: 5px;
+    margin: 0;
+    padding-right: 15px;
 }
 
 #icons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0; gap: 15px;
+    margin: 0;
+    gap: 15px;
     margin-left: 15px;
+}
+
+.view {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 #search-bar {
     display: flex;
     height: auto;
     width: 16rem;
-    margin: 0; border: none;
+    margin: 0;
+    border: none;
     background-color: rgb(228, 228, 228);
     border-radius: 5px;
 
@@ -67,51 +95,123 @@ body::-webkit-scrollbar {
 }
 
 #search {
-    border: none; outline: none;
+    border: none;
+    outline: none;
     background-color: rgb(228, 228, 228);
 }
 
-#search-bar #search-icon {width: 10%;}
-#search-bar input {width: 100%; padding: 8px 0;}
+#search-bar #search-icon {
+    width: 10%;
+}
+
+#search-bar input {
+    width: 100%;
+    padding: 8px 0;
+}
 
 /*----------------CATEGORIES--------------------*/
 #categories {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    align-items: center; 
-    padding: 10 18px; column-gap: 15px;
-    border-bottom: 2px solid rgb(0, 0, 0);
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40%;
+    background-color: rgb(222, 222, 222);
+    margin: 0;
+    padding: 5%;
 }
 
-#categories a {
-    overflow-wrap: break-word;
-    flex: 1 1 auto;
-    width: 50px;
-    min-width: 42px; max-width: 5%;
-    padding: 10px 0; margin: 0;
-    text-decoration: none; text-align: center;
-    font-size: 13px; color: black;
+.category-link {
+    width: 180px;
+    height: 180px;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
+
+.category-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+#beauty {background-image: url(/images/gloss.png);}
+#groceries {background-image: url(/images/broccoli.png);}
+#electronics {background-image: url(/images/laptop.png);}
+#furniture {background-image: url(/images/chair.png);}
+#vehicle {background-image: url(/images/car.png);}
 
 /*----------------MAIN--------------------*/
 #main {
     height: 100lvh;
     width: 100%;
     box-sizing: border-box;
-    background-color: rgb(0, 0, 0, 0.1);
+    background-color: white;
+    overflow-y: scroll;
+    /* scroll-snap-type: y mandatory;
+    scroll-behavior: smooth; */
 }
 
-#productSection {
+.photo {
+    height: 100vh;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    margin-bottom: .5%;
+    cursor: pointer;
+}
+
+#beauty-ad {
+    background-image: url(/images/beauty.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#groceries-ad {
+    background-image: url(/images/groceries.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#electronics-ad {
+    background-image: url(/images/electronics.png);
+    background-size: cover;
+    background-position: center;
+}
+
+/*-------------SCROLL BAR-----------------*/
+#main::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+#main::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 0;
+}
+
+#main::-webkit-scrollbar-thumb {
+    background-color: #a89f9f;
+    border-radius: 8px;
+}
+
+#main::-webkit-scrollbar-thumb:hover {
+    background-color: #918989;
+}
+
+/* #productSection {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    
-    /* background-image: url(/images/main-bg.png);
-    background-size: contain;
-    background-repeat: repeat; */
 }
 
 .product-image {
@@ -155,72 +255,4 @@ body::-webkit-scrollbar {
 
 .product-card:hover {
     transform: scale(1.03);
-}
-
-/*----------------MAIN--------------------*/
-#main {
-    height: 100lvh;
-    width: 100%;
-    box-sizing: border-box;
-    background-color: rgb(0, 0, 0, 0.1);
-}
-
-#productSection {
-  display: grid;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 40px;
-  max-width: 100%;
-  margin: 0;
-}
-
-.product-image {
-  width: 100%;
-  background-color: lightgray;  
-  max-width: 250px;
-  height: auto;
-  border-radius:  12px 12px 0px 0px;
-  margin-bottom: 15px;
-  object-fit: cover;
-}
-
-.product-card {
-    text-decoration: none;
-}
-.product-title {
-    margin: 0;
-    font-size: 10px;
-    color: black;
-    padding: 10px;
-    padding-top: 0;
-}   
-
-.product-price {
-    margin: 0;
-    color: black;
-    padding: 10px;
-    padding-top: 0;
-}
-
-.product-card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 0;
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .product-card:hover {
-    transform: scale(1.03);
-  }
-  
-.view {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
+} */
