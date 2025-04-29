@@ -40,11 +40,22 @@ const displayProduct = async () => {
         createProduct(product);
 
         const existingWishlist = JSON.parse(localStorage.getItem(`${currentUser}-wishlist`)) || [];
+        let existingRecentlyViewed = JSON.parse(localStorage.getItem(`${currentUser}-recently-viewed`)) || [];
+        
         const exists = existingWishlist.find(p => p.id === product.id);
+        const existingProductIndex = existingRecentlyViewed.findIndex(p => p.id === product.id);
+        if (existingProductIndex !== -1) {
+            existingRecentlyViewed.splice(existingProductIndex, 1);
+            localStorage.setItem(`${currentUser}-recently-viewed`, JSON.stringify(existingRecentlyViewed));
+        } 
+        existingRecentlyViewed.unshift(product);
+        localStorage.setItem(`${currentUser}-recently-viewed`, JSON.stringify(existingRecentlyViewed));
+
         if (exists) {
             btn.classList.add("heart-active"); 
         }
     }
+
 };
 
 
@@ -95,6 +106,8 @@ const addToWishlist = async () => {
         btn.classList.add("heart-active");
     }
 };
+
+
 
 showModalBtn.addEventListener("click", () => {
     modal.style.display = "flex";
