@@ -29,6 +29,7 @@ function renderCart() {
             item.quantity++;
             updateLocalStorage();
             renderCart();
+            updateSummary();
         });
 
         subtractBtn.addEventListener("click", () => {
@@ -36,6 +37,7 @@ function renderCart() {
                 item.quantity--;
                 updateLocalStorage();
                 renderCart();
+                updateSummary();
             }
         });
 
@@ -43,6 +45,7 @@ function renderCart() {
             cartItems.splice(index, 1);
             updateLocalStorage();
             renderCart();
+            updateSummary();
         });
 
         cartContainer.appendChild(cartItem);
