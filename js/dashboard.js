@@ -82,29 +82,29 @@ document.getElementById("categories").addEventListener("click", (e) => {
 document.addEventListener("DOMContentLoaded", displayProducts);
 
 // SCROLL TRANSITION
-const sections = document.querySelectorAll('.photo');
-let isScrolling = false;
+// const sections = document.querySelectorAll('.photo');
+// let isScrolling = false;
 
-document.addEventListener('wheel', (event) => {
-  if (isScrolling) return;
-  isScrolling = true;
+// document.addEventListener('wheel', (event) => {
+//   if (isScrolling) return;
+//   isScrolling = true;
 
-  const direction = event.deltaY > 0 ? 1 : -1; 
-  const currentScroll = window.scrollY;
-  const sectionHeight = window.innerHeight;
+//   const direction = event.deltaY > 0 ? 1 : -1; 
+//   const currentScroll = window.scrollY;
+//   const sectionHeight = window.innerHeight;
 
-  let targetIndex = Math.round(currentScroll / sectionHeight) + direction;
+//   let targetIndex = Math.round(currentScroll / sectionHeight) + direction;
 
-  targetIndex = Math.max(0, Math.min(sections.length - 1, targetIndex));
+//   targetIndex = Math.max(0, Math.min(sections.length - 1, targetIndex));
 
-  const targetPosition = sections[targetIndex].offsetTop;
+//   const targetPosition = sections[targetIndex].offsetTop;
 
-  window.scrollTo({
-    top: targetPosition,
-    behavior: 'smooth'
-  });
+//   window.scrollTo({
+//     top: targetPosition,
+//     behavior: 'smooth'
+//   });
 
-  setTimeout(() => {
-    isScrolling = false;
-  }, 700); 
-});
+//   setTimeout(() => {
+//     isScrolling = false;
+//   }, 700); 
+// });
