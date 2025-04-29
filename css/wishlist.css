@@ -27,12 +27,11 @@ a {
 }
 
 .product-title {
-  margin: 0;
-  font-size: 12px;
-  color: black;
-  padding: 10px;
-  padding-top: 0;
-  /* text-align: justify; */
+    margin: 0;
+    font-size: 12px;
+    color: black;
+    padding: 10px;
+    padding-top: 0;
 }
 
 .id{
@@ -66,11 +65,10 @@ a {
 
 
 .top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  /* text-align: center; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .bottom {
@@ -82,8 +80,8 @@ a {
 }
 
 button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  padding-right: 1rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding-right: 1rem;
 }
