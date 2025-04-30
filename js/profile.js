@@ -40,6 +40,7 @@ function initProfilePage() {
             const newUsername = newUsernameInput.value.trim();
             if (newUsername && newUsername !== currentUser) {
                 updateUsername(newUsername);
+                return;
             }
         }
 
@@ -76,17 +77,18 @@ function initProfilePage() {
 
     function updateUsername(newUsername) {
         const oldUsername = localStorage.getItem("currentUser");
+        newUsername = newUsername.trim();
+        
+        if (!newUsername || newUsername === oldUsername) return;
+
         const credentials = JSON.parse(localStorage.getItem("user-credentials")) || {};
 
-        if (!newUsername || newUsername === oldUsername) return;
 
         if (credentials.hasOwnProperty(newUsername)) {
             alert("This username is already taken. Keeping your current username.");
 
             const usernameDisplay = document.getElementById("username");
-            if (usernameDisplay) {
-                usernameDisplay.value = oldUsername;
-            }
+            if (usernameDisplay) usernameDisplay.value = oldUsername;
             return;
         }
 
@@ -96,17 +98,28 @@ function initProfilePage() {
             localStorage.setItem("user-credentials", JSON.stringify(credentials));
         }
 
-        const profileData = localStorage.getItem(`${oldUsername}-profile`);
-        const addressData = localStorage.getItem(`${oldUsername}-address`);
-        const profilePic = localStorage.getItem(`${oldUsername}-profile-pic`);
+        const suffixes = [
+            "profile",
+            "address",
+            "profile-pic",
+            "cart",
+            "wishlist",
+            "recently-viewed"
+        ];
 
-        if (profileData) localStorage.setItem(`${newUsername}-profile`, profileData);
-        if (addressData) localStorage.setItem(`${newUsername}-address`, addressData);
-        if (profilePic) localStorage.setItem(`${newUsername}-profile-pic`, profilePic);
 
-        localStorage.removeItem(`${oldUsername}-profile`);
-        localStorage.removeItem(`${oldUsername}-address`);
-        localStorage.removeItem(`${oldUsername}-profile-pic`);
+        suffixes.forEach(suffix => {
+        const oldKey = `${oldUsername}-${suffix}`;
+        const newKey = `${newUsername}-${suffix}`;
+        const value = localStorage.getItem(oldKey);
+
+        if (value !== null) {
+            localStorage.setItem(newKey, value);
+            localStorage.removeItem(oldKey);
+        }
+
+        });
+
 
         localStorage.setItem("currentUser", newUsername);
 

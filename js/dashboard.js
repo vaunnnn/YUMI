@@ -38,8 +38,13 @@ const displayProducts = async () => {
     const productCard = tempDiv.querySelector(".product-card"); 
     productCard.setAttribute("data-category", product.category.toLowerCase());
 
+    // console.log(productCard);
+    console.log(productFragment);
+
     productSection.appendChild(productCard);
   }
+
+ 
 };
 
 
