@@ -159,8 +159,8 @@ body {
 }
 
 .images {
-    width: 46rem;
-    height: 30rem;
+    width: 720px;
+    height: 500px;
 }
 
 
@@ -169,10 +169,8 @@ body {
 
 .modal {
     display: none;
-    /* Hidden by default */
     position: fixed;
     z-index: 999;
-    /* On top of everything */
     left: 0;
     top: 0;
     width: 100vw;
