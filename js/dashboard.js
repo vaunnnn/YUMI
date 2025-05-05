@@ -10,12 +10,10 @@ const fetchAPI = async () => {
   }
 
   try {
-    const response = await fetch(`https://dummyjson.com/products`);
+    const response = await fetch(`https://dummyjson.com/products?limit=0`);
     if (!response.ok) {
       throw new Error(`${response.status}`);
     }
-
-
     const data = await response.json();
 
     sessionStorage.setItem(cacheKey, JSON.stringify(data));
@@ -57,24 +55,48 @@ const searchProduct = () => {
   });
 };
 
+const groupedCategories = {
+  beauty: ["beauty", "fragrances", "skin-care"],
+  grocery: ["groceries", "kitchen-accessories"],
+  gadgets: ["laptops", "mobile-accessories", "smartphones", "tablets"],
+  clothes: ["mens-shirts", "mens-shoes", "tops", "womens-dresses", "womens-shoes"],
+  accessories: ["sports-accessories", "sunglasses", "mens-watches", "womens-jewellery", "womens-watches"],
+  vehicles: ["motorcycle", "vehicle"],
+};
+
 const filterByCategory = (category) => {
   const productCards = document.querySelectorAll("#productSection .product-card");
 
+  let categoriesToShow = [];
+
+  if (category === "all") {
+    categoriesToShow = null; 
+  } else if (groupedCategories[category]) {
+    categoriesToShow = groupedCategories[category];
+  } else {
+    categoriesToShow = [category]; 
+  }
+
   productCards.forEach((card) => {
     const cardCategory = card.getAttribute("data-category");
-    card.style.display = category === "all" || cardCategory === category ? "" : "none";
+
+    const shouldShow =
+      !categoriesToShow || categoriesToShow.includes(cardCategory);
+
+    card.style.display = shouldShow ? "" : "none";
   });
 };
 
-const showProductsSection = (category) => {
-  const mainSection = document.getElementById("main");
-  const productSection = document.getElementById("productSection");
 
-  mainSection.style.display = "none";
-  productSection.style.display = "grid";
+// const showProductsSection = (category) => {
+//   const mainSection = document.getElementById("main");
+//   const productSection = document.getElementById("productSection");
 
-  filterByCategory(category);
-};
+//   mainSection.style.display = "none";
+//   productSection.style.display = "grid";
+
+//   filterByCategory(category);
+// };
 
 document.getElementById("search").addEventListener("keyup", searchProduct);
 
@@ -83,7 +105,7 @@ document.getElementById("main").addEventListener("click", (e) => {
     e.preventDefault();
     const category = e.target.getAttribute("data-category").toLowerCase();
 
-    showProductsSection(category);
+    window.location.href = `category.html?category=${encodeURIComponent(category)}`;
   }
 });
 

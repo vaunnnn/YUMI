@@ -40,7 +40,7 @@ const fetchImage = (params) => {
 
     tempImg.onload = () => {
         image.src = thumbnail;
-        // loader.style.display = 'none';
+        loader.style.display = 'none';
     }
 
     tempImg.onerror = () => {
@@ -56,7 +56,7 @@ const fetchImage = (params) => {
     }
 
     tempImg.src = thumbnail;
-    console.log(tempImg);
+
 
 }
 
