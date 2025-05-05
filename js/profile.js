@@ -40,6 +40,7 @@ function initProfilePage() {
             const newUsername = newUsernameInput.value.trim();
             if (newUsername && newUsername !== currentUser) {
                 updateUsername(newUsername);
+                return;
             }
         }
 

@@ -16,9 +16,9 @@
 
   <body>
     <div id="header">
-      <div id="yumi">
-        <div id="logo" onclick="window.location.href='/html/dashboard.html'" style="cursor: pointer;"></div>
-        <div id="title" onclick="window.location.href='/html/dashboard.html'" style="cursor: pointer;">YUMI</div>
+      <div id="yumi" onclick="window.location.href='/html/dashboard.html'" style="cursor: pointer;">
+        <div id="logo" ></div>
+        <div id="title">YUMI</div>
     </div>
 
       <div id="search-bar">
@@ -58,30 +58,31 @@
     </div>
 
     <div id="main">
-      <section class="photo" id="beauty-ad"></section>
-      <section class="photo" id="groceries-ad"></section>
-      <section class="photo" id="electronics-ad"></section>
+      <section id="photos">
+        <section class="photo category-link" id="beauty-ad" data-category="beauty"></section>
+        <section class="photo category-link" id="groceries-ad" data-category="groceries"></section>
+        <section class="photo category-link" id="gadgets-ad" data-category="electronics"></section>
+        <section class="photo category-link" id="clothes-ad" data-category="clothes"></section>
+      </section>
 
       <section id="categories">
-        <div class="category-link" data-category="beauty" id="beauty"></div>
-        <div class="category-link" data-category="groceries" id="groceries"></div>
-        <div class="category-link" data-category="electronics" id="electronics"></div>
-        <div class="category-link" data-category="furniture" id="furniture"></div>
-        <div class="category-link" data-category="vehicle" id="vehicle"></div>
+        <div class="category category-link" data-category="beauty" id="beauty"></div>
+        <div class="category category-link" data-category="groceries" id="groceries"></div>
+        <div class="category category-link" data-category="laptops" id="electronics"></div>
+        <div class="category category-link" data-category="clothes" id="clothes"></div>
       </section>
     </div>
 
-    <!-- <template id="product-template">
+    <section id="productSection"></section>
+
+    <template id="product-template">
       <a href="#" class="product-card">
         <img src="" alt="Product image" class="product-image">
         <p class="product-title"></p>
         <p class="product-price"></p>
       </a>
     </template>
-    
-  
-    <section id="productSection">
-    </section> -->
+
   </body>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <script src="/js/dashboard.js" type="module"></script>

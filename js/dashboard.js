@@ -10,7 +10,7 @@ const fetchAPI = async () => {
   }
 
   try {
-    const response = await fetch(`https://dummyjson.com/products?limit=0`);
+    const response = await fetch(`https://dummyjson.com/products`);
     if (!response.ok) {
       throw new Error(`${response.status}`);
     }
@@ -24,24 +24,22 @@ const fetchAPI = async () => {
   }
 };
 
-
-
 const displayProducts = async () => {
   const { products } = await fetchAPI();
   const productSection = document.getElementById("productSection");
+  productSection.innerHTML = "";
 
   for (const product of products) {
-    const productFragment = createProduct(product); 
+    const productFragment = createProduct(product);
     const tempDiv = document.createElement("div");
     tempDiv.appendChild(productFragment);
 
-    const productCard = tempDiv.querySelector(".product-card"); 
+    const productCard = tempDiv.querySelector(".product-card");
     productCard.setAttribute("data-category", product.category.toLowerCase());
 
     productSection.appendChild(productCard);
   }
 };
-
 
 const searchProduct = () => {
   const input = document.getElementById("search").value.toLowerCase();
@@ -58,53 +56,31 @@ const filterByCategory = (category) => {
 
   productCards.forEach((card) => {
     const cardCategory = card.getAttribute("data-category");
-
-    if (category === "all" || cardCategory === category) {
-      card.style.display = "";
-    } else {
-      card.style.display = "none";
-    }
+    card.style.display = category === "all" || cardCategory === category ? "" : "none";
   });
 };
 
-// HI SYBEL YADEEN
+const showProductsSection = (category) => {
+  const mainSection = document.getElementById("main");
+  const productSection = document.getElementById("productSection");
+
+  mainSection.style.display = "none";
+  productSection.style.display = "grid";
+
+  filterByCategory(category);
+};
 
 document.getElementById("search").addEventListener("keyup", searchProduct);
 
-document.getElementById("categories").addEventListener("click", (e) => {
+document.getElementById("main").addEventListener("click", (e) => {
   if (e.target.classList.contains("category-link")) {
     e.preventDefault();
     const category = e.target.getAttribute("data-category").toLowerCase();
-    filterByCategory(category);
+
+    showProductsSection(category);
   }
 });
 
-document.addEventListener("DOMContentLoaded", displayProducts);
-
-// SCROLL TRANSITION
-// const sections = document.querySelectorAll('.photo');
-// let isScrolling = false;
-
-// document.addEventListener('wheel', (event) => {
-//   if (isScrolling) return;
-//   isScrolling = true;
-
-//   const direction = event.deltaY > 0 ? 1 : -1; 
-//   const currentScroll = window.scrollY;
-//   const sectionHeight = window.innerHeight;
-
-//   let targetIndex = Math.round(currentScroll / sectionHeight) + direction;
-
-//   targetIndex = Math.max(0, Math.min(sections.length - 1, targetIndex));
-
-//   const targetPosition = sections[targetIndex].offsetTop;
-
-//   window.scrollTo({
-//     top: targetPosition,
-//     behavior: 'smooth'
-//   });
-
-//   setTimeout(() => {
-//     isScrolling = false;
-//   }, 700); 
-// });
+document.addEventListener("DOMContentLoaded", async () => {
+  await displayProducts();
+});
