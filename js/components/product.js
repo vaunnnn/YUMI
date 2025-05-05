@@ -1,5 +1,6 @@
+const template = document.getElementById("product-template");
 const createProduct = (product) => {
-    const template = document.getElementById("product-template");
+    // const template = document.getElementById("product-template");
     const clone = template.content.cloneNode(true); 
   
     const anchor = clone.querySelector(".product-card");
@@ -19,6 +20,8 @@ const createProduct = (product) => {
     }
     productTitle.textContent = title;
     productPrice.textContent = `$${price}`;
+
+    // console.log(anchor.length);
   
     return clone;
 };
