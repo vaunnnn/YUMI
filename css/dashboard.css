@@ -140,14 +140,48 @@ body::-webkit-scrollbar-track {
   box-sizing: border-box;
   width: 100%;
   height: 40%;
-  background-color: rgb(222, 222, 222);
+  background-color: white;
   margin: 0;
-  padding: 5%;
+  padding: 3% 0;
+  min-width: fit-content; 
+  min-height: fit-content;
+}
+
+#category-title {
+  color: rgb(0, 0, 0, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  visibility: hidden;
+}
+
+#category-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+#category-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40%;
+  margin: 0;
+  padding: 2%;
+  padding-bottom: 0;
+  min-width: fit-content; 
+  min-height: fit-content;
 }
 
 .category {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   border: none;
   border-radius: 50%;
   background-color: white;
@@ -155,28 +189,59 @@ body::-webkit-scrollbar-track {
   background-position: center;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  margin: 1rem;
+
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
 }
 
-.category:hover {
-  transform: scale(1.2);
-  border: 10px solid rgba(71, 69, 69, 0.5); /* Inner border */
-  box-shadow: 0 0 0 8px rgb(0, 0, 0, 0.8); /* Outer border simulated */
+.category.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.category.visible:hover {
+  transform: scale(1.1); 
+  transition: all 0.3s ease-out;
 }
 
 #beauty {
   background-image: url(/images/gloss.png);
 }
 
+#beauty:hover {
+  border: 8px solid #ffdfe6; 
+  box-shadow: 0 0 0 6px rgb(224, 159, 170, 0.8);
+}
+
 #groceries {
   background-image: url(/images/broccoli.png);
+}
+
+#groceries:hover {
+  border: 8px solid #eaf9c9; 
+  box-shadow: 0 0 0 6px rgb(185, 213, 125, 0.8);
 }
 
 #electronics {
   background-image: url(/images/laptop.png);
 }
 
+#electronics:hover {
+  border: 8px solid #e3e3e3; 
+  box-shadow: 0 0 0 6px rgb(192, 192, 198, 0.8);
+}
+
 #clothes {
   background-image: url(/images/jacket.png);
+}
+
+#clothes:hover {
+  border: 8px solid #e5e9f2; 
+  box-shadow: 0 0 0 6px rgba(202, 218, 252, 0.8);
 }
 
 /*----------------MAIN--------------------*/
@@ -196,7 +261,6 @@ body::-webkit-scrollbar-track {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  margin-bottom: .5%;
   background-color: #fcfcfc;
 }
 

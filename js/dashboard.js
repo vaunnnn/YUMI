@@ -90,3 +90,48 @@ document.getElementById("main").addEventListener("click", (e) => {
 document.addEventListener("DOMContentLoaded", async () => {
   await displayProducts();
 });
+
+/*--------TRANSITIONS-------*/
+const observeCategoryTitle = () => {
+  const title = document.getElementById("category-title");
+  if (!title) return;
+
+  const observer = new IntersectionObserver(
+    (entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observerInstance.unobserve(entry.target); 
+        }
+      });
+    },
+    {threshold: 0,});
+
+  observer.observe(title);
+};
+
+const observeCategories = () => {
+  const categories = document.querySelectorAll(".category");
+  if (!categories.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observerInstance.unobserve(entry.target); 
+        }
+      });
+    },
+    {threshold: 0});
+
+  categories.forEach((category) => observer.observe(category));
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  observeCategories();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  observeCategoryTitle();
+});
