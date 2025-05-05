@@ -7,6 +7,7 @@ const groupedCategories = {
   clothes: ["mens-shirts", "mens-shoes", "tops", "womens-dresses", "womens-shoes"],
   accessories: ["sports-accessories", "sunglasses", "mens-watches", "womens-jewellery", "womens-watches"],
   vehicles: ["motorcycle", "vehicle"],
+  furnitures: ["furniture", "home-accessories"]
 };
 
 const fetchGroupedCategoryProducts = async (category) => {

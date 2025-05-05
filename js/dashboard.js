@@ -62,6 +62,7 @@ const groupedCategories = {
   clothes: ["mens-shirts", "mens-shoes", "tops", "womens-dresses", "womens-shoes"],
   accessories: ["sports-accessories", "sunglasses", "mens-watches", "womens-jewellery", "womens-watches"],
   vehicles: ["motorcycle", "vehicle"],
+  furnitures: ["furniture", "home-accessories"]
 };
 
 const filterByCategory = (category) => {
@@ -150,6 +151,29 @@ const observeCategories = () => {
   categories.forEach((category) => observer.observe(category));
 };
 
+const observeButtons = () => {
+  const buttons = document.querySelectorAll(".carousel-buttons");
+  if (!buttons.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observerInstance.unobserve(entry.target); 
+        }
+      });
+    },
+    { threshold: 0 }
+  );
+
+  buttons.forEach((button) => observer.observe(button));
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  observeButtons();
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   observeCategories();
 });
@@ -157,3 +181,22 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   observeCategoryTitle();
 });
+
+/*-----------CAROUSEL----------------*/
+function initializeCarousel() {
+  const carousel = document.getElementById('category-links');
+  const btnLeft = document.getElementById('carousel-left');
+  const btnRight = document.getElementById('carousel-right');
+
+  const scrollAmount = 300;
+
+  btnLeft.addEventListener('click', () => {
+    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  btnRight.addEventListener('click', () => {
+    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+}
+
+initializeCarousel();
