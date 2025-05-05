@@ -14,6 +14,8 @@ const fetchAPI = async () => {
     if (!response.ok) {
       throw new Error(`${response.status}`);
     }
+
+
     const data = await response.json();
 
     sessionStorage.setItem(cacheKey, JSON.stringify(data));
@@ -38,7 +40,6 @@ const displayProducts = async () => {
     productCard.setAttribute("data-category", product.category.toLowerCase());
 
     // console.log(productCard);
-    console.log(productFragment);
 
     productSection.appendChild(productCard);
   }
