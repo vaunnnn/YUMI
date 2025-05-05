@@ -69,7 +69,7 @@ function updateSummary() {
 
     if (shippingValue === "standard") {
         shippingFee = 20;
-        deliveryDays = 14; 
+        deliveryDays = 14;
     } else if (shippingValue === "express") {
         shippingFee = 35;
         deliveryDays = 7;
@@ -101,6 +101,50 @@ function updateSummary() {
 
 document.querySelector("#shipping").addEventListener("change", updateSummary);
 document.querySelector("#voucher").addEventListener("change", updateSummary);
+
+document.querySelector("#checkout").addEventListener("click", () => {
+
+    const currentUser = localStorage.getItem("currentUser");
+    const profileData = JSON.parse(localStorage.getItem(`${currentUser}-profile`)) || {};
+    const addressData = JSON.parse(localStorage.getItem(`${currentUser}-address`)) || {};
+
+    const requiredProfileFields = ["fname", "lname", "email", "phone"];
+    const requiredAddressFields = ["street", "brgy", "town", "province", "country", "zip"];
+
+    const isProfileIncomplete = requiredProfileFields.some(field => !profileData[field]?.trim());
+    const isAddressIncomplete = requiredAddressFields.some(field => !addressData[field]?.trim());
+
+    if (isProfileIncomplete || isAddressIncomplete) {
+        alert("Please complete your profile before proceeding to checkout.");
+        window.location.href = "profile.html";
+        return;
+    }
+
+
+    const shippingValue = document.querySelector("#shipping").value;
+    const voucherValue = document.querySelector("#voucher").value;
+    const paymentMethod = document.querySelector('input[name="payment"]:checked')?.value || "";
+    const deliveryDate = document.querySelector("#delivery-date").textContent;
+    const subtotal = parseFloat(document.querySelector("#subtotal").textContent.slice(1));
+    const total = parseFloat(document.querySelector("#total").textContent.slice(1));
+    const discount = (subtotal - total).toFixed(2);
+
+    const checkoutData = {
+        shippingMethod: shippingValue,
+        voucherUsed: voucherValue,
+        paymentMethod,
+        deliveryDate,
+        subtotal: subtotal.toFixed(2),
+        discount,
+        total: total.toFixed(2)
+    };
+
+    localStorage.setItem(`${currentUser}-checkoutData`, JSON.stringify(checkoutData));
+
+    // Redirect to checkout page (optional)
+    window.location.href = "checkout.html";
+});
+
 
 updateSummary();
 renderCart();
