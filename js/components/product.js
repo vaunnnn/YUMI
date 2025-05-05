@@ -50,7 +50,7 @@ const fetchImage = (params) => {
             setTimeout(()=> fetchImage(params), retryDelay);
             
         } else {
-            image.src = "../../images/yumi-1.png"
+            image.src = "../../images/edwinchan.png"
         }
 
     }
