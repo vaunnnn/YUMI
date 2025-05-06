@@ -23,8 +23,10 @@ const fetchGroupedCategoryProducts = async (category) => {
       console.error(`Error fetching ${sub}:`, error);
     }
   }
+  console.log(allProducts);
 
   return allProducts;
+  
 };
 
 const displayCategoryProducts = async () => {
