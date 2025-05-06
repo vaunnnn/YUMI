@@ -48,7 +48,6 @@ const fetchImage = (params) => {
 
         if (currentTry < maxRetries) {
             setTimeout(()=> fetchImage(params), retryDelay);
-            
         } else {
             image.src = "../../images/edwinchan.png"
         }

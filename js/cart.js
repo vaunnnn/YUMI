@@ -1,3 +1,5 @@
+import convertUsdToPhp from "../js/utilities/convertUsdToPhp.js";
+
 const currentUser = localStorage.getItem("currentUser");
 let cartItems = JSON.parse(localStorage.getItem(`${currentUser}-cart`)) || [];
 const cartContainer = document.getElementById("cart-container");
@@ -23,7 +25,8 @@ function renderCart() {
         img.src = item.images[0];
         title.textContent = item.title;
         quantity.textContent = `${item.quantity}`;
-        total.textContent = `$${(item.price * item.quantity).toFixed(2)}`;
+        const convertToPhp =  convertUsdToPhp(item.price) * item.quantity;
+        total.textContent = `P ${convertToPhp}`;
 
         addBtn.addEventListener("click", () => {
             item.quantity++;
@@ -60,7 +63,7 @@ function updateSummary() {
     const rawTotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
     document.querySelector("#order-quantity").textContent = `Total ${totalQuantity} Item(s)`;
-    document.querySelector("#order-total").textContent = `$${rawTotal.toFixed(2)}`;
+    document.querySelector("#order-total").textContent =  `P ${convertUsdToPhp(rawTotal)}`;
 
     const shippingSelect = document.querySelector("#shipping");
     const shippingValue = shippingSelect.value;
@@ -81,7 +84,7 @@ function updateSummary() {
     document.querySelector("#delivery-date").textContent = formattedDate;
 
     const subtotal = rawTotal + shippingFee;
-    document.querySelector("#subtotal").textContent = `$${subtotal.toFixed(2)}`;
+    document.querySelector("#subtotal").textContent = `P ${convertUsdToPhp(subtotal)}`;
 
     const voucherSelect = document.querySelector("#voucher");
     const voucherValue = voucherSelect.value;
@@ -96,7 +99,7 @@ function updateSummary() {
     }
 
     const total = subtotal - discount;
-    document.querySelector("#total").textContent = `$${total.toFixed(2)}`;
+    document.querySelector("#total").textContent = `P ${convertUsdToPhp(total)}`;
 }
 
 document.querySelector("#shipping").addEventListener("change", updateSummary);
