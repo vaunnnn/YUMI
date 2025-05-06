@@ -36,7 +36,7 @@ const createProduct = (product) => {
 
 const fetchImage = (params) => {
 
-    const {thumbnail, loader, image, tempImg, maxRetries, retryDelay, currentTry} = params
+    const {thumbnail, loader, image, tempImg, maxRetries, retryDelay} = params
 
     tempImg.onload = () => {
         image.src = thumbnail;
@@ -44,12 +44,13 @@ const fetchImage = (params) => {
     }
 
     tempImg.onerror = () => {
-        currentTry++;
+        params.currentTry++;
 
-        if (currentTry < maxRetries) {
+        if (params.currentTry < maxRetries) {
             setTimeout(()=> fetchImage(params), retryDelay);
         } else {
-            image.src = "../images/edwinchan.png"
+            image.src = "../../images/edwinchan.jpg";
+            loader.style.display = 'none';
         }
 
     }
