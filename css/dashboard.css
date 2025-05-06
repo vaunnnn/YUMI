@@ -509,10 +509,10 @@ body::-webkit-scrollbar-track {
   flex-direction: column;
   text-decoration: none;
 
-  opacity: 0;
+  /* opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease-out, transform 1s ease-out;
-  visibility: hidden;
+  visibility: hidden; */
 }
 
 .product-card.visible {
