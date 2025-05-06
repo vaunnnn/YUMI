@@ -11,21 +11,18 @@ document.addEventListener("DOMContentLoaded", function () {
             const confirmPassword = document.getElementById("signup-confirm-password").value;
 
             if (password !== confirmPassword) {
-                alert("Passwords do not match!");
                 return;
             }
 
             const credentials = JSON.parse(localStorage.getItem("user-credentials")) || {};
 
             if (credentials[username]) {
-                alert("Username already exists!");
                 return;
             }
 
             credentials[username] = password;
             localStorage.setItem("user-credentials", JSON.stringify(credentials));
 
-            alert("Account created successfully! You can now sign in.");
             window.location.href = "signin.html";
         });
     }
@@ -41,16 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const storedPassword = credentials[username];
 
             if (!storedPassword) {
-                alert("Account not found!");
                 return;
             }
 
             if (storedPassword !== password) {
-                alert("Incorrect password!");
                 return;
             }
 
-            alert(`Welcome, ${username}!`);
             localStorage.setItem("currentUser", username);
             window.location.href = "dashboard.html";
         });
@@ -87,3 +81,5 @@ if (overlay && toSignup && toSignin) {
         overlay.classList.remove("move-left");
     });
 }
+
+
