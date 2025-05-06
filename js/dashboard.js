@@ -93,10 +93,7 @@ const filterByCategory = (category) => {
 //   const mainSection = document.getElementById("main");
 //   const productSection = document.getElementById("productSection");
 
-//   mainSection.style.display = "none";
-//   productSection.style.display = "grid";
-
-//   filterByCategory(category);
+//   productSection.style.display = "flex";
 // };
 
 document.getElementById("search").addEventListener("keyup", searchProduct);
@@ -152,7 +149,7 @@ const observeCategories = () => {
 };
 
 const observeButtons = () => {
-  const buttons = document.querySelectorAll(".carousel-buttons");
+  const buttons = document.querySelectorAll(".category-buttons");
   if (!buttons.length) return;
 
   const observer = new IntersectionObserver(
@@ -170,23 +167,113 @@ const observeButtons = () => {
   buttons.forEach((button) => observer.observe(button));
 };
 
+const observeCategoryYumi = () => {
+  const categoryYumi = document.querySelector("#category-yumi");
+  if (!categoryYumi) return;
+
+  const observer = new IntersectionObserver(
+    (entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observerInstance.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0 }
+  );
+  observer.observe(categoryYumi);
+};
+
+const observeRecommended = () => {
+  const recommended = document.querySelectorAll(".observe-recommended");
+  if (!recommended.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observerInstance.unobserve(entry.target); 
+        }
+      });
+    },
+    { threshold: 0 }
+  );
+
+  recommended.forEach((recommended) => observer.observe(recommended));
+};
+
+const observeRecommendedButtons = () => {
+  const buttons = document.querySelectorAll(".recommended-buttons");
+  if (!buttons.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observerInstance.unobserve(entry.target); 
+        }
+      });
+    },
+    { threshold: 0 }
+  );
+
+  buttons.forEach((button) => observer.observe(button));
+};
+
+const observeProductCards = () => {
+  const cards = document.querySelectorAll(".product-card");
+  if (!cards.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries, observerInstance) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observerInstance.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0 }
+  );
+
+  cards.forEach((card) => observer.observe(card));
+};
+
+
 document.addEventListener("DOMContentLoaded", () => {
+  observeCategoryYumi();
   observeButtons();
-});
-
-document.addEventListener("DOMContentLoaded", () => {
   observeCategories();
-});
-
-document.addEventListener("DOMContentLoaded", () => {
   observeCategoryTitle();
+  observeRecommended();
+  observeRecommendedButtons();
+  observeProductCards();
 });
 
 /*-----------CAROUSEL----------------*/
-function initializeCarousel() {
+function initializeCategoryCarousel() {
   const carousel = document.getElementById('category-links');
-  const btnLeft = document.getElementById('carousel-left');
-  const btnRight = document.getElementById('carousel-right');
+  const btnLeft = document.getElementById('category-left');
+  const btnRight = document.getElementById('category-right');
+
+  const scrollAmount = 295;
+
+  btnLeft.addEventListener('click', () => {
+    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  btnRight.addEventListener('click', () => {
+    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+}
+
+function initializeRecommendedCarousel() {
+  const carousel = document.getElementById('productSection');
+  const btnLeft = document.getElementById('recommended-left');
+  const btnRight = document.getElementById('recommended-right');
 
   const scrollAmount = 300;
 
@@ -199,4 +286,5 @@ function initializeCarousel() {
   });
 }
 
-initializeCarousel();
+initializeCategoryCarousel();
+initializeRecommendedCarousel();

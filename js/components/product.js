@@ -19,7 +19,7 @@ const createProduct = (product) => {
         const maxRetries = 5;
         const retryDelay = 2000;
         let currentTry = 0;
-        const tempImg = new Image();
+        let tempImg = new Image();
         fetchImage({thumbnail, loader, image, tempImg, maxRetries, retryDelay, currentTry});
     }
 

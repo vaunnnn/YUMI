@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 /* div {border: 1px solid black;} */
 
-
 body {
   display: flex;
   flex-direction: column;
@@ -132,33 +131,7 @@ body::-webkit-scrollbar-track {
 }
 
 /*----------------CAROUSEL--------------------*/
-/* .carousel-buttons {
-  position: absolute;
-  top: 65%;
-  transform: translateY(-50%);
-  z-index: 500;
-  margin: 0;
-  padding: 0;
-
-  font-size: 3rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: rgb(0, 0, 0, 0.65);
-
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-  visibility: hidden;
-}
-
-.carousel-buttons.visible {
-  opacity: 1;
-  transform: translateY(-50%);
-  visibility: visible;
-} */
-
-.carousel-buttons {
+.category-buttons {
   position: absolute;
   top: 65%;
   z-index: 500;
@@ -174,17 +147,48 @@ body::-webkit-scrollbar-track {
   visibility: hidden;
 }
 
-.carousel-buttons.visible {
+.category-buttons.visible {
   opacity: .5;
   transform: translateY(-50%);
   visibility: visible;
 }
 
-#carousel-left {
+#category-left {
   left: 6rem;
 }
 
-#carousel-right {
+#category-right {
+  right: 6rem;
+}
+
+.recommended-buttons {
+  position: absolute;
+  top: 50%;
+  z-index: 500;
+  margin: 0;
+  padding: 0;
+  font-size: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  visibility: hidden;
+}
+
+.recommended-buttons.visible {
+  opacity: .5;
+  transform: translateY(-50%);
+  visibility: visible;
+}
+
+#recommended-left {
+  left: 6rem;
+}
+
+#recommended-right {
   right: 6rem;
 }
 
@@ -196,21 +200,40 @@ body::-webkit-scrollbar-track {
   justify-content: center;
   box-sizing: border-box;
   width: 100%;
-  height: 40%;
+  height: 50%;
   background-color: white;
   margin: 0;
   padding: 3% 0;
   min-height: fit-content;
+  margin-top: 0.5rem;
 
   overflow: hidden;
   position: relative;
+}
+
+#category-yumi {
+  width: 80%;
+  text-align: center;
+  margin-top: 1rem;
+  letter-spacing: 2px;
+  color: rgb(0, 0, 0, 0.65);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  visibility: hidden;
+}
+
+#category-yumi.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
 
 #category-title {
   color: rgb(0, 0, 0, 0.65);
   text-transform: uppercase;
   letter-spacing: 10px;
-  font-size: 5rem;
+  font-size: 2rem;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease-out, transform 1s ease-out;
@@ -228,7 +251,7 @@ body::-webkit-scrollbar-track {
   align-items: center;
   box-sizing: border-box;
   width: 83%;
-  height: 40%;
+  height: fit-content;
   margin: 0;
   padding: 2% 0;
   padding-bottom: 0;
@@ -237,6 +260,7 @@ body::-webkit-scrollbar-track {
   flex-wrap: nowrap;
   overflow-x: auto; 
   scroll-behavior: smooth;  
+  overflow-y: hidden;
 } 
 
 #category-links::-webkit-scrollbar {
@@ -244,8 +268,8 @@ body::-webkit-scrollbar-track {
 }
 
 .category {
-  width: 220px;
-  height: 220px;  
+  width: 210px;
+  height: 210px;  
   border: none;
   border-radius: 50%;
   background-color: white;
@@ -253,7 +277,7 @@ body::-webkit-scrollbar-track {
   background-position: center;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  margin: 1rem 2.25rem;
+  margin: 1rem 2.6rem;
 
   flex-shrink: 0;
   opacity: 0;
@@ -278,8 +302,8 @@ body::-webkit-scrollbar-track {
 }
 
 #beauty:hover {
-  border: 8px solid #ffdfe6; 
-  box-shadow: 0 0 0 6px rgb(224, 159, 170, 0.8);
+  border: 6px solid #ffdfe6; 
+  box-shadow: 0 0 0 4px rgb(224, 159, 170, 0.8);
 }
 
 #groceries {
@@ -287,8 +311,8 @@ body::-webkit-scrollbar-track {
 }
 
 #groceries:hover {
-  border: 8px solid #eaf9c9; 
-  box-shadow: 0 0 0 6px rgb(185, 213, 125, 0.8);
+  border: 6px solid #eaf9c9; 
+  box-shadow: 0 0 0 4px rgb(185, 213, 125, 0.8);
 }
 
 #gadgets {
@@ -296,8 +320,8 @@ body::-webkit-scrollbar-track {
 }
 
 #gadgets:hover {
-  border: 8px solid #e3e3e3; 
-  box-shadow: 0 0 0 6px rgb(192, 192, 198, 0.8);
+  border: 6px solid #e3e3e3; 
+  box-shadow: 0 0 0 4px rgb(192, 192, 198, 0.8);
 }
 
 #clothes {
@@ -305,8 +329,8 @@ body::-webkit-scrollbar-track {
 }
 
 #clothes:hover {
-  border: 8px solid #e5e9f2; 
-  box-shadow: 0 0 0 6px rgba(202, 218, 252);
+  border: 6px solid #e5e9f2; 
+  box-shadow: 0 0 0 4px rgba(202, 218, 252);
 }
 
 #accessories {
@@ -314,8 +338,8 @@ body::-webkit-scrollbar-track {
 }
 
 #accessories:hover {
-  border: 8px solid #cbe9ea; 
-  box-shadow: 0 0 0 6px rgb(160, 210, 212, 0.8);
+  border: 6px solid #cbe9ea; 
+  box-shadow: 0 0 0 4px rgb(160, 210, 212, 0.8);
 }
 
 #vehicles {
@@ -323,8 +347,8 @@ body::-webkit-scrollbar-track {
 }
 
 #vehicles:hover {
-  border: 8px solid #d1e6dc; 
-  box-shadow: 0 0 0 6px rgb(164, 205, 186, 0.8);
+  border: 6px solid #d1e6dc; 
+  box-shadow: 0 0 0 4px rgb(164, 205, 186, 0.8);
 }
 
 #furniture {
@@ -332,8 +356,8 @@ body::-webkit-scrollbar-track {
 }
 
 #furniture:hover {
-  border: 8px solid #fcefd2; 
-  box-shadow: 0 0 0 6px rgb(236, 212, 157, 0.8);
+  border: 6px solid #fcefd2; 
+  box-shadow: 0 0 0 4px rgb(236, 212, 157, 0.8);
 }
 
 /*----------------MAIN--------------------*/
@@ -376,7 +400,7 @@ body::-webkit-scrollbar-track {
 }
 
 #beauty-ad {
-  background-image: url(/images/beauty.png);
+  background-image: url(../images/beauty.png);
   background-size: cover;
   background-position: center;
 }
@@ -399,21 +423,59 @@ body::-webkit-scrollbar-track {
   background-position: center;
 }
 
+/* -------RECOMMEND PRODUCTS--------- */
+#recommended {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 65%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 5% 2%;
+  background-color: #fcfcfc;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+#recommended-title {
+  color: rgb(0, 0, 0, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.observe-recommended {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  visibility: hidden;
+}
+
+.observe-recommended.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
 /* -------PRODUCT SECTION--------- */
 #productSection {
-  display: none;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 100px;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  gap: 32px;
+  padding: 25px 35px;
+  width: 85%;
+  /* max-width: 1200px; */
+  height: 80%;
+  overflow: hidden;
 }
 
 .product-image {
   width: 100%;
   height: 100%;
   background-color: lightgray;
-  max-width: 250px;
+  max-width: 350px;
   height: auto;
   border-radius: 12px 12px 0px 0px;
   margin-bottom: 15px;
@@ -441,16 +503,27 @@ body::-webkit-scrollbar-track {
   height: 100%;
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
   padding: 0;
-  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   text-decoration: none;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  visibility: hidden;
+}
+
+.product-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
 }
 
 .product-card:hover {
   transform: scale(1.03);
+  transition: transform 0.3s ease;
 }
 
 .loader {
@@ -471,8 +544,8 @@ body::-webkit-scrollbar-track {
 }
 
 .image-container {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 250px;
   display: flex;
   align-items: center;
 }

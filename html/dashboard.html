@@ -71,14 +71,15 @@
     </section>
 
     <section id="categories">
-      <h1 id="category-title">Categories</h1>
+      <h5 id="category-yumi">YUMI</h5>
+      <h1 id="category-title">Discover more!</h1>
 
-      <div id="carousel-left" aria-label="Scroll Left" class="carousel-buttons">
+      <div id="category-left" aria-label="Scroll Left" class="category-buttons">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
           <path fill="#171515" d="M14.707 5.293a1 1 0 0 1 0 1.414L9.414 12l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6a1 1 0 0 1 0-1.414l6-6a1 1 0 0 1 1.414 0" stroke-width="0.2" stroke="#595959" />
         </svg>
       </div>
-      <div id="carousel-right" aria-label="Scroll Right" class="carousel-buttons">
+      <div id="category-right" aria-label="Scroll Right" class="category-buttons">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
           <path fill="#171515" d="M9.293 18.707a1 1 0 0 1 0-1.414L14.586 12L9.293 6.707a1 1 0 0 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414 0" stroke-width="0.2" stroke="#595959" />
         </svg>
@@ -94,9 +95,24 @@
         <div class="category category-link" data-category="furnitures" id="furniture" onclick="location.href='category.html?category=furniture'"></div>
       </div>
     </section>
-  </div>
 
-  <section id="productSection"></section>
+    <section id="recommended">
+      <h1 id="recommended-title" class="observe-recommended">Popular Products</h1>
+      
+      <div id="recommended-left" aria-label="Scroll Left" class="recommended-buttons">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+          <path fill="#171515" d="M14.707 5.293a1 1 0 0 1 0 1.414L9.414 12l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6a1 1 0 0 1 0-1.414l6-6a1 1 0 0 1 1.414 0" stroke-width="0.2" stroke="#595959" />
+        </svg>
+      </div>
+      <div id="recommended-right" aria-label="Scroll Right" class="recommended-buttons">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+          <path fill="#171515" d="M9.293 18.707a1 1 0 0 1 0-1.414L14.586 12L9.293 6.707a1 1 0 0 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414 0" stroke-width="0.2" stroke="#595959" />
+        </svg>
+      </div>
+
+      <div id="productSection"></div>
+    </section>
+  </div>
 
   <template id="product-template">
     <a href="#" class="product-card">
