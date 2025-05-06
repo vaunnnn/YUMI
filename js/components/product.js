@@ -14,13 +14,13 @@ const createProduct = (product) => {
     const loader = clone.querySelector('.loader');
 
     const { id, thumbnail, title, price } = product;
-    const imageLoadState = { currentTry: 0};
 
     {
         const maxRetries = 5;
         const retryDelay = 2000;
+        let currentTry = 0;
         const tempImg = new Image();
-        fetchImage({thumbnail, loader, image, tempImg, maxRetries, retryDelay, imageLoadState});
+        fetchImage({thumbnail, loader, image, tempImg, maxRetries, retryDelay, currentTry});
     }
 
 
@@ -36,7 +36,7 @@ const createProduct = (product) => {
 
 const fetchImage = (params) => {
 
-    const {thumbnail, loader, image, tempImg, maxRetries, retryDelay, imageLoadState} = params
+    const {thumbnail, loader, image, tempImg, maxRetries, retryDelay, currentTry} = params
 
     tempImg.onload = () => {
         image.src = thumbnail;
@@ -44,12 +44,12 @@ const fetchImage = (params) => {
     }
 
     tempImg.onerror = () => {
-        imageLoadState.currentTry++;
+        currentTry++;
 
         if (currentTry < maxRetries) {
             setTimeout(()=> fetchImage(params), retryDelay);
         } else {
-            image.src = "../../images/edwinchan.png"
+            image.src = "../images/edwinchan.png"
         }
 
     }
