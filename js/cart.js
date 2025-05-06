@@ -116,32 +116,34 @@ document.querySelector("#checkout").addEventListener("click", () => {
 
     if (isProfileIncomplete || isAddressIncomplete) {
         alert("Please complete your profile before proceeding to checkout.");
-        window.location.href = "profile.html";
-        return;
+        return window.location.href = "profile.html";
     }
 
 
     const shippingValue = document.querySelector("#shipping").value;
     const voucherValue = document.querySelector("#voucher").value;
-    const paymentMethod = document.querySelector('input[name="payment"]:checked')?.value || "";
+    const paymentValue = document.querySelector('#payment').value;
     const deliveryDate = document.querySelector("#delivery-date").textContent;
     const subtotal = parseFloat(document.querySelector("#subtotal").textContent.slice(1));
     const total = parseFloat(document.querySelector("#total").textContent.slice(1));
     const discount = (subtotal - total).toFixed(2);
 
+    if(!shippingValue || !paymentValue) return alert("Please add delivery option and Payment method"); 
+
     const checkoutData = {
         shippingMethod: shippingValue,
         voucherUsed: voucherValue,
-        paymentMethod,
+        paymentMethod: paymentValue,
         deliveryDate,
         subtotal: subtotal.toFixed(2),
         discount,
         total: total.toFixed(2)
     };
 
+    
+
     localStorage.setItem(`${currentUser}-checkoutData`, JSON.stringify(checkoutData));
 
-    // Redirect to checkout page (optional)
     window.location.href = "checkout.html";
 });
 

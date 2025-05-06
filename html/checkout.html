@@ -2,19 +2,19 @@
 <html>
 
 <head>
-    <title>Cart</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/cart.css">
+  <title>Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/checkout.css">
 </head>
 
 <body>
-    <div id="header">
-        <div id="yumi">
-          <div id="logo" onclick="window.location.href='/html/dashboard.html'" style="cursor: pointer;"></div>
-          <div id="title" onclick="window.location.href='/html/dashboard.html'" style="cursor: pointer;">YUMI</div>
-      </div>
-  
-        <!-- <div id="search-bar">
+  <div id="header">
+    <div id="yumi">
+      <div id="logo" onclick="window.location.href='/html/dashboard.html'" style="cursor: pointer;"></div>
+      <div id="title" onclick="window.location.href='/html/dashboard.html'" style="cursor: pointer;">YUMI</div>
+    </div>
+
+    <!-- <div id="search-bar">
           <div class="search-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
               <path fill="#080606" d="M10 4a6 6 0 1 0 0 12a6 6 0 0 0 0-12m-8 6a8 8 0 1 1 14.32 4.906l5.387 5.387a1 1 0 0 1-1.414 1.414l-5.387-5.387A8 8 0 0 1 2 10" stroke-width="1" stroke="#080606" />
@@ -27,128 +27,138 @@
             </svg>
           </div>
         </div> -->
-  
-        <div id="icons">
-          <div id="wishlist"> <button class="view" onclick="window.location.href='wishlist.html'">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                  <path fill="#080606" fill-rule="evenodd" d="M11.823 4.771L12 4.95l.177-.178a5.754 5.754 0 0 1 8.138 8.138l-6.724 6.723a2.25 2.25 0 0 1-3.182 0L3.685 12.91a5.754 5.754 0 1 1 8.138-8.138m-1.061 1.06a4.254 4.254 0 1 0-6.016 6.017l6.724 6.724a.75.75 0 0 0 1.06 0l6.724-6.724a4.254 4.254 0 0 0-6.016-6.016l-.708.708a.75.75 0 0 1-1.06 0z" clip-rule="evenodd" stroke-width="1.2" stroke="#080606" />
-              </svg>  
-          </button>
-          </div>
-          <div id="cart"><button class="view" onclick="window.location.href='cart.html'">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                <path fill="#080606" d="M4.142 4L6.01 16.136A1 1 0 0 0 7.016 17H18a1 1 0 0 0 .958-.713l3-10A1 1 0 0 0 21 5H6.32l-.33-2.138a1 1 0 0 0-.346-.627A1 1 0 0 0 4.984 2H3a1 1 0 1 0 0 2zm3.716 11l-1.23-8h13.028l-2.4 8zM10 20a2 2 0 1 1-4 0a2 2 0 0 1 4 0m9 0a2 2 0 1 1-4 0a2 2 0 0 1 4 0" stroke-width="0.5" stroke="#080606" />
-            </svg>
-          </button>
-        </div>
-          <div id="user"> <button class="view" onclick="window.location.href='profile.html'">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                  <path fill="#080606" d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8M6 8a6 6 0 1 1 12 0A6 6 0 0 1 6 8m2 10a3 3 0 0 0-3 3a1 1 0 1 1-2 0a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5a1 1 0 1 1-2 0a3 3 0 0 0-3-3z" stroke-width="0.8" stroke="#080606" />
-              </svg>
-          </div>
+
+    <div id="icons">
+      <div id="wishlist"> <button class="view" onclick="window.location.href='wishlist.html'">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+            <path fill="#080606" fill-rule="evenodd"
+              d="M11.823 4.771L12 4.95l.177-.178a5.754 5.754 0 0 1 8.138 8.138l-6.724 6.723a2.25 2.25 0 0 1-3.182 0L3.685 12.91a5.754 5.754 0 1 1 8.138-8.138m-1.061 1.06a4.254 4.254 0 1 0-6.016 6.017l6.724 6.724a.75.75 0 0 0 1.06 0l6.724-6.724a4.254 4.254 0 0 0-6.016-6.016l-.708.708a.75.75 0 0 1-1.06 0z"
+              clip-rule="evenodd" stroke-width="1.2" stroke="#080606" />
+          </svg>
         </button>
       </div>
+      <div id="cart"><button class="view" onclick="window.location.href='cart.html'">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+            <path fill="#080606"
+              d="M4.142 4L6.01 16.136A1 1 0 0 0 7.016 17H18a1 1 0 0 0 .958-.713l3-10A1 1 0 0 0 21 5H6.32l-.33-2.138a1 1 0 0 0-.346-.627A1 1 0 0 0 4.984 2H3a1 1 0 1 0 0 2zm3.716 11l-1.23-8h13.028l-2.4 8zM10 20a2 2 0 1 1-4 0a2 2 0 0 1 4 0m9 0a2 2 0 1 1-4 0a2 2 0 0 1 4 0"
+              stroke-width="0.5" stroke="#080606" />
+          </svg>
+        </button>
+      </div>
+      <div id="user"> <button class="view" onclick="window.location.href='profile.html'">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+            <path fill="#080606"
+              d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8M6 8a6 6 0 1 1 12 0A6 6 0 0 1 6 8m2 10a3 3 0 0 0-3 3a1 1 0 1 1-2 0a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5a1 1 0 1 1-2 0a3 3 0 0 0-3-3z"
+              stroke-width="0.8" stroke="#080606" />
+          </svg>
+      </div>
+      </button>
+    </div>
+  </div>
+
+  <!--------------------MAIN--------------------->
+
+  <div id="main">
+    <!-- CART SECTION -->
+    <div id="cart-section">
+      <div id="cart-header">
+        <h1>Checkout</h1>
+        <p id="item-count"># Item(s)</p>
       </div>
 
-    <!--------------------MAIN--------------------->
-
-    <div id="main">
-        <div id="cart-box">
-            <div id="cart-title">
-                <h1>Checkout</h1>
-                <p id="item-count"># Item(s)</p>
-            </div>
-            <div id="cart-container">CART ITEMS</div>
-        </div>
-
-        <div id="summary">
-            <div id="summary-title">
-                <h1>Order Details</h1>
-                <div>
-                    <p id="order-quantity"></p>
-                    <p id="order-total"></p>
-                </div>
-            </div>
-
-            <div id="summary-input">
-                <div class="summary-input">
-                    <label for="shipping">Delivery Option:</label>
-                    <select id="shipping" name="shipping">
-                        <option value="" disabled selected>Select Delivery Option</option>
-                        <option value="standard">Standard Delivery</option>
-                        <option value="express">Express Delivery</option>
-                    </select>
-                </div>
-
-                <div class="summary-input">
-                    <label for="voucher">Vouchers:</label>
-                    <select id="voucher" name="voucher">
-                        <option value="" disabled selected>Select Voucher</option>
-                        <option value="save10">SAVE10</option>
-                        <option value="freeship">FREESHIP</option>
-                        <option value="welcome15">WELCOME15</option>
-                    </select>
-                </div>
-
-                <div class="summary-input">
-                    <label for="payment">Payment Method:</label>
-                    <select id="payment" name="payment">
-                        <option value="" disabled selected>Select Payment Method</option>
-                        <option value="cash">Cash on Delivery</option>
-                        <option value="card">Credit / Debit Card</option>
-                    </select>   
-                </div>
-
-                <div id="total-details">
-                    <div class="details">
-                        <p>Estimated Delivery Date:</p>
-                        <p id="delivery-date"></p>
-                    </div>
-
-                    <div class="details">
-                        <p>Subtotal:</p>
-                        <p id="subtotal"></p>
-                    </div>
-
-                    <hr style="width: 100%; border: none; height: 1px; background-color: black;">
-                    
-                    <div id="cart-total">
-                        <h3>Total Price</h3>
-                        <h3 id="total"></h3>
-                    </div>
-                </div>
-            </div>
-            
-            <button id="checkout" onclick="window.location.href='checkout.html'">CHECKOUT</button>
-        </div>
+      <div id="cart-items">CART ITEMS</div>
     </div>
 
-    <!-----------------TEMPLATE-------------------->
-    <template id="cartItemTemplate">
-        <div class="cart-item">
-            <img class="cart-img" src="" alt="Product Image">
-            <div class="product-details">
-                <h4 class="title"></h4>
-            </div>
-            <div class="kwantity">
-                <div class="subtract-btn">
-                    
-                </div>
-                <p class="quantity"></p>
-                <div class="add-btn">
-                    
-                </div>
-            </div>
-            <p class="total"></p>
-            <div class="remove-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
-                    <path fill="#171515" d="M7 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2h4a1 1 0 1 1 0 2h-1.069l-.867 12.142A2 2 0 0 1 17.069 22H6.93a2 2 0 0 1-1.995-1.858L4.07 8H3a1 1 0 0 1 0-2h4zm2 2h6V4H9zM6.074 8l.857 12H17.07l.857-12zM10 10a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1m4 0a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1" stroke-width="0.1" stroke="#171515" />
-                </svg>
-            </div>
+    <!-- SUMMARY SECTION -->
+    <div id="order-summary">
+      <div id="summary-header">
+        <h1>Order Details</h1>
+      </div>
+
+      <div id="summary-content">
+        <!-- CUSTOMER DETAILS -->
+        <div class="summary-group">
+          <div class="customer-name"></div>
+          <div class="customer-phone"></div>
+          <div class="customer-address">
+            <!-- <div class="street"></div>
+            <div class="city"></div>
+            <div class="province"></div>
+            <div class="country"></div>
+            <div class="postal-code"></div> -->
+          </div>
+
         </div>
-    </template>
+
+        <!-- DELIVERY DETAILS -->
+        <div class="summary-group">
+          <div class="delivery-info">
+            <p class="delivery-method"></p>
+            <p class="shipping-cost"></p>
+          </div>
+        </div>
+
+        <!-- VOUCHERS -->
+        <div class="summary-group">
+          <div class="voucher-info">
+            <p class="voucher-applied"></p>
+            <p class="voucher-discount"></p>
+          </div>
+        </div>
+
+        <!-- PAYMENT METHOD -->
+        <div class="summary-group">
+          <div class="payment-info">
+            <p class="payment-method"></p>
+          </div>
+        </div>
+
+        <!-- TOTALS -->
+        <div id="pricing-summary">
+          <div class="summary-line">
+            <p>Estimated Delivery Date:</p>
+            <p id="estimated-delivery"></p>
+          </div>
+
+          <div class="summary-line">
+            <p>Subtotal:</p>
+            <p id="subtotal-amount"></p>
+          </div>
+
+          <hr />
+
+          <div id="total-payment">
+            <h3>Total Price</h3>
+            <h3 id="total-amount"></h3>
+          </div>
+        </div>
+      </div>
+
+      <button id="checkout-button">PLACE ORDER</button>
+    </div>
+  </div>
+
+
+  <!-----------------TEMPLATE-------------------->
+  <template id="cartItemTemplate">
+    <div class="cart-item">
+      <img class="cart-img" src="" alt="Product Image">
+      <div class="product-details">
+        <h4 class="title"></h4>
+      </div>
+
+      <p class="total"></p>
+      <div class="remove-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
+          <path fill="#171515"
+            d="M7 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2h4a1 1 0 1 1 0 2h-1.069l-.867 12.142A2 2 0 0 1 17.069 22H6.93a2 2 0 0 1-1.995-1.858L4.07 8H3a1 1 0 0 1 0-2h4zm2 2h6V4H9zM6.074 8l.857 12H17.07l.857-12zM10 10a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1m4 0a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1"
+            stroke-width="0.1" stroke="#171515" />
+        </svg>
+      </div>
+    </div>
+  </template>
 
 </body>
-<script type="module" src="/js/cart.js"></script>
+<script type="module" src="/js/checkout.js"></script>
 
 </html>

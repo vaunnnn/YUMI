@@ -1,43 +1,273 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    display: flex; flex-direction: column;
-    height: 100vh; width: 100vw;
-    margin: 0; padding: 0; gap: 0;
-    font-family: 'Inter';
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f7f7;
+    color: #333;
 }
 
-/*----------------HEADER--------------------*/
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* === Header === */
 #header {
-    display: flex;
-    justify-content: space-between;    
-    height: 4%; margin: 0;
-    padding: 12px 18px; border-radius: 2px;
-    border-bottom: 3px solid rgb(0, 0, 0, 0.9);
-}
-
-#logo {
-    height: 24px; width: 24px;
-    background-color: black;
-}
-
-#title {
-    font-family: 'Poetsen One', sans-serif;
-    font-weight: 400; font-size: 22px;
-    letter-spacing: 2px;
-}
-
-#yumi {
-    display: flex; align-items: center;
-    width: auto; column-gap: 5px;
-    margin: 0; padding-right: 15px;
-}
-
-#icons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0; gap: 15px;
-    margin-left: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px 30px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+/* === Branding === */
+#yumi {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo {
+    width: 40px;
+    height: 40px;
+    background: url('/images/sia.jpg') no-repeat center center/cover;
+    border-radius: 50%;
+}
+
+#title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: 2px;
+}
+
+/* === Search Bar === */
+#search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 5px 15px;
+    background: #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+#search-bar:focus-within {
+    border-color: #222;
+    background: #fff;
+}
+
+.search-icon svg {
+    fill: #888;
+}
+
+.search {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.95rem;
+    padding: 8px;
+    width: 180px;
+}
+
+/* === Header Icons === */
+#icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.view {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.view:hover {
+    transform: scale(1.1);
+}
+
+#icons svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* === Main Layout === */
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* === Cart Section === */
+#cart-section {
+    flex: 2;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+#cart-header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+#cart-header p {
+    font-size: 14px;
+    color: #888;
+}
+
+#cart-items {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* === Order Summary === */
+#order-summary {
+    flex: 1;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+#summary-header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#summary-content {
+    margin-top: 10px;
+}
+
+.summary-group {
+    margin-bottom: 20px;
+}
+
+.summary-group p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* === Total Summary === */
+#pricing-summary {
+    margin-top: 20px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+#total-payment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* === Checkout Button === */
+#checkout-button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 16px;
+    background: #ff6363;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#checkout-button:hover {
+    background: #e55353;
+}
+
+/* === Cart Item Template === */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background: #f1f1f1;
+    border-radius: 8px;
+    gap: 15px;
+}
+
+.cart-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+    background: #ddd;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.kwantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subtract-btn,
+.add-btn,
+.remove-btn {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.subtract-btn:hover svg,
+.add-btn:hover svg,
+.remove-btn:hover svg {
+    transform: scale(1.2);
+}
+
+.quantity {
+    min-width: 20px;
+    text-align: center;
+}
+
+.total {
+    font-weight: bold;
+    width: 80px;
+    text-align: right;
+}
+
+.remove-btn {
+    margin-left: 10px;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+    #main {
+        flex-direction: column;
+    }
+
+    #order-summary {
+        order: -1;
+    }
 }
