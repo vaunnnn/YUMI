@@ -5,6 +5,7 @@
   <title>Cart</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/checkout.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -66,7 +67,7 @@
         <p id="item-count"># Item(s)</p>
       </div>
 
-      <div id="cart-items">CART ITEMS</div>
+      <div id="cart-container">CART ITEMS</div>
     </div>
 
     <!-- SUMMARY SECTION -->
@@ -77,10 +78,12 @@
 
       <div id="summary-content">
         <!-- CUSTOMER DETAILS -->
-        <div class="summary-group">
-          <div class="customer-name"></div>
-          <div class="customer-phone"></div>
-          <div class="customer-address">
+        <div class="p-2 bg-gray-100 rounded-md text-sm">
+          <div class="flex gap-5">
+            <div class="customer-name "></div>
+            <div class="customer-phone text-gray-500"></div>
+          </div>
+          <div class="customer-address text-gray-500">
             <!-- <div class="street"></div>
             <div class="city"></div>
             <div class="province"></div>
@@ -91,23 +94,23 @@
         </div>
 
         <!-- DELIVERY DETAILS -->
-        <div class="summary-group">
+        <div class="p-2 mt-3 bg-gray-100 rounded-md text-sm">
           <div class="delivery-info">
-            <p class="delivery-method"></p>
-            <p class="shipping-cost"></p>
+            <p class="delivery-method text-gray-500"></p>
+            <p class="shipping-cost text-gray-500"></strong></p>
           </div>
         </div>
 
         <!-- VOUCHERS -->
-        <div class="summary-group">
+        <div class="p-2 mt-3 bg-gray-100 rounded-md text-sm">
           <div class="voucher-info">
-            <p class="voucher-applied"></p>
-            <p class="voucher-discount"></p>
+            <p class="voucher-applied text-gray-500"></p>
+            <p class="voucher-discount text-gray-500"></p>
           </div>
         </div>
 
         <!-- PAYMENT METHOD -->
-        <div class="summary-group">
+        <div class="p-2 mt-3 bg-gray-100 rounded-md text-sm">
           <div class="payment-info">
             <p class="payment-method"></p>
           </div>
@@ -121,8 +124,18 @@
           </div>
 
           <div class="summary-line">
-            <p>Subtotal:</p>
-            <p id="subtotal-amount"></p>
+            <p>Merchandise Subtotal:</p>
+            <p id="merchandise-subtotal"></p>
+          </div>
+
+          <div class="summary-line">
+            <p>Shipping Subtotal:</p>
+            <p id="shipping-subtotal"></p>
+          </div>
+
+          <div class="summary-line">
+            <p>Discount Subtotal:</p>
+            <p id="discount-subtotal"></p>
           </div>
 
           <hr />
@@ -141,19 +154,15 @@
 
   <!-----------------TEMPLATE-------------------->
   <template id="cartItemTemplate">
-    <div class="cart-item">
+    <div class="cart-item mt-3.5">
       <img class="cart-img" src="" alt="Product Image">
       <div class="product-details">
-        <h4 class="title"></h4>
+        <h4 class="title font-bold"></h4>
+        <p class="quantity text-start text-sm"></p>
       </div>
-
+      
       <p class="total"></p>
-      <div class="remove-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
-          <path fill="#171515"
-            d="M7 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2h4a1 1 0 1 1 0 2h-1.069l-.867 12.142A2 2 0 0 1 17.069 22H6.93a2 2 0 0 1-1.995-1.858L4.07 8H3a1 1 0 0 1 0-2h4zm2 2h6V4H9zM6.074 8l.857 12H17.07l.857-12zM10 10a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1m4 0a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0v-6a1 1 0 0 1 1-1"
-            stroke-width="0.1" stroke="#171515" />
-        </svg>
+      
       </div>
     </div>
   </template>

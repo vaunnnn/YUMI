@@ -1,15 +1,15 @@
 import convertUsdToPhp from "../js/utilities/convertUsdToPhp.js";
+import { formatDate, updateLocalStorage } from "./utilities/userUtils.js";
 
 const currentUser = localStorage.getItem("currentUser");
 let cartItems = JSON.parse(localStorage.getItem(`${currentUser}-cart`)) || [];
 const cartContainer = document.getElementById("cart-container");
 const cartItemTemplate = document.getElementById("cartItemTemplate");
+const checkoutdata = JSON.parse(localStorage.getItem(`${currentUser}-checkoutData`)); 
 
-function updateLocalStorage() {
-    localStorage.setItem(`${currentUser}-cart`, JSON.stringify(cartItems));
-}
 
 function renderCart() {
+
     cartContainer.innerHTML = '';
     cartItems.forEach((item, index) => {
         const cartItem = cartItemTemplate.content.cloneNode(true);
@@ -26,11 +26,11 @@ function renderCart() {
         title.textContent = item.title;
         quantity.textContent = `${item.quantity}`;
         const convertToPhp =  convertUsdToPhp(item.price) * item.quantity;
-        total.textContent = `P ${convertToPhp}`;
+        total.textContent = `P ${convertToPhp.toFixed(2)}`;
 
         addBtn.addEventListener("click", () => {
             item.quantity++;
-            updateLocalStorage();
+            updateLocalStorage(currentUser, cartItems);
             renderCart();
             updateSummary();
         });
@@ -38,7 +38,7 @@ function renderCart() {
         subtractBtn.addEventListener("click", () => {
             if (item.quantity > 1) {
                 item.quantity--;
-                updateLocalStorage();
+                updateLocalStorage(currentUser, cartItems);
                 renderCart();
                 updateSummary();
             }
@@ -46,12 +46,14 @@ function renderCart() {
 
         removeBtn.addEventListener("click", () => {
             cartItems.splice(index, 1);
-            updateLocalStorage();
+            updateLocalStorage(currentUser, cartItems);
             renderCart();
             updateSummary();
         });
 
+        
         cartContainer.appendChild(cartItem);
+        
     });
 
     document.querySelector("#item-count").textContent = `Total ${cartItems.reduce((sum, item) => sum + item.quantity, 0)} Item(s)`;
@@ -65,22 +67,21 @@ function updateSummary() {
     document.querySelector("#order-quantity").textContent = `Total ${totalQuantity} Item(s)`;
     document.querySelector("#order-total").textContent =  `P ${convertUsdToPhp(rawTotal)}`;
 
-    const shippingSelect = document.querySelector("#shipping");
-    const shippingValue = shippingSelect.value;
+    const shippingSelect = document.querySelector("#shipping").value;
     let shippingFee = 0;
     let deliveryDays = 0;
 
-    if (shippingValue === "standard") {
+    if (shippingSelect === "Standard Delivery") {
         shippingFee = 20;
         deliveryDays = 14;
-    } else if (shippingValue === "express") {
+    } else if (shippingSelect === "Express Delivery") {
         shippingFee = 35;
         deliveryDays = 7;
     }
 
     const deliveryDate = new Date();
     deliveryDate.setDate(deliveryDate.getDate() + deliveryDays);
-    const formattedDate = `${(deliveryDate.getMonth() + 1).toString().padStart(2, '0')}/${deliveryDate.getDate().toString().padStart(2, '0')}/${deliveryDate.getFullYear().toString().slice(-2)}`;
+    const formattedDate = `${formatDate(deliveryDate)}`;
     document.querySelector("#delivery-date").textContent = formattedDate;
 
     const subtotal = rawTotal + shippingFee;
@@ -104,6 +105,26 @@ function updateSummary() {
 
 document.querySelector("#shipping").addEventListener("change", updateSummary);
 document.querySelector("#voucher").addEventListener("change", updateSummary);
+document.querySelector("#shipping").addEventListener("change", updateCheckoutButton);
+document.querySelector("#payment").addEventListener("change", updateCheckoutButton);
+
+function updateCheckoutButton() {
+    const shippingValue = document.querySelector("#shipping").value;
+    const paymentValue = document.querySelector("#payment").value;
+    const checkoutBtn = document.querySelector("#checkout");
+
+    if (shippingValue && paymentValue && cartItems[0]) {
+        checkoutBtn.style.backgroundColor = ""; 
+        checkoutBtn.disabled = false;
+        checkoutBtn.classList.add("checkout-enabled");
+        checkoutBtn.style.cursor = "pointer";
+    } else {
+        checkoutBtn.style.backgroundColor = "#ccc";
+        checkoutBtn.disabled = true;
+        checkoutBtn.style.cursor = "not-allowed";
+    }
+}
+updateCheckoutButton();
 
 document.querySelector("#checkout").addEventListener("click", () => {
 
@@ -130,26 +151,37 @@ document.querySelector("#checkout").addEventListener("click", () => {
     const subtotal = parseFloat(document.querySelector("#subtotal").textContent.slice(1));
     const total = parseFloat(document.querySelector("#total").textContent.slice(1));
     const discount = (subtotal - total).toFixed(2);
+    const merchUsdTotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0); 
+    const merchandiseTotal = convertUsdToPhp(merchUsdTotal);
 
-    if(!shippingValue || !paymentValue) return alert("Please add delivery option and Payment method"); 
+    const checkoutBtn = document.querySelector("#checkout");
+
+    if(shippingValue && paymentValue) {
+        checkoutBtn.style.backgroundColor = "#1abc9c";
+    }
+
+    console.log(checkoutBtn);
 
     const checkoutData = {
         shippingMethod: shippingValue,
         voucherUsed: voucherValue,
         paymentMethod: paymentValue,
         deliveryDate,
+        merchandiseTotal,
         subtotal: subtotal.toFixed(2),
         discount,
         total: total.toFixed(2)
     };
 
     
-
+    
     localStorage.setItem(`${currentUser}-checkoutData`, JSON.stringify(checkoutData));
 
     window.location.href = "checkout.html";
 });
 
 
+
 updateSummary();
 renderCart();
+

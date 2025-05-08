@@ -26,3 +26,14 @@ export function setProfilePic(dataURL) {
         localStorage.setItem(`${currentUser}-profile-pic`, dataURL);
     }
 }
+
+export function formatDate(date) {
+    const mm = String(date.getMonth() + 1).padStart(2, '0');
+    const dd = String(date.getDate()).padStart(2, '0');
+    const yy = String(date.getFullYear()).slice(-2);
+    return `${mm}/${dd}/${yy}`;
+}
+
+export function updateLocalStorage(currentUser, cartItems) {
+    return localStorage.setItem(`${currentUser}-cart`, JSON.stringify(cartItems));
+}

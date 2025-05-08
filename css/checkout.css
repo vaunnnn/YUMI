@@ -15,7 +15,9 @@ body::-webkit-scrollbar {
     width: 0px;
     background: transparent;
 }
-
+h1, h4 {
+    font-weight: bold;
+}
 /* === Header === */
 #header {
     display: flex;
@@ -110,6 +112,7 @@ body::-webkit-scrollbar {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
+    margin-inline: 120px;
 }
 
 /* === Cart Section === */
@@ -192,7 +195,7 @@ body::-webkit-scrollbar {
     margin-top: 20px;
     padding: 12px;
     font-size: 16px;
-    background: #ff6363;
+    background: black;
     color: white;
     border: none;
     border-radius: 8px;
@@ -201,7 +204,7 @@ body::-webkit-scrollbar {
 }
 
 #checkout-button:hover {
-    background: #e55353;
+    background: #616161;
 }
 
 /* === Cart Item Template === */
@@ -248,13 +251,14 @@ body::-webkit-scrollbar {
 
 .quantity {
     min-width: 20px;
-    text-align: center;
+    
 }
 
 .total {
     font-weight: bold;
     width: 80px;
     text-align: right;
+    white-space: nowrap;
 }
 
 .remove-btn {
