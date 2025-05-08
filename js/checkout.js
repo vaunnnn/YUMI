@@ -13,7 +13,7 @@ const checkout = () => {
     const addressData = getUserData("address");
     const checkoutData = getUserData("checkoutData");
 
-    if(cartItems.length === 0) {
+    if(cartItems.length === 0 || !checkoutData.paymentMethod || !checkoutData.shippingMethod) {
         window.location.href = "dashboard.html";
     }
 
@@ -48,8 +48,8 @@ const checkout = () => {
     merchandiseSubtotal.textContent = merchandiseTotal;
 
     const shippingFees = {
-        "Standard Delivery": 20,
-        "Express Delivery": 35
+        "Standard Delivery": 2,
+        "Express Delivery": 5
     };
 
     const fee = shippingFees[shippingMethod];
@@ -91,7 +91,7 @@ function renderCart() {
         const title = cartItem.querySelector(".title");
         const quantity = cartItem.querySelector(".quantity");
         const total = cartItem.querySelector(".total");
-        const removeBtn = cartItem.querySelector(".remove-btn");
+
         img.src = item.images[0];
         img.alt = item.title;
         (item.quantity === 1) ? quantity.textContent = `${item.quantity}pc. `: quantity.textContent = `${item.quantity}pcs.`
@@ -110,12 +110,21 @@ function renderCart() {
     document.querySelector("#item-count").textContent = `Total ${totalItems} Item(s)`;
 }
 
-document.querySelector("#checkout-button").addEventListener("click", ()=> {
+document.querySelector("#checkout-button").addEventListener("click", () => {
 
+    let checkoutdata = JSON.parse(localStorage.getItem(`${currentUser}-checkoutData`));
+    const orderHistory = JSON.parse(localStorage.getItem(`${currentUser}-history`)) || [];
 
+    orderHistory.push(checkoutdata);
+
+    localStorage.setItem(`${currentUser}-history`, JSON.stringify(orderHistory));
+
+    localStorage.removeItem(`${currentUser}-checkoutData`);
     localStorage.removeItem(`${currentUser}-cart`);
+
     window.location.href = "history.html";
-})
+});
+
 
 
 window.addEventListener("DOMContentLoaded", () => {

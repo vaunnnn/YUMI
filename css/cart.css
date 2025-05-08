@@ -1,22 +1,16 @@
-/* Reset and base styles */
+/* Reset and Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f7f7f7;
   color: #333;
 }
 
-body::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
-
-/* === Header === */
+/* Header */
 #header {
   display: flex;
   justify-content: space-between;
@@ -25,27 +19,23 @@ body::-webkit-scrollbar {
   padding: 15px 30px;
   width: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  /* position: fixed; */
-  /* top: 0; */
   z-index: 1000;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
 }
 
-/* === YUMI Branding === */
+/* YUMI Branding */
 #yumi {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 #logo {
   width: 40px;
   height: 40px;
-  background: url('/images/sia.jpg') no-repeat center center/cover;
+  background: url('/images/sia.jpg') no-repeat center/cover;
   border-radius: 50%;
 }
-
 #title {
   font-size: 1.6rem;
   font-weight: 700;
@@ -53,7 +43,7 @@ body::-webkit-scrollbar {
   letter-spacing: 2px;
 }
 
-/* === Search Bar === */
+/* Search Bar */
 #search-bar {
   display: flex;
   align-items: center;
@@ -64,16 +54,13 @@ body::-webkit-scrollbar {
   background: #f0f0f0;
   transition: all 0.3s ease;
 }
-
 #search-bar:focus-within {
   border-color: #222;
   background: #fff;
 }
-
 .search-icon svg {
   fill: #888;
 }
-
 .search {
   border: none;
   background: transparent;
@@ -83,31 +70,29 @@ body::-webkit-scrollbar {
   width: 180px;
 }
 
-/* === Header Icons === */
+/* Header Icons */
 #icons {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-
 .view {
   background: none;
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-
 .view:hover {
   transform: scale(1.1);
 }
-
 #icons svg {
   width: 20px;
   height: 20px;
 }
 
-/* Main Container */
+/* Main */
 #main {
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -115,25 +100,31 @@ body::-webkit-scrollbar {
   margin-inline: 120px;
 }
 
-/* Cart Section */
-#cart-box {
-  flex: 2;
-  background: #ffffff;
+/* Cart Section & Summary */
+#cart-box, #summary {
+  background: #fff;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
+#cart-box { flex: 2; }
+#summary { flex: 1; }
 
-#cart-title h1 {
+#cart-title h1, #summary-title h1 {
   font-size: 28px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
-
-#cart-title p {
+#cart-title p, #summary-title div {
   font-size: 14px;
   color: #888;
 }
+#summary-title div {
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+}
 
+/* Cart Container */
 #cart-container {
   margin-top: 20px;
   display: flex;
@@ -141,37 +132,15 @@ body::-webkit-scrollbar {
   gap: 15px;
 }
 
-/* Summary Section */
-#summary {
-  flex: 1;
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-}
-
-#summary-title h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-#summary-title div {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  color: #555;
-}
-
+/* Summary Inputs */
 .summary-input {
   margin-top: 20px;
 }
-
 .summary-input label {
   font-size: 14px;
   margin-bottom: 4px;
   display: block;
 }
-
 .summary-input select {
   width: 100%;
   padding: 8px 12px;
@@ -181,20 +150,19 @@ body::-webkit-scrollbar {
   outline: none;
 }
 
+/* Totals */
 #total-details {
   margin-top: 20px;
 }
-
-.details {
+.details, #cart-total {
   display: flex;
   justify-content: space-between;
+}
+.details {
   margin-bottom: 10px;
   font-size: 14px;
 }
-
 #cart-total {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   font-size: 18px;
   font-weight: bold;
@@ -206,23 +174,20 @@ body::-webkit-scrollbar {
   margin-top: 20px;
   padding: 12px;
   font-size: 16px;
-  /* background-color: #ccc; */
-  cursor: not-allowed;
   color: white;
   border: none;
   border-radius: 8px;
-  cursor: pointer;
+  cursor: not-allowed;
   transition: background 0.3s ease;
 }
-
 .checkout-enabled {
-  background-color: black;
+  background: black;
+}
+.checkout-enabled:hover {
+  background: #616161;
 }
 
-.checkout-enabled:hover{
-  background-color: #616161;
-}
-/* Cart Item Template */
+/* Cart Items */
 .cart-item {
   display: flex;
   align-items: center;
@@ -232,7 +197,6 @@ body::-webkit-scrollbar {
   border-radius: 8px;
   gap: 15px;
 }
-
 .cart-img {
   width: 60px;
   height: 60px;
@@ -240,52 +204,46 @@ body::-webkit-scrollbar {
   object-fit: cover;
   background: #ddd;
 }
-
 .product-details {
   flex: 1;
 }
-
 .kwantity {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
-.subtract-btn,
-.add-btn,
-.remove-btn {
+.subtract-btn, .add-btn, .remove-btn {
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-
-.subtract-btn:hover svg,
-.add-btn:hover svg,
+.subtract-btn:hover svg, 
+.add-btn:hover svg, 
 .remove-btn:hover svg {
   transform: scale(1.2);
 }
-
 .quantity {
   min-width: 20px;
   text-align: center;
 }
-
 .total {
   font-weight: bold;
   width: 80px;
   text-align: right;
   white-space: nowrap;
 }
-
 .remove-btn {
   margin-left: 10px;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
+  #header {
+    gap: 15px;
+    flex-direction: column;
+  }
   #main {
     flex-direction: column;
   }
-
   #summary {
     order: -1;
   }

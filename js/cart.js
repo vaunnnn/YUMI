@@ -5,7 +5,7 @@ const currentUser = localStorage.getItem("currentUser");
 let cartItems = JSON.parse(localStorage.getItem(`${currentUser}-cart`)) || [];
 const cartContainer = document.getElementById("cart-container");
 const cartItemTemplate = document.getElementById("cartItemTemplate");
-const checkoutdata = JSON.parse(localStorage.getItem(`${currentUser}-checkoutData`)); 
+ 
 
 
 function renderCart() {
@@ -72,10 +72,10 @@ function updateSummary() {
     let deliveryDays = 0;
 
     if (shippingSelect === "Standard Delivery") {
-        shippingFee = 20;
+        shippingFee = 2;
         deliveryDays = 14;
     } else if (shippingSelect === "Express Delivery") {
-        shippingFee = 35;
+        shippingFee = 5;
         deliveryDays = 7;
     }
 
@@ -131,6 +131,7 @@ document.querySelector("#checkout").addEventListener("click", () => {
     const currentUser = localStorage.getItem("currentUser");
     const profileData = JSON.parse(localStorage.getItem(`${currentUser}-profile`)) || {};
     const addressData = JSON.parse(localStorage.getItem(`${currentUser}-address`)) || {};
+    const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
     const requiredProfileFields = ["fname", "lname", "email", "phone"];
     const requiredAddressFields = ["street", "brgy", "town", "province", "country", "zip"];
@@ -159,13 +160,17 @@ document.querySelector("#checkout").addEventListener("click", () => {
     if(shippingValue && paymentValue) {
         checkoutBtn.style.backgroundColor = "#1abc9c";
     }
-
-    console.log(checkoutBtn);
+    const today = new Date();
+    today.setDate(today.getDate());
+    const formattedDate = `${formatDate(today)}`;
+    
 
     const checkoutData = {
         shippingMethod: shippingValue,
         voucherUsed: voucherValue,
         paymentMethod: paymentValue,
+        quantity: totalQuantity,
+        dateOrdered: formattedDate,
         deliveryDate,
         merchandiseTotal,
         subtotal: subtotal.toFixed(2),
