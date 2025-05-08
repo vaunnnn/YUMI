@@ -50,16 +50,6 @@ const displayProducts = async () => {
  
 };
 
-// const searchProduct = () => {
-//   const input = document.getElementById("search").value.toLowerCase();
-//   const rows = document.querySelectorAll("#productSection .product-card");
-
-//   rows.forEach((row) => {
-//     const productName = row.querySelector(".product-title").textContent.toLowerCase();
-//     row.style.display = productName.includes(input) ? "" : "none";
-//   });
-// };
-
 const groupedCategories = {
   beauty: ["beauty", "fragrances", "skin-care"],
   grocery: ["groceries", "kitchen-accessories"],
@@ -93,15 +83,12 @@ const filterByCategory = (category) => {
   });
 };
 
-
 // const showProductsSection = (category) => {
 //   const mainSection = document.getElementById("main");
 //   const productSection = document.getElementById("productSection");
 
 //   productSection.style.display = "flex";
 // };
-
-// document.getElementById("search").addEventListener("keyup", searchProduct);
 
 document.getElementById("main").addEventListener("click", (e) => {
   if (e.target.classList.contains("category-link")) {

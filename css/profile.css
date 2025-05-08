@@ -25,7 +25,7 @@
 
 #img-buttons label,
 #img-buttons button {
-    background-color: #7c6610;
+    background-color: grey;
     font-weight: 500;
     font-size: .9rem;
     color: #f7f5eb;
@@ -39,8 +39,8 @@
 
 #img-buttons label:hover,
 #img-buttons button:hover {
-    color: #ed9f49;
-    background-color: #f7f5eb;
+    color: white;
+    background-color: #888;
     box-shadow: 0 2px 8px rgb(88, 76, 27, 0.4);
 }
 
@@ -50,20 +50,13 @@
 
 /* -------------------FORMS----------------------- */
 .box {
-    background-color: #f7f5eb;
-    background-color: #fff5e6;
+    background-color: rgb(247, 247, 247);
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 1.5rem;
     box-shadow: 0 2px 6px rgb(88, 76, 27, 0.1);
     transition: all 0.3s ease-in-out;
-    color: #584c1b;
-    border: 1.8px solid rgb(88, 76, 27, 0.8);
-}
-
-.box:hover {
-    transform: scale(1.005);
-    box-shadow: 0 2px 6px rgb(88, 76, 27, 0.2);
+    border: 1.5px solid rgb(0, 0, 0, 0.7);
 }
 
 .box p {
@@ -99,7 +92,7 @@
 .s-input input,
 .s-input select {
     padding: 0.5rem;
-    border: 1px solid rgb(88, 76, 27, 0.6);
+    border: 1px solid rgb(0, 0, 0, 0.6);
     border-radius: 5px;
     font-size: 1rem;
     color: rgb(88, 76, 27, 0.3);
@@ -110,9 +103,8 @@
 .address-input input:hover,
 .s-input input:hover,
 .s-input select:hover {
-    border-color: #584c1b;
-    color: #584c1b;
-    box-shadow: 0 2px 6px rgb(88, 76, 27, 0.1);
+    border-color: rgb(0, 0, 0, 0.7);
+    box-shadow: 0 2px 6px rgb(0, 0, 0, 0.1);
     outline: none;
 }
 
@@ -120,8 +112,7 @@
 .address-input input:focus,
 .s-input input:focus,
 .s-input select:focus {
-    border-color: #584c1b;
-    color: #584c1b;
+    border-color: rgb(0, 0, 0, 0.7);
     outline: none;
 }
 
@@ -141,11 +132,10 @@
     margin-bottom: 0.3rem;
     font-weight: 500;
     font-size: 0.9rem;
-    color: #584c1b;
 }
 
 .s-input button {
-    background-color: #7c6610;
+    background-color: grey;
     color: #f7f5eb;
     border: none;
     padding: .6rem;
@@ -157,14 +147,14 @@
 }
 
 .s-input button:hover {
-    color: #ed9f49;
-    background-color: #f7f5eb;
+    color: white;
+    background-color: grey;
     box-shadow: 0 2px 6px rgb(88, 76, 27, 0.2);
 }
 
 /* -------------------SAVE BUTTON----------------------- */
 #save {
-    background-color: #7c6610;
+    background-color: grey;
     font-size: .9rem;
     color: #f7f5eb;
     border: none;
@@ -178,8 +168,6 @@
 }
 
 #save:hover {
-    color: #ed9f49;
-    background-color: #f7f5eb;
     box-shadow: 0 2px 6px rgb(88, 76, 27, 0.3);
 }
 

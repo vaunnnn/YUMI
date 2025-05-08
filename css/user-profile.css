@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: black;
 }
 
 body {
@@ -11,68 +12,127 @@ body {
 }
 
 body::-webkit-scrollbar {
-    width: 0px; background: none;
+    width: 0px;
+    background: none;
 }
 
-/* ------------------HEADER------------------- */
+/*----------------HEADER--------------------*/
+/* === General Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f7f7;
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(175, 168, 168);
+    /* Thumb color */
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* === Header === */
 #header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffefd8;
-    padding: .8rem 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-top: none;
-    border-bottom: 1px solid rgb(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px 30px;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
 }
 
+/* === YUMI Branding === */
 #yumi {
     display: flex;
     align-items: center;
+    gap: 10px;
     cursor: pointer;
 }
 
 #logo {
     width: 40px;
     height: 40px;
-    background-image: url('/images/yumi-1.png');
-    background-size: cover;
-    background-position: center;
-    margin-right: 0.5rem;
+    background: url('/images/logo.png') no-repeat center center/cover;
+    border-radius: 50%;
 }
 
 #title {
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    font-weight: bolder;
-    color: #ed9f49;
-    color: #584c1b;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
-#icons {
+/* === Search Bar === */
+#search-bar {
     display: flex;
-    gap: 1rem;
-}
-
-#icons .view {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 5px 15px;
+    background: #f0f0f0;
     transition: all 0.3s ease;
 }
 
-#icons .view svg {
-    transition: transform 0.3s ease;
+#search-bar:focus-within {
+    border-color: #6e6d6d;
+    background: #fff;
 }
 
-#icons .view:hover svg {
+.search-icon svg {
+    fill: #888;
+}
+
+.search {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.95rem;
+    padding: 8px;
+    width: 180px;
+}
+
+/* === Header Icons === */
+#icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.view {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.view:hover {
     transform: scale(1.1);
 }
 
-#icons .view:hover {
-    background-color: rgb(237, 159, 73, 0.1);
-    border-radius: 50%;
+#icons svg {
+    width: 20px;
+    height: 20px;
 }
 
 /* ----------------CONTAINER------------------- */
@@ -84,10 +144,9 @@ body::-webkit-scrollbar {
 /* -------------SIDEBAR----------------  */
 #sidebar {
     width: 250px;
-    background-color: #fcf8e3;
-    padding: 2rem 1rem;
+    background-color: white;
+    padding: 5.5rem 1rem 2rem 1rem;
     border-right: 1px solid rgb(0, 0, 0, 0.3);
-    color: #584c1b;
 }
 
 #sb-options .tab {
@@ -103,7 +162,7 @@ body::-webkit-scrollbar {
 
 #sb-options .tab:hover {
     transform: scale(1.03);
-    background-color: rgb(237, 159, 73, 0.3);
+    background-color: rgba(110, 109, 109, 0.123);
 }
 
 #sb-options .tab svg {
@@ -116,16 +175,16 @@ body::-webkit-scrollbar {
 }
 
 #sb-options #active {
-    border: 2px solid #584c1b;
+    background-color: rgba(110, 109, 109, 0.123);
+    border: 2px solid rgb(0, 0, 0, 0.5);
     border-style: dashed;
-    background-color: rgb(237, 159, 73, 0.3);
 }
 
 /* -------------MAIN---------------- */
 #main {
     flex: 1;
     padding: 2rem;
-    background-color: #fdfbf4;
+    background-color: white;
 }
 
 #main-box {
@@ -136,25 +195,24 @@ body::-webkit-scrollbar {
 #box-title {
     font-size: 2.5rem;
     font-weight: bold;
-    border-bottom: 2.5px solid rgb(88, 76, 27, 0.9);
-    padding-bottom: .3rem;
-    margin-bottom: 2rem ;
-    color: #584c1b;
+    border-bottom: 2.5px solid rgb(0, 0, 0, 0.7);
+    margin-bottom: 2rem;
+    margin: 3rem 0 2rem 0;
 }
 
 /* -------------LOG OUT MODAL------------ */
 .logout-modal {
-    display: none; 
+    display: none;
     justify-content: center;
     align-items: center;
-    position: fixed; 
-    z-index: 1000; 
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; 
+    width: 100%;
     height: 100%;
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.5);
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .logout-modal-content {
@@ -162,18 +220,19 @@ body::-webkit-scrollbar {
     margin: 15% auto;
     padding: .7rem;
     border: 1px solid #888;
-    width: 20%; height: fit-content;
+    width: 20%;
+    height: fit-content;
     text-align: center;
     border-radius: 8px;
     border-bottom: 8px solid #584c1b;
-    color: #584c1b;
 }
 
-#confirm-logout, #cancel-logout {
+#confirm-logout,
+#cancel-logout {
     background-color: #7c6610;
     border-radius: 8px;
     border: none;
-    color: #f7f5eb;
+    color: black;
     font-weight: 500;
     margin: 1rem 0.5rem;
     padding: 0.5rem 1rem;
@@ -181,8 +240,8 @@ body::-webkit-scrollbar {
     transition: all 0.2s ease-in-out;
 }
 
-#confirm-logout:hover, #cancel-logout:hover {
-    color: #ed9f49;
+#confirm-logout:hover,
+#cancel-logout:hover {
     background-color: #f7f5eb;
     box-shadow: 0 2px 6px rgba(88, 76, 27, 0.2);
     transform: scale(1.01);
@@ -192,5 +251,3 @@ body::-webkit-scrollbar {
     margin-bottom: .5rem;
     margin-top: 2rem;
 }
-
-.logout-close:hover {color: black;}

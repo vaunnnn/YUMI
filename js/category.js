@@ -37,7 +37,7 @@ const displayCategoryProducts = async () => {
   if (!category || !productSection) return;
 
   productSection.innerHTML = "";
-  productSection.style.display = "grid"; 
+  productSection.style.display = "flex"; 
 
   const products = await fetchGroupedCategoryProducts(category);
 
@@ -52,4 +52,15 @@ const displayCategoryProducts = async () => {
   });
 };
 
+const searchProduct = () => {
+  const input = document.getElementById("search").value.toLowerCase();
+  const rows = document.querySelectorAll("#productSection .product-card");
+
+  rows.forEach((row) => {
+    const productName = row.querySelector(".product-title").textContent.toLowerCase();
+    row.style.display = productName.includes(input) ? "" : "none";
+  });
+};
+
+document.getElementById("search").addEventListener("keyup", searchProduct);
 document.addEventListener("DOMContentLoaded", displayCategoryProducts);

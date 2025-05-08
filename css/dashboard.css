@@ -639,8 +639,8 @@ body::-webkit-scrollbar-track {
 }
 
 #socmed #socmed-icons div {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   margin-right: 25px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -666,4 +666,23 @@ body::-webkit-scrollbar-track {
   #socmed-icons {
     justify-content: flex-start;
   }
+}
+
+#footer-logo {
+  display: flex;  
+  justify-content: right;
+  align-self: flex-end;
+}
+
+#footer-logo img {
+  width: 65px;
+  height: 65px;
+  margin: 0;
+}
+
+#footer-logo h3 {
+  align-self: flex-end;
+  margin-bottom: 10px;
+  color: black;
+  letter-spacing: 2px;
 }
