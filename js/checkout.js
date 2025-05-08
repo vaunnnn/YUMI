@@ -13,7 +13,7 @@ const checkout = () => {
     const addressData = getUserData("address");
     const checkoutData = getUserData("checkoutData");
 
-    if(cartItems.length === 0) {
+    if(cartItems.length === 0 || !checkoutData.paymentMethod || !checkoutData.shippingMethod) {
         window.location.href = "dashboard.html";
     }
 

@@ -1,4 +1,5 @@
 import createProduct from "./components/product.js";
+import { shuffleArray } from "./utilities/userUtils.js";
 
 const fetchAPI = async () => {
   const cacheKey = "all-products";
@@ -29,26 +30,14 @@ const displayProducts = async () => {
   const productSection = document.getElementById("productSection");
   productSection.innerHTML = "";
 
-  // for (const product of products) {
-  //   const productFragment = createProduct(product);
-  //   const tempDiv = document.createElement("div");
-  //   tempDiv.appendChild(productFragment);
+  const shuffledProducts = shuffleArray(products);
 
-  //   const productCard = tempDiv.querySelector(".product-card");
-  //   productCard.setAttribute("data-category", product.category.toLowerCase());
-
-  //   // console.log(productCard);  
-
-  //   productSection.appendChild(productCard);
-  // }
-
-  products.forEach((product) => {
-    const productElement = createProduct(product);
+  shuffledProducts.forEach((product) => {
+    const productElement = createProduct(product); 
     productSection.appendChild(productElement);
-  })
-
- 
+  });
 };
+
 
 const groupedCategories = {
   beauty: ["beauty", "fragrances", "skin-care"],
