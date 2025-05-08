@@ -66,7 +66,7 @@ body::-webkit-scrollbar-track {
 #logo {
   width: 40px;
   height: 40px;
-  background: url('/images/sia.jpg') no-repeat center center/cover;
+  background: url('/images/logo.png') no-repeat center center/cover;
   border-radius: 50%;
 }
 
@@ -133,7 +133,8 @@ body::-webkit-scrollbar-track {
 /*----------------CAROUSEL--------------------*/
 .category-buttons {
   position: absolute;
-  top: 65%;
+  top: 55%;
+  transform: translateY(-50%);
   z-index: 500;
   margin: 0;
   padding: 0;
@@ -151,14 +152,6 @@ body::-webkit-scrollbar-track {
   opacity: .5;
   transform: translateY(-50%);
   visibility: visible;
-}
-
-#category-left {
-  left: 6rem;
-}
-
-#category-right {
-  right: 6rem;
 }
 
 .recommended-buttons {
@@ -184,38 +177,43 @@ body::-webkit-scrollbar-track {
   visibility: visible;
 }
 
+#category-left, 
 #recommended-left {
-  left: 6rem;
+  left: .5rem;
 }
 
+#category-right,
 #recommended-right {
-  right: 6rem;
+  right: .5rem;
 }
 
 /*----------------CATEGORIES--------------------*/
 #categories {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
   box-sizing: border-box;
   width: 100%;
+  /* height: 50%; */
   height: 50%;
+  height: fit-content;
+  min-height: fit-content;
   background-color: white;
   margin: 0;
-  padding: 3% 0;
+  padding: 2% 0;
   min-height: fit-content;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+  /* border-top: .25rem solid rgb(74, 158, 134, 0.8); */
 
   overflow: hidden;
   position: relative;
 }
 
-#category-yumi {
-  width: 80%;
+#category-header {
   text-align: center;
-  margin-top: 1rem;
-  letter-spacing: 2px;
   color: rgb(0, 0, 0, 0.65);
   opacity: 0;
   transform: translateY(20px);
@@ -223,10 +221,17 @@ body::-webkit-scrollbar-track {
   visibility: hidden;
 }
 
-#category-yumi.visible {
+#category-header.visible {
   opacity: 1;
   transform: translateY(0);
   visibility: visible;
+} 
+
+#category-yumi {
+  text-align: center;
+  margin-top: 1rem;
+  letter-spacing: 2px;
+  font-size: clamp(.5rem, 1vw, 1rem);
 }
 
 #category-title {
@@ -234,26 +239,27 @@ body::-webkit-scrollbar-track {
   text-transform: uppercase;
   letter-spacing: 10px;
   font-size: 2rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-  visibility: hidden;
+  font-size: clamp(1.5rem, 1vw, 2rem);
 }
 
-#category-title.visible {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
+#category-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 85%;
+  margin: 0;
+  padding: 0;
+  max-width: 2200px;
 }
 
 #category-links {
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  width: 83%;
+  width: fit-content;
   height: fit-content;
   margin: 0;
-  padding: 2% 0;
+  padding: 2% 60px;
   padding-bottom: 0;
   min-height: fit-content;
 
@@ -261,6 +267,7 @@ body::-webkit-scrollbar-track {
   overflow-x: auto; 
   scroll-behavior: smooth;  
   overflow-y: hidden;
+  column-gap: 92px;
 } 
 
 #category-links::-webkit-scrollbar {
@@ -268,16 +275,15 @@ body::-webkit-scrollbar-track {
 }
 
 .category {
-  width: 210px;
-  height: 210px;  
+  width: 200px;
+  height: 200px;  
   border: none;
   border-radius: 50%;
   background-color: white;
   background-size: contain;
   background-position: center;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  margin: 1rem 2.6rem;
+  margin: 1rem 0;
 
   flex-shrink: 0;
   opacity: 0;
@@ -304,6 +310,7 @@ body::-webkit-scrollbar-track {
 #beauty:hover {
   border: 6px solid #ffdfe6; 
   box-shadow: 0 0 0 4px rgb(224, 159, 170, 0.8);
+  transition: all 0.3s ease-in-out;
 }
 
 #groceries {
@@ -320,8 +327,8 @@ body::-webkit-scrollbar-track {
 }
 
 #gadgets:hover {
-  border: 6px solid #e3e3e3; 
-  box-shadow: 0 0 0 4px rgb(192, 192, 198, 0.8);
+  border: 6px solid #e2dcef; 
+  box-shadow: 0 0 0 4px rgb(204, 204, 255);
 }
 
 #clothes {
@@ -426,25 +433,40 @@ body::-webkit-scrollbar-track {
 /* -------RECOMMEND PRODUCTS--------- */
 #recommended {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
-  height: 65%;
+  align-items: center;
+  flex-direction: column;
+  height: fit-content;
   width: 100%;
   overflow: hidden;
   margin: 0;
   padding: 5% 2%;
-  background-color: #fcfcfc;
-  margin-top: 0.5rem;
+  background-color: white;
+  margin-top: 1rem;
   position: relative;
+  row-gap: 10px;
+
+  /* border-top: .25rem solid rgb(74, 158, 134, 0.8); */
 }
 
 #recommended-title {
   color: rgb(0, 0, 0, 0.65);
   text-transform: uppercase;
   letter-spacing: 10px;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 1vw, 2rem);
   margin: 0;
   padding: 0;
+  text-align: center;
+}
+
+#recc-container {
+  display: flex;
+  width: 90%;
+  height: fit-content;
+  padding: 0 50px;
+  position: relative;
+  max-width: 2200px;
 }
 
 .observe-recommended {
@@ -463,25 +485,30 @@ body::-webkit-scrollbar-track {
 /* -------PRODUCT SECTION--------- */
 #productSection {
   display: flex;
+  align-items: center;
+  box-sizing: border-box;
   gap: 32px;
-  padding: 25px 35px;
-  width: 85%;
-  /* max-width: 1200px; */
-  height: 80%;
-  overflow: hidden;
+  padding: 30px 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+#productSection::-webkit-scrollbar {
+  display: none;
 }
 
 .product-image {
   width: 100%;
   height: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   max-width: 350px;
   height: auto;
-  border-radius: 12px 12px 0px 0px;
   margin-bottom: 15px;
   object-fit: cover;
 }
-
 
 .product-title {
   margin: 0;
@@ -502,17 +529,15 @@ body::-webkit-scrollbar-track {
   width: 100%;
   height: 100%;
   background-color: #fff;
-  border-radius: 12px;
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
   padding: 0;
   display: flex;
   flex-direction: column;
   text-decoration: none;
 
-  /* opacity: 0;
+  opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease-out, transform 1s ease-out;
-  visibility: hidden; */
+  visibility: hidden;
 }
 
 .product-card.visible {
@@ -523,19 +548,23 @@ body::-webkit-scrollbar-track {
 
 .product-card:hover {
   transform: scale(1.03);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-out;
 }
 
 .loader {
   width: 100%;
   height: 100%;
-  border: 4px solid #f3f3f3; /* Light grey */
-  border-top: 4px solid #3498db; /* Blue */
+  border: 4px solid #f3f3f3aa; /* Light grey */
+  border-top: 4px solid #3498dba6; /* Blue */
   border-radius: 50%;
   width: 40px;
   height: 40px;
   animation: spin 1s linear infinite;
-  margin: 20px auto; /* Center the loader */
+  
+  position: absolute;
+  left: 40%;
+  top: 45%;
+  transform: translate(-50%, -50%);
 }
 
 @keyframes spin {
@@ -548,4 +577,93 @@ body::-webkit-scrollbar-track {
   height: 250px;
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+/*-----FOOTER-------*/
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-top: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  /* border-top: .25rem solid rgb(74, 158, 134, 0.8); */
+  padding: 2%;
+}
+
+#footer-container {
+  display: flex;
+  margin: 0;
+  height: fit-content;
+  width: 95%;
+  box-sizing: border-box;
+  padding: 0;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 20px;
+  max-width: 2200px;
+}
+
+.footer {
+  height: fit-content;
+  min-height: fit-content;
+  padding: 0;
+  margin: 0;
+  cursor: default;
+  flex: 1 1 200px;
+}
+
+.footer h4 {
+  font-size: 1rem;
+  margin-bottom: .5rem; 
+  text-transform: uppercase;
+  width: 100%;
+  height: fit-content;
+}
+
+#contact-info p {
+  font-size: .9rem;
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#socmed-icons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2px;
+}
+
+#socmed #socmed-icons div {
+  width: 40px;
+  height: 40px;
+  margin-right: 25px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  opacity: .9;
+}
+
+#fb {background-image: url(/images/fb.png);}
+#x {background-image: url(/images/x.png);}
+#insta {background-image: url(/images/insta.png);}
+
+@media (max-width: 768px) {
+  #footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .footer {
+    width: 100%;
+  }
+
+  #socmed-icons {
+    justify-content: flex-start;
+  }
 }

@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 /*--------TRANSITIONS-------*/
 const observeCategoryTitle = () => {
-  const title = document.getElementById("category-title");
+  const title = document.getElementById("category-header");
   if (!title) return;
 
   const observer = new IntersectionObserver(
@@ -170,24 +170,6 @@ const observeButtons = () => {
   );
 
   buttons.forEach((button) => observer.observe(button));
-};
-
-const observeCategoryYumi = () => {
-  const categoryYumi = document.querySelector("#category-yumi");
-  if (!categoryYumi) return;
-
-  const observer = new IntersectionObserver(
-    (entries, observerInstance) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observerInstance.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0 }
-  );
-  observer.observe(categoryYumi);
 };
 
 const observeRecommended = () => {
@@ -247,9 +229,7 @@ const observeProductCards = () => {
   cards.forEach((card) => observer.observe(card));
 };
 
-
 document.addEventListener("DOMContentLoaded", () => {
-  observeCategoryYumi();
   observeButtons();
   observeCategories();
   observeCategoryTitle();
@@ -280,7 +260,7 @@ function initializeRecommendedCarousel() {
   const btnLeft = document.getElementById('recommended-left');
   const btnRight = document.getElementById('recommended-right');
 
-  const scrollAmount = 300;
+  const scrollAmount = 1210;
 
   btnLeft.addEventListener('click', () => {
     carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
