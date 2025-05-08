@@ -512,7 +512,7 @@ body::-webkit-scrollbar-track {
 
 .product-title {
   margin: 0;
-  font-size: 10px;
+  font-size: 14px;
   color: black;
   padding: 10px;
   padding-top: 0;
@@ -523,6 +523,7 @@ body::-webkit-scrollbar-track {
   color: black;
   padding: 10px;
   padding-top: 0;
+  font-size: 12px;
 }
 
 .product-card {
