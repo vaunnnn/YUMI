@@ -189,4 +189,3 @@ document.querySelector("#checkout").addEventListener("click", () => {
 
 updateSummary();
 renderCart();
-
