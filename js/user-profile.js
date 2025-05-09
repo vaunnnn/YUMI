@@ -23,3 +23,12 @@ if (logoutTab && logoutModal && confirmLogout && cancelLogout) {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mainBox = document.getElementById("main-box");
+    if (mainBox) {
+        requestAnimationFrame(() => {
+            mainBox.style.opacity = 1;
+        });
+    }
+});

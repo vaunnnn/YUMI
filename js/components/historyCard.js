@@ -22,7 +22,7 @@ const createTicket = (item, index) => {
 
     orderID.textContent = ++index;
     datePlaced.textContent = dateOrdered;
-    date.textContent = `Date to be Delivered: ${deliveryDate}`;
+    date.textContent = deliveryDate;
     payment.textContent = paymentMethod;
     pieces.textContent = quantity;
     shipType.textContent = shippingMethod;

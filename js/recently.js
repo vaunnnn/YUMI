@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const recentSection = document.querySelector('.wishlistSection');
 
     if (!recentSection) {
-        console.error('Wishlist section not found.');
+        console.error('Recently viewed section not found.');
         return;
     }
 
@@ -23,22 +23,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     recents.forEach(item => {
         const productCard = createProduct(item);
-        const removeBtn = productCard.querySelector('.remove-wishlist-btn');
-        removeBtn.addEventListener('click', (e) => {
-            e.preventDefault(); 
-    
-            const updatedRecent = wishlist.filter(p => p.id !== item.id);
-            localStorage.setItem(`${currentUser}-wishlist`, JSON.stringify(updatedRecent));
-    
-            removeBtn.closest('.product-card').remove();
-    
-            if (updatedRecent.length === 0) {
-                const emptyMessage = document.createElement('p');
-                emptyMessage.textContent = 'Your wishlist is empty.';
-                recentSection.appendChild(emptyMessage);
-            }
-        });
-    
         recentSection.appendChild(productCard);
     });
 
