@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-
-
 * {
     box-sizing: border-box;  
 }
@@ -9,15 +7,11 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    /* overflow: hidden;  */
     box-sizing: border-box;
     background: #f7f7f7;
     color: #333;
-    height: 100vw;
 }
 
-
-/* === Header === */
 #header {
     display: flex;
     justify-content: space-between;
@@ -30,30 +24,28 @@ body {
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
 }
-  
-  /* === YUMI Branding === */
-  #yumi {
+
+#yumi {
     display: flex;
     align-items: center;
     gap: 10px;
-  }
-  
-  #logo {
+}
+
+#logo {
     width: 40px;
     height: 40px;
     background: url('../images/sia.jpg') no-repeat center center/cover;
     border-radius: 50%;
-  }
-  
-  #title {
+}
+
+#title {
     font-size: 1.6rem;
     font-weight: 700;
     color: #222;
     letter-spacing: 2px;
-  }
-  
-  /* === Search Bar === */
-  #search-bar {
+}
+
+#search-bar {
     flex: 1; 
     display: flex;
     justify-content: center;
@@ -65,131 +57,96 @@ body {
     background: #f0f0f0;
     transition: all 0.3s ease;
     max-width: 250px; 
-  }
-  
-  #search-bar:focus-within {
+}
+
+#search-bar:focus-within {
     border-color: #6e6d6d;
     background: #fff;
-  }
-  
-  .search-icon svg {
+}
+
+.search-icon svg {
     fill: #888;
-  }
-  
-  .search {
+}
+
+.search {
     border: none;
     background: transparent;
     outline: none;
     font-size: 0.95rem;
     padding: 8px;
     width: 180px;
-  }
-  
-  /* === Header Icons === */
-  #icons {
+}
+
+#icons {
     display: flex;
     align-items: center;
     gap: 20px;
     justify-content: flex-end; 
-  }
-  
-  .view {
+}
+
+.view {
     background: none;
     border: none;
     cursor: pointer;
     transition: transform 0.2s ease;
-  }
-  
-  .view:hover {
+}
+
+.view:hover {
     transform: scale(1.1);
-  }
-  
-  #icons svg {
+}
+
+#icons svg {
     width: 20px;
     height: 20px;
-  }
-
-
-/*----------------PRODUCT--------------------*/
+}
 
 .product {
     display: flex;
     gap: 1rem;
-    position: relative;
     flex-wrap: wrap;
     flex-direction: row;
-
-    height: 40%;
-    width: 85%;
-    margin: 2rem auto;          /* Center the card */
-    padding: 2rem;
+    width: 82%;
+    margin: 1rem auto;
+    margin-top: 20px;
+    padding: 1rem;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
     background-color: #ffffff;
     box-sizing: border-box;
 }
 
-
 .left-product {
-    display: flex;
-    flex-direction: column;
-    background-color: #f1f1f1;
-    box-sizing: border-box;
-    /* height: 100vh; */
-    position: relative;
-    height: 100%;
-    padding: 5%;
-
-    width: 560px;
-    flex: 1 1 560px;
+    width: 100%;
+    flex: 1 1 40%;
+    max-width: 60%;
+    min-width: 300px;
 }
 
 .product-details {
-    flex-grow: 1;
-    flex-shrink: 1;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto; 
-    /* margin-top: 5rem; */
-    position: relative;
-    box-sizing: border-box;
-    padding: 5%;
-    height: calc(100vh - 70px);
-    width: 560px;
-    flex: 1 1 560px;
-}
-
-.product-details::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
-
-.product-title {
-    display: block;
-    border-bottom: 1px solid lightgrey;
-    margin: 0 1rem 1rem 0;
-    padding-bottom: 0.5rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    width: 100%;
+    flex: 1 1 60%;
+    max-width: 40%;
+    min-width: 300px;
+    max-height: 500px;
+    overflow-y: auto;
 }
 
 .product-image {
-    display: flex;
     width: 100%;
     height: auto;
-    overflow-y: auto;
+    max-height: 60vh;
+    background-color: lightgray;
     object-fit: contain;
     max-width: 100%;
-    
+    display: block;
+    margin: 0 auto;
+    max-height: 500px;
+    border-radius: 8px;
 }
 
 .images {
-    width: 100%; 
-    height: auto;
+    width: 100%;
 }
-
-
-/* MODAL */
 
 .modal {
     position: fixed;
@@ -199,13 +156,11 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.6);
-    /* Semi-transparent background */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Modal content box */
 .modal-content {
     background-color: #fff;
     padding: 2rem;
@@ -248,14 +203,11 @@ body {
         opacity: 0;
         transform: translateY(-10%);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
-/* FOOTER FOR LEFT */
 
 #add-to-cart {
     margin: 1rem 0;
@@ -280,7 +232,6 @@ body {
     padding: 10px 20px;
     background-color: transparent;
     border: none;
-    /* border-radius: 8px; */
     cursor: pointer;
     font-size: 16px;
 }
@@ -299,8 +250,6 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
 }
-
-
 
 .title {
     display: flex;
@@ -342,12 +291,6 @@ body {
     margin-top: 0;
 }
 
-.view {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
-
 .heart-active svg path {
     fill: red;
     transition: fill 0.3s ease;
@@ -360,46 +303,21 @@ body {
     margin-right: 1rem;
 }
 
-
 .product-description {
     display: flex;
     flex-direction: column;
     margin-right: 1rem;
 }
-@media (max-width: 1136px) {html, body {overflow: auto; }}
 
-@media (max-width: 992px) {
-
+@media (max-width: 993px) {
     html, body {
-        overflow: auto; 
-    }
-
-    #header {
-        padding: 15px 20px;
-    }
-
-    #title {
-        font-size: 1.6em;
-    }
-
-    .product {
-        padding: 20px;
-        gap: 25px;
-    }
-
-    .product-title .name {
-        font-size: 1.8em;
-    }
-
-    .product-description .price {
-        font-size: 1.6em;
+        overflow: auto;
     }
 }
 
-@media (max-width: 768px) {
-
+@media (max-width: 996px) {
     html, body {
-        overflow: auto; 
+        overflow: auto;
     }
 
     #header {
@@ -443,11 +361,110 @@ body {
     .product-details {
         flex: none;
         width: 100%;
+        max-width: 100%;
+        min-width: 0;
     }
 
     .images {
         max-width: 100%;
         min-height: 250px;
+        height: auto;
+    }
+
+    .product-image {
+        max-height: 60vh;
+        width: 100%;
+        height: auto;
+    }
+
+    .product-details {
+        max-height: 400px;
+    }
+
+    .product-title .name {
+        font-size: 1.6em;
+    }
+
+    .product-title .title {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .product-title .id {
+        margin-top: 5px;
+    }
+
+    .product-description .price {
+        font-size: 1.5em;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buttons button {
+        width: 100%;
+        margin-bottom: 0;
+        min-width: auto;
+        padding: 14px 20px;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin: 15% auto;
+        padding: 20px;
+    }
+
+    .modal-content h3 {
+        font-size: 1.3em;
+    }
+
+    .modal-content input[type="number"] {
+        padding: 8px;
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+
+    .modal-content #added-to-cart {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 768px) {
+    html, body {
+        overflow: auto;
+    }
+
+    .product {
+        flex-direction: column;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .left-product,
+    .product-details {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .images {
+        max-width: 100%;
+        min-height: 250px;
+        height: auto;
+    }
+
+    .product-image {
+        max-height: 60vh;
+        width: 100%;
+        height: auto;
+    }
+
+    .product-details {
+        max-height: 400px;
     }
 
     .product-title .name {
@@ -502,9 +519,8 @@ body {
 }
 
 @media (max-width: 480px) {
-
     html, body {
-        overflow: auto; 
+        overflow: auto;
     }
 
     body {
@@ -530,6 +546,23 @@ body {
     #icons .view svg {
         width: 20px;
         height: 20px;
+    }
+
+    .product {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .images {
+        min-height: 200px;
+    }
+
+    .product-image {
+        max-height: 50vh;
+    }
+
+    .product-details {
+        max-height: 350px;
     }
 
     .product-title .name {
@@ -570,7 +603,6 @@ body {
     }
 }
 
-
 .stock, .weight, .dimensions,
 .warranty, .shipping {
     margin-top: 0;
@@ -580,5 +612,5 @@ body {
 .category {
     margin-top: 0;
     margin-bottom: 0; 
-    font-style:italic;
+    font-style: italic;
 }
