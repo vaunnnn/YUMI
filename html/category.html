@@ -59,13 +59,28 @@
     </div>
   </div>
 
+  <div id="category-tab">
+    <button id="toggle-categories">☰ Categories</button>
+    <div id="category-list" class="collapsed">
+      <a href="category.html?category=beauty" class="category-item">Beauty</a>
+      <a href="category.html?category=grocery" class="category-item">Groceries</a>
+      <a href="category.html?category=gadgets" class="category-item">Gadgets</a>
+      <a href="category.html?category=clothes" class="category-item">Clothes</a>
+      <a href="category.html?category=accessories" class="category-item">Accessories</a>
+      <a href="category.html?category=vehicles" class="category-item">Vehicle</a>
+      <a href="category.html?category=furniture" class="category-item">Furniture</a>
+    </div>
+  </div>
+
   <section id="productSection"></section>
 
   <section id="footer">
     <div id="footer-container">
       <div class="footer" id="footer-logo">
-        <h3>YUMI</h3>
-        <img src="/images/logo.png">
+        <div id="logo-group">
+          <h3>YUMI</h3>
+          <img src="/images/logo.png">
+        </div>
       </div>
 
       <div class="footer" id="socmed">
@@ -92,7 +107,7 @@
           <div class="loader"></div>
           <img class="product-image" src=""/>
         </div>
-        <h3 class="product-title"></h3>
+        <p class="product-title"></p>
         <p class="product-price"></p>
       </a>
     </template>

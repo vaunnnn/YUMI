@@ -64,3 +64,9 @@ const searchProduct = () => {
 
 document.getElementById("search").addEventListener("keyup", searchProduct);
 document.addEventListener("DOMContentLoaded", displayCategoryProducts);
+
+/*========CATEGORY TAB===========*/
+document.getElementById("toggle-categories").addEventListener("click", function () {
+  const categoryList = document.getElementById("category-list");
+  categoryList.classList.toggle("expanded");
+});
