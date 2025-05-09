@@ -54,9 +54,9 @@
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 1.5rem;
-    box-shadow: 0 2px 6px rgb(88, 76, 27, 0.1);
+    /* box-shadow: 0 2px 2px rgb(88, 76, 27, 0.1); */
     transition: all 0.3s ease-in-out;
-    border: 1.5px solid rgb(0, 0, 0, 0.7);
+    border: 1px solid rgb(0, 0, 0, 0.2);
 }
 
 .box p {
@@ -92,10 +92,10 @@
 .s-input input,
 .s-input select {
     padding: 0.5rem;
-    border: 1px solid rgb(0, 0, 0, 0.6);
+    border: 1px solid rgb(0, 0, 0, 0.3);
     border-radius: 5px;
     font-size: 1rem;
-    color: rgb(88, 76, 27, 0.3);
+    color: rgb(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
@@ -103,7 +103,7 @@
 .address-input input:hover,
 .s-input input:hover,
 .s-input select:hover {
-    border-color: rgb(0, 0, 0, 0.7);
+    border-color: rgb(0, 0, 0, 0.5);
     box-shadow: 0 2px 6px rgb(0, 0, 0, 0.1);
     outline: none;
 }
@@ -112,7 +112,7 @@
 .address-input input:focus,
 .s-input input:focus,
 .s-input select:focus {
-    border-color: rgb(0, 0, 0, 0.7);
+    border-color: rgb(0, 0, 0, 0.5);
     outline: none;
 }
 

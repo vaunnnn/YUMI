@@ -9,6 +9,13 @@ const renderHistory = () => {
     console.log(orderHistory)
     const historySection = document.querySelector("#order-history-container");
 
+    if (orderHistory.length === 0) {
+        const emptyMessage = document.createElement('p');
+        emptyMessage.textContent = 'Order history is empty.';
+        historySection.appendChild(emptyMessage);
+        return;
+    }
+
     orderHistory.forEach((item, index) => {
         const ticketCard = createTicket(item, index);
 

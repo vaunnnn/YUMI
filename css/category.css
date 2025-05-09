@@ -267,6 +267,7 @@ body::-webkit-scrollbar-track {
     text-transform: uppercase;
     width: 100%;
     height: fit-content;
+    font-weight: normal;
 }
 
 #contact-info p {
@@ -292,18 +293,6 @@ body::-webkit-scrollbar-track {
     opacity: .9;
 }
 
-#fb {
-    background-image: url(/images/fb.png);
-}
-
-#x {
-    background-image: url(/images/x.png);
-}
-
-#insta {
-    background-image: url(/images/insta.png);
-}
-
 #footer-logo {
     display: flex;
     justify-content: right;
@@ -323,12 +312,16 @@ body::-webkit-scrollbar-track {
 }
 
 #footer-logo h3 {
-    /* align-self: flex-end; */
     height: fit-content;
     margin-bottom: 10px;
     color: black;
     letter-spacing: 2px;
+    font-weight: bold;
 }
+
+#fb {background-image: url(/images/fb.png);}
+#x {background-image: url(/images/x.png);}
+#insta {background-image: url(/images/insta.png);}
 
 /*==========COLLAPSIBLE TAB=============*/
 #category-tab {
@@ -379,7 +372,7 @@ body::-webkit-scrollbar-track {
     max-height: 500px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 510px) {
     #header {padding: 15px 15px;}
     #yumi {gap: 6px;}
     #title {font-size: 1rem;}

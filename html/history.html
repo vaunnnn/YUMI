@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Order History</title>
     <link rel="stylesheet" href="../css/user-profile.css">
+    <link rel="stylesheet" href="../css/history.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -62,7 +63,8 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
                         <g fill="#171515" stroke-width="0.8" stroke="#171515">
                             <path d="M15 12a3 3 0 1 1-6 0a3 3 0 0 1 6 0" />
-                            <path d="M21.894 11.553C19.736 7.236 15.904 5 12 5s-7.736 2.236-9.894 6.553a1 1 0 0 0 0 .894C4.264 16.764 8.096 19 12 19s7.736-2.236 9.894-6.553a1 1 0 0 0 0-.894M12 17c-2.969 0-6.002-1.62-7.87-5C5.998 8.62 9.03 7 12 7s6.002 1.62 7.87 5c-1.868 3.38-4.901 5-7.87 5" />
+                            <path
+                                d="M21.894 11.553C19.736 7.236 15.904 5 12 5s-7.736 2.236-9.894 6.553a1 1 0 0 0 0 .894C4.264 16.764 8.096 19 12 19s7.736-2.236 9.894-6.553a1 1 0 0 0 0-.894M12 17c-2.969 0-6.002-1.62-7.87-5C5.998 8.62 9.03 7 12 7s6.002 1.62 7.87 5c-1.868 3.38-4.901 5-7.87 5" />
                         </g>
                     </svg>
                     <p>Recently Viewed</p>
@@ -88,8 +90,11 @@
                 <div class="tab" id="logout-tab">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
                         <g fill="#171515" stroke-width="0.8" stroke="#171515">
-                            <path fill-rule="evenodd" d="M11 20a1 1 0 0 0-1-1H5V5h5a1 1 0 1 0 0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5a1 1 0 0 0 1-1" clip-rule="evenodd" />
-                            <path d="M21.714 12.7a1 1 0 0 0 .286-.697v-.006a1 1 0 0 0-.293-.704l-4-4a1 1 0 1 0-1.414 1.414L18.586 11H9a1 1 0 1 0 0 2h9.586l-2.293 2.293a1 1 0 0 0 1.414 1.414l4-4z" />
+                            <path fill-rule="evenodd"
+                                d="M11 20a1 1 0 0 0-1-1H5V5h5a1 1 0 1 0 0-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5a1 1 0 0 0 1-1"
+                                clip-rule="evenodd" />
+                            <path
+                                d="M21.714 12.7a1 1 0 0 0 .286-.697v-.006a1 1 0 0 0-.293-.704l-4-4a1 1 0 1 0-1.414 1.414L18.586 11H9a1 1 0 1 0 0 2h9.586l-2.293 2.293a1 1 0 0 0 1.414 1.414l4-4z" />
                         </g>
                     </svg>
                     <p>Log Out</p>
@@ -100,7 +105,16 @@
         <!-------------------------MAIN--------------------------->
         <div id="main">
             <div id="main-box">
-                <div id="box-title">Order History</div>
+                <div id="box-title">Recently Viewed</div>
+                <div id="order-history-header" class="order-item header">
+                    <p>Order #</p>
+                    <p>Date Placed</p>
+                    <p>Delivery Date</p>
+                    <p>Payment Method</p>
+                    <p>Total Qty</p>
+                    <p>Shipping Method</p>
+                    <p>Total</p>
+                </div>
                 <div id="order-history-container"></div>
             </div>
         </div>
@@ -117,23 +131,20 @@
 
     <template id="order-history-item-template">
         <div class="order-item">
-            <div class="order-header flex">
-                <h3 class="order-number "></h3>
-                <p class="date-placed"></p>
-            </div>
-            <div class="order-details flex">
-                <p class="delivery-date"></p>
-                <p class="payment-method"></p>
-                <p class="total-quantity"></p>
-                <p class="shipping-type"></p>
-                <p class="order-total"></p>
-            </div>
-            </div>
+            <p class="order-number "></p>
+            <p class="date-placed"></p>
+            <p class="delivery-date"></p>
+            <p class="payment-method"></p>
+            <p class="total-quantity"></p>
+            <p class="shipping-type"></p>
+            <p class="order-total"></p>
+        </div>
     </template>
-    
-    
+
+
 
 </body>
 <script src="/js/history.js" type="module"></script>
+<script src="/js/user-profile.js"></script>
 
 </html>

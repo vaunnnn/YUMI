@@ -1,0 +1,41 @@
+#order-history-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.order-item {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+    padding: 16px 16px;
+    align-items: center;
+    border-top: none;
+    width: 100%;
+    max-width: 1200px;
+    background-color: whitesmoke;
+    min-width: 510px;
+}
+
+.order-item p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    color: #444;
+    word-break: break-word;       
+    overflow-wrap: anywhere;      
+    white-space: normal;  
+}
+
+.order-item.header{    
+    width: 100%;
+    font-weight: bold;
+    background-color: rgb(235, 234, 234);
+    border-bottom: 2px solid #ccc;
+    color: rgba(34, 34, 34, 0.733);
+    min-width: 510px;
+    max-width: 1200px;
+}
+
+.order-item.header p {font-size: 14px;}
