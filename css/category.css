@@ -132,6 +132,12 @@ body::-webkit-scrollbar-track {
 }
 
 /* -------PRODUCT SECTION--------- */
+#display-product {
+    position: relative;
+    width: 100%;
+    background-color: yellow;
+}
+
 #productSection {
     display: flex;
     flex-direction: row;
@@ -143,6 +149,8 @@ body::-webkit-scrollbar-track {
     scroll-behavior: smooth;
     background-color: white;
     margin-top: 6rem;
+
+    background-color: thistle;
 }
 
 #productSection::-webkit-scrollbar {
@@ -328,8 +336,10 @@ body::-webkit-scrollbar-track {
     position: absolute;
     z-index: 500;
     top: 4rem;
+    /* left: 5.8rem; */
     width: 85%;
     margin: 20px auto;
+    margin-left: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -338,7 +348,7 @@ body::-webkit-scrollbar-track {
 #toggle-categories {
     background-color: white;
     color: black;
-    padding: 16px 24px 16px 10px;
+    padding: 10px 24px 10px 0;
     border: none;
     cursor: pointer;
     font-size: 16px;
