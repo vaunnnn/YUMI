@@ -1,8 +1,9 @@
+import convertUsdToPhp from "../utilities/convertUsdToPhp.js";
 const createProduct = (product) => {
 
     const productImage = document.querySelector(".product-image");
     const productStock = document.querySelector(".stock");
-    const productTags = document.querySelector(".tags");
+    // const productTags = document.querySelector(".tags");
 
     const productName = document.querySelector(".name");
     const productID = document.querySelector(".id");
@@ -26,7 +27,7 @@ const createProduct = (product) => {
         price,
         rating,
         stock,
-        tags,
+        // tags,
         description,
         brand,
         category,
@@ -41,16 +42,16 @@ const createProduct = (product) => {
     productImage.alt = `Image of ${images}`;
     (stock) ? productStock.textContent = `In stock` : productStock.textContent = `No stock`
     
-    if (tags && tags.length > 0) {
-        tags.forEach(tag => {
-            const tagElement = document.createElement('div');
-            tagElement.textContent = tag;
-            tagElement.classList.add('tag');
-            productTags.appendChild(tagElement);
-        });
-    } else {
-        productTags.textContent = 'No tags available';
-    }
+    // if (tags && tags.length > 0) {
+    //     tags.forEach(tag => {
+    //         const tagElement = document.createElement('div');
+    //         tagElement.textContent = tag;
+    //         tagElement.classList.add('tag');
+    //         productTags.appendChild(tagElement);
+    //     });
+    // } else {
+    //     productTags.textContent = 'No tags available';
+    // }
 
     productName.textContent = title;
     if(brand) {
@@ -60,7 +61,7 @@ const createProduct = (product) => {
     }
     
     productID.textContent = `ID: ${id}`;
-    productPrice.textContent = `$${price}`;
+    productPrice.textContent = `P${convertUsdToPhp(price)}`;
     productRating.textContent = `${"⭐".repeat(rating)}`;
 
     productDes.textContent = description;
