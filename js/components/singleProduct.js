@@ -61,8 +61,8 @@ const createProduct = (product) => {
     }
     
     productID.textContent = `ID: ${id}`;
-    productPrice.textContent = `P${convertUsdToPhp(price)}`;
-    productRating.textContent = `${"⭐".repeat(rating)}`;
+    productPrice.textContent = `₱${convertUsdToPhp(price)}`;
+    productRating.textContent = `${"★".repeat(rating)}`;
 
     productDes.textContent = description;
     productCategory.textContent = `Category: ${category}`;
@@ -78,7 +78,7 @@ const createProduct = (product) => {
             const reviewHTML = `
                 <div class="single-review" style="margin-bottom: 1rem; padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
                     <p><strong>${review.reviewerName}</strong> (${new Date(review.date).toLocaleDateString()})</p>
-                    <p>Rating: ${"⭐".repeat(review.rating)}</p>
+                    <p>Rating: ${"★".repeat(review.rating)}</p>
                     <p>"${review.comment}"</p>
                 </div>
             `;
