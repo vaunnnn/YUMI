@@ -41,10 +41,7 @@ const displayWishlist = () => {
     
         wishlistSection.appendChild(productCard);
     });
-    
-
-    
 };
 
 
-document.addEventListener("DOMContentLoaded", displayWishlist);
+window.addEventListener("DOMContentLoaded", displayWishlist);

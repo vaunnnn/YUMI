@@ -1,3 +1,13 @@
+#history-card {
+    width: 90%;
+    justify-self: center;
+    margin: 0;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
 #order-history-container {
     display: flex;
     flex-direction: column;
@@ -14,7 +24,6 @@
     border-top: none;
     width: 100%;
     max-width: 1200px;
-    background-color: whitesmoke;
     min-width: 510px;
 }
 
@@ -31,9 +40,8 @@
 .order-item.header{    
     width: 100%;
     font-weight: bold;
-    background-color: rgb(235, 234, 234);
-    border-bottom: 2px solid #ccc;
-    color: rgba(34, 34, 34, 0.733);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    color: rgba(34, 34, 34, 0.5);
     min-width: 510px;
     max-width: 1200px;
 }

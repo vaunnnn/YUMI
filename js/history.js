@@ -12,6 +12,9 @@ const renderHistory = () => {
     if (orderHistory.length === 0) {
         const emptyMessage = document.createElement('p');
         emptyMessage.textContent = 'Order history is empty.';
+        emptyMessage.style.textAlign = "center"
+        emptyMessage.style.padding = "16px"
+        emptyMessage.style.opacity = ".5"
         historySection.appendChild(emptyMessage);
         return;
     }

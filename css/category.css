@@ -9,7 +9,6 @@ body {
     font-family: 'Inter', sans-serif;
     overflow: auto;
     align-items: center;
-    position: relative;
 }
 
 /*----------------HEADER--------------------*/
@@ -133,9 +132,13 @@ body::-webkit-scrollbar-track {
 
 /* -------PRODUCT SECTION--------- */
 #display-product {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    min-height: 80vh;
+    margin: 70px 0 auto;
     position: relative;
-    width: 100%;
-    background-color: yellow;
+    max-width: 1200px;
 }
 
 #productSection {
@@ -145,12 +148,11 @@ body::-webkit-scrollbar-track {
     flex-wrap: wrap;
     gap: 60px 32px;
     padding: 40px 0;
-    width: 90%;
+    width: 100%;
     scroll-behavior: smooth;
     background-color: white;
-    margin-top: 6rem;
-
-    background-color: thistle;
+    margin-top: 3rem;
+    align-self: center;
 }
 
 #productSection::-webkit-scrollbar {
@@ -335,10 +337,9 @@ body::-webkit-scrollbar-track {
 #category-tab {
     position: absolute;
     z-index: 500;
-    top: 4rem;
-    /* left: 5.8rem; */
+    top: 20px;
     width: 85%;
-    margin: 20px auto;
+    margin: 0;
     margin-left: 0;
     display: flex;
     flex-direction: column;

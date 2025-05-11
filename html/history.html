@@ -5,9 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Order History</title>
-    <link rel="stylesheet" href="../css/user-profile.css">
+    <link rel="stylesheet" href="/css/user-profile.css">
     <link rel="stylesheet" href="../css/history.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -105,17 +104,19 @@
         <!-------------------------MAIN--------------------------->
         <div id="main">
             <div id="main-box">
-                <div id="box-title">Recently Viewed</div>
-                <div id="order-history-header" class="order-item header">
-                    <p>Order #</p>
-                    <p>Date Placed</p>
-                    <p>Delivery Date</p>
-                    <p>Payment Method</p>
-                    <p>Total Qty</p>
-                    <p>Shipping Method</p>
-                    <p>Total</p>
+                <!-- <div id="box-title">Order History</div> -->
+                <div id="history-card">
+                    <div id="order-history-header" class="order-item header">
+                        <p>Order #</p>
+                        <p>Date Placed</p>
+                        <p>Delivery Date</p>
+                        <p>Payment Method</p>
+                        <p>Total Qty</p>
+                        <p>Shipping Method</p>
+                        <p>Total</p>
+                    </div>
+                    <div id="order-history-container"></div>
                 </div>
-                <div id="order-history-container"></div>
             </div>
         </div>
     </div>
