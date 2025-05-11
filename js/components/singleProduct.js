@@ -1,5 +1,5 @@
 import convertUsdToPhp from "../utilities/convertUsdToPhp.js";
-const createProduct = (product) => {
+const createSingleProduct = (product) => {
 
     const productImage = document.querySelector(".product-image");
     const productStock = document.querySelector(".stock");
@@ -91,4 +91,4 @@ const createProduct = (product) => {
 
 }
 
-export default createProduct;
+export default createSingleProduct;

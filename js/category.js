@@ -1,33 +1,5 @@
 import createProduct from "./components/product.js";
-
-const groupedCategories = {
-  beauty: ["beauty", "fragrances", "skincare", "skin-care"],
-  grocery: ["groceries", "kitchen-accessories"],
-  gadgets: ["laptops", "mobile-accessories", "smartphones", "tablets"],
-  clothes: ["mens-shirts", "mens-shoes", "tops", "womens-dresses", "womens-shoes"],
-  accessories: ["sports-accessories", "sunglasses", "mens-watches", "womens-jewellery", "womens-watches"],
-  vehicles: ["motorcycle", "vehicle"],
-  furnitures: ["furniture", "home-accessories"]
-};
-
-const fetchGroupedCategoryProducts = async (category) => {
-  const subcategories = groupedCategories[category.toLowerCase()] || [category];
-  let allProducts = [];
-
-  for (const sub of subcategories) {
-    try {
-      const response = await fetch(`https://dummyjson.com/products/category/${sub}`);
-      const data = await response.json();
-      allProducts = allProducts.concat(data.products);
-    } catch (error) {
-      console.error(`Error fetching ${sub}:`, error);
-    }
-  }
-  console.log(allProducts);
-
-  return allProducts;
-  
-};
+import { fetchGroupedCategoryProducts } from "./utilities/categoryUtils.js";
 
 const displayCategoryProducts = async () => {
   const params = new URLSearchParams(window.location.search);
@@ -37,7 +9,7 @@ const displayCategoryProducts = async () => {
   if (!category || !productSection) return;
 
   productSection.innerHTML = "";
-  productSection.style.display = "flex"; 
+  productSection.style.display = "flex";
 
   const products = await fetchGroupedCategoryProducts(category);
 

@@ -419,7 +419,6 @@ body {
         flex-direction: column;
         gap: 10px;
 
-        background-color: pink;
     }
 
     .buttons button {
@@ -450,10 +449,6 @@ body {
         font-size: 0.95em;
     }
 }
-
-/* Note: Media query for max-width: 768px is identical to parts of max-width: 996px for .product and its children.
-   It can be removed if 996px styles are sufficient or adjusted if different behavior is needed.
-   Keeping it for now as it might be intentional for cascading or future changes. */
 @media (max-width: 768px) {
 
     html,

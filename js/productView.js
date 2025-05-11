@@ -1,11 +1,13 @@
-import createProduct from "./components/singleProduct.js";
+import createSingleProduct from "./components/singleProduct.js";
+import createProduct from "./components/product.js";
+import { fetchGroupedCategoryProducts } from "./utilities/categoryUtils.js";
 
 const params = new URLSearchParams(window.location.search);
-const showModalBtn = document.getElementById("add-to-cart");   
-const addToWishlistBtn = document.getElementById("add-to-wishlist");  
-const addToCartBtn = document.getElementById("added-to-cart");   
-const quantityInput = document.getElementById("quantity");       
-const modal = document.getElementById("cartModal");              
+const showModalBtn = document.getElementById("add-to-cart");
+const addToWishlistBtn = document.getElementById("add-to-wishlist");
+const addToCartBtn = document.getElementById("added-to-cart");
+const quantityInput = document.getElementById("quantity");
+const modal = document.getElementById("cartModal");
 modal.style.display = "none";
 const productID = params.get("id");
 
@@ -30,6 +32,39 @@ const fetchProducts = async () => {
     }
 };
 
+const displaySimilarProducts = async (currentProduct) => {
+    const similarProductsSection = document.getElementById("productSection");
+    if (!similarProductsSection || !currentProduct) {
+        return;
+    }
+
+    const currentProductCategory = currentProduct.category;
+    const currentProductId = currentProduct.id;
+
+    const allProductsInCategory = await fetchGroupedCategoryProducts(currentProductCategory);
+
+    const similarProducts = allProductsInCategory.filter(product => product.id !== currentProductId);
+
+    const shuffledProducts = similarProducts.sort(() => 0.5 - Math.random());
+    const productsToDisplay = shuffledProducts.slice(0, 5);
+
+    if (productsToDisplay.length === 0) {
+        similarProductsSection.innerHTML += "<p>No similar products found in this category.</p>";
+        return;
+    }
+
+    const similarProductsContainer = document.createElement('div');
+    similarProductsContainer.classList.add('similar-products-container');
+
+    productsToDisplay.forEach((product) => {
+        const productElement = createProduct(product);
+        similarProductsContainer.appendChild(productElement);
+    });
+
+    similarProductsSection.appendChild(similarProductsContainer);
+};
+
+
 
 const displayProduct = async () => {
     const product = await fetchProducts();
@@ -37,27 +72,31 @@ const displayProduct = async () => {
     const btn = document.getElementById("add-to-wishlist");
 
     if (product) {
-        createProduct(product);
+        createSingleProduct(product);
 
         const existingWishlist = JSON.parse(localStorage.getItem(`${currentUser}-wishlist`)) || [];
         let existingRecentlyViewed = JSON.parse(localStorage.getItem(`${currentUser}-recently-viewed`)) || [];
-        
+
         const exists = existingWishlist.find(p => p.id === product.id);
         const existingProductIndex = existingRecentlyViewed.findIndex(p => p.id === product.id);
         if (existingProductIndex !== -1) {
             existingRecentlyViewed.splice(existingProductIndex, 1);
             localStorage.setItem(`${currentUser}-recently-viewed`, JSON.stringify(existingRecentlyViewed));
-        } 
+        }
         existingRecentlyViewed.unshift(product);
         localStorage.setItem(`${currentUser}-recently-viewed`, JSON.stringify(existingRecentlyViewed));
 
         if (exists) {
-            btn.classList.add("heart-active"); 
+            btn.classList.add("heart-active");
         }
+
+        displaySimilarProducts(product);
+
+    } else {
+        document.querySelector('.product-details').innerHTML = "<p>Product not found.</p>";
+        document.getElementById("productSection").innerHTML = "";
     }
-
 };
-
 
 const addToCart = async () => {
     const data = await fetchProducts();
@@ -107,8 +146,6 @@ const addToWishlist = async () => {
     }
 };
 
-
-
 showModalBtn.addEventListener("click", () => {
     modal.style.display = "flex";
 });
@@ -121,5 +158,6 @@ window.addEventListener("click", (e) => {
 
 addToCartBtn.addEventListener("click", addToCart);
 addToWishlistBtn.addEventListener("click", addToWishlist);
-
-document.addEventListener("DOMContentLoaded", displayProduct);
+document.addEventListener("DOMContentLoaded", () => {
+    displayProduct();
+});
