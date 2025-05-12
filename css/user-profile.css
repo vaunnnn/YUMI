@@ -114,7 +114,7 @@ body::-webkit-scrollbar-track {
     margin-bottom: 20px;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 500;
     transition: all 0.3s ease;
     border: 2px solid rgb(0, 0, 0, 0);
 }

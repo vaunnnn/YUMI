@@ -231,7 +231,7 @@ body::-webkit-scrollbar-track {
 
 .specifications {
     margin: 0;
-    padding: 15px 10px;
+    padding: 0 10px 15px 10px;
 }
 
 .specifications p {
@@ -428,16 +428,16 @@ body::-webkit-scrollbar-track {
 
 /*=== Footer ===*/
 #footer {
+    height: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
-    margin-top: 20px;
     width: 100%;
     box-sizing: border-box;
     background-color: white;
-    padding: 2%;
-    border-top: 2px solid rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
     color: rgba(0, 0, 0, 0.8);
 }
 
@@ -459,21 +459,21 @@ body::-webkit-scrollbar-track {
     padding: 0;
     margin: 0;
     cursor: default;
-    flex: 1 1 100px;
+    flex: 1 1 60px;
 }
 
 .footer h4 {
-    font-size: 1rem;
-    margin-bottom: .5rem;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: .3rem;
     text-transform: uppercase;
     width: 100%;
     height: fit-content;
-    font-weight: normal;
 }
 
 #contact-info p {
-    font-size: .9rem;
-    margin: 0;
+    font-size: 12px;
+    padding: 0;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
@@ -485,8 +485,8 @@ body::-webkit-scrollbar-track {
 }
 
 #socmed #socmed-icons div {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     margin-right: 25px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -507,14 +507,14 @@ body::-webkit-scrollbar-track {
 }
 
 #footer-logo img {
-    width: 65px;
-    height: 65px;
+    width: 50px;
+    height: 50px;
     margin: 0;
 }
 
 #footer-logo h3 {
     height: fit-content;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     color: black;
     letter-spacing: 2px;
     font-weight: bold;
@@ -860,6 +860,7 @@ body::-webkit-scrollbar-track {
     }
 }
 
+/* 
 .stock,
 .weight,
 .dimensions,
@@ -867,4 +868,4 @@ body::-webkit-scrollbar-track {
 .shipping {
     margin-top: 0;
     font-size: 14px;
-}
+} */

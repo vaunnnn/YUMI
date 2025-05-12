@@ -78,36 +78,6 @@ body::-webkit-scrollbar-track {
   letter-spacing: 2px;
 }
 
-/* === Search Bar === */
-#search-bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid #ddd;
-  border-radius: 30px;
-  padding: 5px 15px;
-  background: #f0f0f0;
-  transition: all 0.3s ease;
-}
-
-#search-bar:focus-within {
-  border-color: #6e6d6d;
-  background: #fff;
-}
-
-.search-icon svg {
-  fill: #888;
-}
-
-.search {
-  border: none;
-  background: transparent;
-  outline: none;
-  font-size: 0.95rem;
-  padding: 8px;
-  width: 180px;
-}
-
 /* === Header Icons === */
 #icons {
   display: flex;
@@ -591,6 +561,7 @@ body::-webkit-scrollbar-track {
 
 /*-----FOOTER-------*/
 #footer {
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -598,8 +569,8 @@ body::-webkit-scrollbar-track {
   width: 100%;
   box-sizing: border-box;
   background-color: white;
-  padding: 2%;
-  border-top: 2px solid rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.8);
 }
 
@@ -621,20 +592,21 @@ body::-webkit-scrollbar-track {
   padding: 0;
   margin: 0;
   cursor: default;
-  flex: 1 1 100px;
+  flex: 1 1 60px;
 }
 
 .footer h4 {
-  font-size: 1rem;
-  margin-bottom: .5rem;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: .3rem;
   text-transform: uppercase;
   width: 100%;
   height: fit-content;
 }
 
 #contact-info p {
-  font-size: .9rem;
-
+  font-size: 12px;
+  padding: 0;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -646,8 +618,8 @@ body::-webkit-scrollbar-track {
 }
 
 #socmed #socmed-icons div {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   margin-right: 25px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -668,14 +640,14 @@ body::-webkit-scrollbar-track {
 }
 
 #footer-logo img {
-  width: 65px;
-  height: 65px;
+  width: 50px;
+  height: 50px;
   margin: 0;
 }
 
 #footer-logo h3 {
   height: fit-content;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   color: black;
   letter-spacing: 2px;
   font-weight: bold;
@@ -761,4 +733,96 @@ body::-webkit-scrollbar-track {
   #contact-info p {
     font-size: 12px;
   }
+}
+
+@media (max-width: 510px) {
+    #header {
+        padding: 15px 15px;
+    }
+
+    #yumi {
+        gap: 6px;
+    }
+
+    #title {
+        font-size: 1rem;
+    }
+
+    #logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    #icons .view svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    #toggle-categories,
+    #category-list a {
+        font-size: 14px;
+    }
+
+    #footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .image-container {
+        width: 100px;
+        height: 110px;
+    }
+
+    .product-title {
+        font-size: 10px;
+        font-weight: 500;
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex: 0;
+        margin-bottom: 0;
+    }
+
+    #footer-logo {
+        justify-content: left;
+    }
+
+    #logo-group h3 {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    #logo-group img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer h4 {
+        font-size: 14px;
+        width: fit-content;
+    }
+
+    #contact-info p {
+        font-size: 12px;
+    }
+
+    #socmed-icons {
+        justify-content: flex-start;
+    }
+
+    #productSection {
+        gap: 10px 15px;
+    }
+
+    .product-card {
+        width: 100px;
+    }
+
+    .product-price {
+        font-size: 8px;
+    }
 }

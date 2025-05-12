@@ -58,7 +58,7 @@
 
 .box p {
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 500;
     margin-bottom: .5rem;
 }
 
@@ -80,7 +80,6 @@
 .info-input label,
 .address-input label {
     margin-bottom: 0.3rem;
-    font-weight: 500;
     font-size: 0.9rem;
 }
 
