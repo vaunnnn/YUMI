@@ -204,9 +204,9 @@ body::-webkit-scrollbar-track {
   min-height: fit-content;
   background-color: white;
   margin: 0;
-  padding: 2% 0;
+  padding: 4% 0 0 0;
   min-height: fit-content;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   /* border-top: .25rem solid rgb(74, 158, 134, 0.8); */
 
   overflow: hidden;
@@ -444,7 +444,7 @@ body::-webkit-scrollbar-track {
   margin: 0;
   padding: 5% 2%;
   background-color: white;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   position: relative;
   row-gap: 10px;
 

@@ -282,7 +282,7 @@ body::-webkit-scrollbar-track {
 
 #contact-info p {
     font-size: .9rem;
-
+    margin: 0;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }

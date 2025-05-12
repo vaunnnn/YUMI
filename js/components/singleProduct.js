@@ -76,7 +76,7 @@ const createSingleProduct = (product) => {
     if (product.reviews && product.reviews.length > 0) {
         product.reviews.forEach(review => {
             const reviewHTML = `
-                <div class="single-review" style="margin-bottom: 1rem; padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
+                <div class="single-review">
                     <p><strong>${review.reviewerName}</strong> (${new Date(review.date).toLocaleDateString()})</p>
                     <p>Rating: ${"★".repeat(review.rating)}</p>
                     <p>"${review.comment}"</p>
