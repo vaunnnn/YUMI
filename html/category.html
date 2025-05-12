@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">    
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Category Products</title>
   <link rel="stylesheet" href="/css/category.css">
 </head>
+
 <body>
   <div id="header">
     <div id="yumi" onclick="window.location.href='/html/dashboard.html'" style="cursor: pointer;">
@@ -41,14 +43,11 @@
           </svg>
         </button>
       </div>
-      <div id="user"> <button class="view" onclick="window.location.href='profile.html'">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-            <path fill="#080606"
-              d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8M6 8a6 6 0 1 1 12 0A6 6 0 0 1 6 8m2 10a3 3 0 0 0-3 3a1 1 0 1 1-2 0a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5a1 1 0 1 1-2 0a3 3 0 0 0-3-3z"
-              stroke-width="0.8" stroke="#080606" />
-          </svg>
+      <div id="user">
+        <a href="profile.html" class="view" onclick="window.location.href='profile.html'"
+          style="padding: 0; line-height: 0; display: block;">
+          <img id="header-profile-pic" src="/images/profile.png" alt="User Profile"> </a>
       </div>
-      </button>
     </div>
   </div>
 
@@ -68,8 +67,8 @@
 
     <section id="productSection"></section>
   </div>
-    
-  
+
+
 
   <section id="footer">
     <div id="footer-container">
@@ -98,20 +97,21 @@
     </div>
   </section>
 
-    <template id="product-template">
-      <a class="product-card" href="#">
-        <div class="image-container">
-          <div class="loader"></div>
-          <img class="product-image" src=""/>
-        </div>
-        <p class="product-title"></p>
-        <p class="product-price"></p>
-      </a>
-    </template>
-    
+  <template id="product-template">
+    <a class="product-card" href="#">
+      <div class="image-container">
+        <div class="loader"></div>
+        <img class="product-image" src="" />
+      </div>
+      <p class="product-title"></p>
+      <p class="product-price"></p>
+    </a>
+  </template>
+
 
   <script type="module" src="/js/category.js"></script>
+  <script src="../js/header.js" type="module"></script>
 
-  
 </body>
+
 </html>

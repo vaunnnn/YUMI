@@ -101,6 +101,22 @@ body::-webkit-scrollbar-track {
   height: 20px;
 }
 
+#user a.view {
+    padding: 0;
+    line-height: 0;
+    display: block;
+}
+
+#header-profile-pic {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+
 /*----------------CAROUSEL--------------------*/
 .category-buttons {
   position: absolute;
@@ -168,17 +184,14 @@ body::-webkit-scrollbar-track {
   justify-content: center;
   box-sizing: border-box;
   width: 100%;
-  /* height: 50%; */
   height: 50%;
   height: fit-content;
   min-height: fit-content;
   background-color: white;
   margin: 0;
-  padding: 4% 0 0 0;
+  padding: 4% 0;
   min-height: fit-content;
-  /* margin-top: 1rem; */
-  /* border-top: .25rem solid rgb(74, 158, 134, 0.8); */
-
+  border-bottom: 2px solid rgb(0, 0, 0, 0.05);
   overflow: hidden;
   position: relative;
 }
@@ -205,12 +218,14 @@ body::-webkit-scrollbar-track {
   font-size: clamp(.5rem, 1vw, 1rem);
 }
 
-#category-title {
+#category-title,
+#recommended-title {
   color: rgb(0, 0, 0, 0.65);
   text-transform: uppercase;
+  font-weight: 500;
   letter-spacing: 10px;
-  font-size: 2rem;
-  font-size: clamp(1.5rem, 1vw, 2rem);
+  font-size: 24px;
+  text-align: center;
 }
 
 #category-container {
@@ -404,7 +419,6 @@ body::-webkit-scrollbar-track {
 /* -------RECOMMEND PRODUCTS--------- */
 #recommended {
   display: flex;
-  /* flex-wrap: wrap; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -414,21 +428,8 @@ body::-webkit-scrollbar-track {
   margin: 0;
   padding: 5% 2%;
   background-color: white;
-  /* margin-top: 1rem; */
   position: relative;
   row-gap: 10px;
-
-  /* border-top: .25rem solid rgb(74, 158, 134, 0.8); */
-}
-
-#recommended-title {
-  color: rgb(0, 0, 0, 0.65);
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  font-size: clamp(1.5rem, 1vw, 2rem);
-  margin: 0;
-  padding: 0;
-  text-align: center;
 }
 
 #recc-container {
@@ -555,6 +556,7 @@ body::-webkit-scrollbar-track {
   width: 220px;
   height: 250px;
   display: flex;
+  justify-content: center;
   align-items: center;
   position: relative;
 }
@@ -665,12 +667,28 @@ body::-webkit-scrollbar-track {
   background-image: url(/images/insta.png);
 }
 
-
 @media (max-width: 768px) {
+  /*=== Categories ===*/
+  #category-links {
+    column-gap: 40px;
+  }
+
+  .category {
+    width: 150px;
+    height: 150px;
+  }
+
+  #category-title,
+  #recommended-title {
+    font-size: 20px;
+    letter-spacing: 6px;
+  }
+
+  /*=== Footer ===*/
   #footer-container {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.7rem;
   }
 
   .image-container {
@@ -689,16 +707,33 @@ body::-webkit-scrollbar-track {
     flex-direction: column;
     margin-bottom: 15px;
     flex: 0;
-  }
-
-  .footer {
     width: 100%;
   }
 
-  #socmed-icons {
-    justify-content: flex-start;
+  #footer-logo {
+    margin-bottom: 0;
   }
 
+  #logo-group h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  #logo-group img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer h4 {
+    font-size: 14px;
+    width: fit-content;
+  }
+
+  #contact-info p {
+    font-size: 12px;
+  }
+
+  /*=== Product Card ===*/
   #productSection {
     gap: 10px 15px;
   }
@@ -710,9 +745,45 @@ body::-webkit-scrollbar-track {
   .product-price {
     font-size: 8px;
   }
+}
 
+@media (max-width: 510px) {
+  /*=== Header ===*/
+  #header {
+    padding: 15px 15px;
+    flex-wrap: wrap;
+  }
+
+  #yumi {
+    gap: 6px;
+  }
+
+  #title {
+    font-size: 1rem;
+  }
+
+  #logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  #icons .view svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  #toggle-categories,
+  #category-list a {
+    font-size: 14px;
+  }
+
+  /*=== Footer ===*/
   #footer-logo {
     justify-content: left;
+  }
+
+  #socmed-icons {
+    justify-content: flex-start;
   }
 
   #logo-group h3 {
@@ -721,108 +792,16 @@ body::-webkit-scrollbar-track {
   }
 
   #logo-group img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
 
-  .footer h4 {
-    font-size: 14px;
-    width: fit-content;
+  .footer {
+    margin-bottom: 10px;
   }
 
-  #contact-info p {
-    font-size: 12px;
+  #footer-container {
+    gap: .7rem;
   }
 }
 
-@media (max-width: 510px) {
-    #header {
-        padding: 15px 15px;
-    }
-
-    #yumi {
-        gap: 6px;
-    }
-
-    #title {
-        font-size: 1rem;
-    }
-
-    #logo {
-        width: 30px;
-        height: 30px;
-    }
-
-    #icons .view svg {
-        width: 14px;
-        height: 14px;
-    }
-
-    #toggle-categories,
-    #category-list a {
-        font-size: 14px;
-    }
-
-    #footer-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    .image-container {
-        width: 100px;
-        height: 110px;
-    }
-
-    .product-title {
-        font-size: 10px;
-        font-weight: 500;
-    }
-
-    .footer {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        flex: 0;
-        margin-bottom: 0;
-    }
-
-    #footer-logo {
-        justify-content: left;
-    }
-
-    #logo-group h3 {
-        font-size: 15px;
-        margin-bottom: 8px;
-    }
-
-    #logo-group img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .footer h4 {
-        font-size: 14px;
-        width: fit-content;
-    }
-
-    #contact-info p {
-        font-size: 12px;
-    }
-
-    #socmed-icons {
-        justify-content: flex-start;
-    }
-
-    #productSection {
-        gap: 10px 15px;
-    }
-
-    .product-card {
-        width: 100px;
-    }
-
-    .product-price {
-        font-size: 8px;
-    }
-}

@@ -15,20 +15,6 @@
       <div id="title" onclick="window.location.href='/html/dashboard.html'" style="cursor: pointer;">YUMI</div>
     </div>
 
-    <!-- <div id="search-bar">
-          <div class="search-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-              <path fill="#080606" d="M10 4a6 6 0 1 0 0 12a6 6 0 0 0 0-12m-8 6a8 8 0 1 1 14.32 4.906l5.387 5.387a1 1 0 0 1-1.414 1.414l-5.387-5.387A8 8 0 0 1 2 10" stroke-width="1" stroke="#080606" />
-            </svg>
-          </div>
-          <input class="search" type="text" id="search" placeholder="Search">
-          <div class="search-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-              <path fill="#080606" d="M9 5a1 1 0 1 0 0 2a1 1 0 0 0 0-2M6.17 5a3.001 3.001 0 0 1 5.66 0H19a1 1 0 1 1 0 2h-7.17a3.001 3.001 0 0 1-5.66 0H5a1 1 0 0 1 0-2zM15 11a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-2.83 0a3.001 3.001 0 0 1 5.66 0H19a1 1 0 1 1 0 2h-1.17a3.001 3.001 0 0 1-5.66 0H5a1 1 0 1 1 0-2zM9 17a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-2.83 0a3.001 3.001 0 0 1 5.66 0H19a1 1 0 1 1 0 2h-7.17a3.001 3.001 0 0 1-5.66 0H5a1 1 0 1 1 0-2z" stroke-width="0.3" stroke="#080606" />
-            </svg>
-          </div>
-        </div> -->
-
     <div id="icons">
       <div id="wishlist"> <button class="view" onclick="window.location.href='wishlist.html'">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
@@ -46,14 +32,11 @@
           </svg>
         </button>
       </div>
-      <div id="user"> <button class="view" onclick="window.location.href='profile.html'">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-            <path fill="#080606"
-              d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8M6 8a6 6 0 1 1 12 0A6 6 0 0 1 6 8m2 10a3 3 0 0 0-3 3a1 1 0 1 1-2 0a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5a1 1 0 1 1-2 0a3 3 0 0 0-3-3z"
-              stroke-width="0.8" stroke="#080606" />
-          </svg>
+      <div id="user">
+        <a href="profile.html" class="view" onclick="window.location.href='profile.html'"
+          style="padding: 0; line-height: 0; display: block;">
+          <img id="header-profile-pic" src="/images/profile.png" alt="User Profile"> </a>
       </div>
-      </button>
     </div>
   </div>
 
@@ -160,14 +143,15 @@
         <h4 class="title font-bold"></h4>
         <p class="quantity text-start text-sm"></p>
       </div>
-      
+
       <p class="total"></p>
-      
-      </div>
+
+    </div>
     </div>
   </template>
 
 </body>
 <script type="module" src="/js/checkout.js"></script>
+<script src="../js/header.js" type="module"></script>
 
 </html>

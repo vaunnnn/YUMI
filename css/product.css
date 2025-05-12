@@ -89,6 +89,22 @@ body::-webkit-scrollbar-track {
     height: 20px;
 }
 
+#user a.view {
+    padding: 0;
+    line-height: 0;
+    display: block;
+}
+
+#header-profile-pic {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+
 /*=== Card ===*/
 .product {
     display: flex;
@@ -532,55 +548,19 @@ body::-webkit-scrollbar-track {
     background-image: url(/images/insta.png);
 }
 
-@media (max-width: 993px) {
-
-    /* Note: This breakpoint is very close to 996px below. Consider merging if logic is similar. */
-    html,
-    body {
-        overflow: auto;
-        /* This might conflict with a global overflow-y: scroll if another CSS file sets that. */
-    }
-}
-
 @media (max-width: 996px) {
 
     html,
     body {
         overflow: auto;
-        /* This might conflict with a global overflow-y: scroll if another CSS file sets that. */
     }
 
+    /*=== Header ===*/
     #header {
-        flex-direction: column;
-        /* This is what causes header items to stack/wrap */
         padding: 15px;
-        align-items: stretch;
+        justify-content: space-between;
+        align-items: center;
         height: auto;
-        /* Recommended: Add height: auto when flex-direction is column and content might vary */
-    }
-
-    #yumi {
-        margin-bottom: 15px;
-        justify-content: center;
-    }
-
-    /* VV Unused selector for product.html VV */
-    #search-bar {
-        /* THIS ID IS NOT IN product.html */
-        width: 100%;
-        margin-bottom: 15px;
-        max-width: none;
-        box-sizing: border-box;
-    }
-
-    /* ^^ Unused selector for product.html ^^ */
-
-    #icons {
-        width: 100%;
-        justify-content: space-around;
-        padding-top: 10px;
-        border-top: 1px solid #e0e0e0;
-        margin-top: 10px;
     }
 
     #icons .view {
@@ -588,7 +568,9 @@ body::-webkit-scrollbar-track {
         padding: 8px;
     }
 
+    /*=== Product Page Layout ===*/
     .product {
+        margin-top: 80px;
         flex-direction: column;
         padding: 15px;
         gap: 20px;
@@ -619,29 +601,19 @@ body::-webkit-scrollbar-track {
     }
 
     .name {
-        /* Typo: .product-title .name, HTML is .product-title > .title > .name */
-        /* Correct selector would be .product-title .title .name or simply .name if specific enough */
-        font-size: 1.6em;
-    }
-
-    .details {
-        align-items: flex-start;
-        flex-direction: column;
+        font-size: 24px;
     }
 
     .id {
-        /* Typo: .product-title .id, HTML is .product-title > .title > .id */
-        /* Correct selector would be .product-title .title .id or simply .id */
         margin-top: 5px;
     }
 
     .product-description .price {
-        font-size: 1.5em;
+        font-size: 20px;
     }
 
-    .buttons {
-        flex-direction: column;
-        gap: 10px;
+    .specifications {
+        padding: 15px 10px;
     }
 
     .buttons button {
@@ -652,113 +624,141 @@ body::-webkit-scrollbar-track {
     }
 
     .modal-content {
-        width: 90%;
+        width: 40%;
         margin: 15% auto;
         padding: 20px;
     }
 
-    .modal-content h3 {
-        font-size: 1.3em;
-    }
-
-    .modal-content input[type="number"] {
-        padding: 8px;
-        font-size: 0.9em;
+    .modal-content input {
+        padding: 5px;
+        font-size: 12px;
         margin-bottom: 20px;
     }
 
-    .modal-content #added-to-cart {
-        padding: 10px 20px;
-        font-size: 0.95em;
+    /*=== Similar Products ===*/
+    .similar-products-container {gap: 20px}
+
+    #similar-header {font-size: 26px;}
+
+    .similar-card,
+    .similar-card .product-title,
+    .similar-card .product-price {
+        max-width: 100px;
+        align-items: center;
     }
 }
 
 @media (max-width: 768px) {
-
-    html,
-    body {
-        overflow: auto;
-    }
-
-    .product {
+    /*=== Footer ===*/
+    #footer-container {
         flex-direction: column;
-        padding: 15px;
-        gap: 20px;
-    }
-
-    .left-product,
-    .product-details {
-        flex: none;
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-    }
-
-    .images {
-        max-width: 100%;
-        min-height: 250px;
-        height: auto;
-    }
-
-    .product-image {
-        max-height: 60vh;
-        width: 100%;
-        height: auto;
-    }
-
-    .product-details {
-        max-height: 400px;
-    }
-
-    .name {
-        /* Typo as above */
-        font-size: 1.6em;
-    }
-
-    .product-title .details {
         align-items: flex-start;
+        gap: 0.7rem;
+    }
+
+    .image-container {
+        width: 100px;
+        height: 110px;
+    }
+
+    .product-title {
+        font-size: 10px;
+        font-weight: 500;
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
         flex-direction: column;
-    }
-
-    .id {
-        margin-top: 5px;
-    }
-
-    .product-description .price {
-        font-size: 1.5em;
-    }
-
-    .buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .buttons button {
+        margin-bottom: 15px;
+        flex: 0;
         width: 100%;
+    }
+
+    #footer-logo {
         margin-bottom: 0;
-        min-width: auto;
-        padding: 14px 20px;
     }
 
-    .modal-content {
-        width: 90%;
-        margin: 15% auto;
-        padding: 20px;
+    #logo-group h3 {
+        font-size: 14px;
+        margin-bottom: 6px;
     }
 
-    .modal-content h3 {
-        font-size: 1.3em;
+    #logo-group img {
+        width: 50px;
+        height: 50px;
     }
 
-    .modal-content input[type="number"] {
-        padding: 8px;
-        font-size: 0.9em;
-        margin-bottom: 20px;
+    .footer h4 {
+        font-size: 14px;
+        width: fit-content;
     }
 
-    .modal-content #added-to-cart {
-        padding: 10px 20px;
-        font-size: 0.95em;
+    #contact-info p {
+        font-size: 12px;
+    }
+
+    #productSection {
+        gap: 10px 15px;
+    }
+
+    .product-card {
+        width: 100px;
+    }
+
+    .product-price {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 510px) {
+    #header {
+        padding: 15px 15px;
+        flex-wrap: wrap;
+    }
+
+    #yumi {
+        gap: 6px;
+    }
+
+    #title {
+        font-size: 1rem;
+    }
+
+    #logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    #icons .view svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    #footer-container {
+        gap: 0.7rem;
+    }
+
+    .footer {
+        margin-bottom: 10px;
+    }
+
+    #footer-logo {
+        justify-content: left;
+    }
+
+    #socmed-icons {
+        justify-content: flex-start;
+    }
+
+    #logo-group h3 {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    #logo-group img {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -771,7 +771,6 @@ body::-webkit-scrollbar-track {
 
     body {
         font-size: 15px;
-        /* This changes the base font size, affecting em units */
     }
 
     #header {
@@ -779,26 +778,10 @@ body::-webkit-scrollbar-track {
     }
 
     #title {
-        /* This will be 1.5 * 15px if browser default was 16px for root em */
         font-size: 1.5em;
-        /* Changed from rem to em, relative to body's 15px */
     }
-
-    /* VV Unused selectors for product.html VV */
-    #search-bar {
-        /* THIS ID IS NOT IN product.html */
-        padding: 4px 8px;
-    }
-
-    .search {
-        /* THIS CLASS IS NOT IN product.html */
-        font-size: 0.9em;
-    }
-
-    /* ^^ Unused selectors for product.html ^^ */
 
     #icons .view svg {
-        /* Note: #icons svg already sets size. This is more specific. */
         width: 20px;
         height: 20px;
     }
@@ -821,12 +804,10 @@ body::-webkit-scrollbar-track {
     }
 
     .product-title .name {
-        /* Typo as above, also now em based */
         font-size: 1.5em;
     }
 
     .product-description .price {
-        /* Now em based */
         font-size: 1.4em;
     }
 
@@ -859,13 +840,3 @@ body::-webkit-scrollbar-track {
         font-size: 0.95em;
     }
 }
-
-/* 
-.stock,
-.weight,
-.dimensions,
-.warranty,
-.shipping {
-    margin-top: 0;
-    font-size: 14px;
-} */

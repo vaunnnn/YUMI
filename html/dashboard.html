@@ -34,14 +34,11 @@
           </svg>
         </button>
       </div>
-      <div id="user"> <button class="view" onclick="window.location.href='profile.html'">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-            <path fill="#080606"
-              d="M12 4a4 4 0 1 0 0 8a4 4 0 0 0 0-8M6 8a6 6 0 1 1 12 0A6 6 0 0 1 6 8m2 10a3 3 0 0 0-3 3a1 1 0 1 1-2 0a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5a1 1 0 1 1-2 0a3 3 0 0 0-3-3z"
-              stroke-width="0.8" stroke="#080606" />
-          </svg>
+      <div id="user">
+        <a href="profile.html" class="view" onclick="window.location.href='profile.html'"
+          style="padding: 0; line-height: 0; display: block;">
+          <img id="header-profile-pic" src="/images/profile.png" alt="User Profile"> </a>
       </div>
-      </button>
     </div>
   </div>
 
@@ -62,23 +59,34 @@
       <div id="category-container">
         <div id="category-left" aria-label="Scroll Left" class="category-buttons">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-            <path fill="#171515" d="M14.707 5.293a1 1 0 0 1 0 1.414L9.414 12l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6a1 1 0 0 1 0-1.414l6-6a1 1 0 0 1 1.414 0" stroke-width="0.2" stroke="#595959" />
+            <path fill="#171515"
+              d="M14.707 5.293a1 1 0 0 1 0 1.414L9.414 12l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6a1 1 0 0 1 0-1.414l6-6a1 1 0 0 1 1.414 0"
+              stroke-width="0.2" stroke="#595959" />
           </svg>
         </div>
         <div id="category-right" aria-label="Scroll Right" class="category-buttons">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-            <path fill="#171515" d="M9.293 18.707a1 1 0 0 1 0-1.414L14.586 12L9.293 6.707a1 1 0 0 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414 0" stroke-width="0.2" stroke="#595959" />
+            <path fill="#171515"
+              d="M9.293 18.707a1 1 0 0 1 0-1.414L14.586 12L9.293 6.707a1 1 0 0 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414 0"
+              stroke-width="0.2" stroke="#595959" />
           </svg>
         </div>
 
         <div id="category-links">
-          <div class="category category-link" data-category="beauty" id="beauty" onclick="location.href='category.html?category=beauty'"></div>
-          <div class="category category-link" data-category="grocery" id="groceries" onclick="location.href='category.html?category=grocery'"></div>
-          <div class="category category-link" data-category="gadgets" id="gadgets" onclick="location.href='category.html?category=gadgets'"></div>
-          <div class="category category-link" data-category="clothes" id="clothes" onclick="location.href='category.html?category=clothes'"></div>
-          <div class="category category-link" data-category="accessories" id="accessories" onclick="location.href='category.html?category=accessories'"></div>
-          <div class="category category-link" data-category="vehicles" id="vehicles" onclick="location.href='category.html?category=vehicles'"></div>
-          <div class="category category-link" data-category="furnitures" id="furniture" onclick="location.href='category.html?category=furniture'"></div>
+          <div class="category category-link" data-category="beauty" id="beauty"
+            onclick="location.href='category.html?category=beauty'"></div>
+          <div class="category category-link" data-category="grocery" id="groceries"
+            onclick="location.href='category.html?category=grocery'"></div>
+          <div class="category category-link" data-category="gadgets" id="gadgets"
+            onclick="location.href='category.html?category=gadgets'"></div>
+          <div class="category category-link" data-category="clothes" id="clothes"
+            onclick="location.href='category.html?category=clothes'"></div>
+          <div class="category category-link" data-category="accessories" id="accessories"
+            onclick="location.href='category.html?category=accessories'"></div>
+          <div class="category category-link" data-category="vehicles" id="vehicles"
+            onclick="location.href='category.html?category=vehicles'"></div>
+          <div class="category category-link" data-category="furnitures" id="furniture"
+            onclick="location.href='category.html?category=furniture'"></div>
         </div>
       </div>
     </section>
@@ -89,12 +97,16 @@
       <div id="recc-container">
         <div id="recommended-left" aria-label="Scroll Left" class="recommended-buttons">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-            <path fill="#171515" d="M14.707 5.293a1 1 0 0 1 0 1.414L9.414 12l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6a1 1 0 0 1 0-1.414l6-6a1 1 0 0 1 1.414 0" stroke-width="0.2" stroke="#595959" />
+            <path fill="#171515"
+              d="M14.707 5.293a1 1 0 0 1 0 1.414L9.414 12l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6a1 1 0 0 1 0-1.414l6-6a1 1 0 0 1 1.414 0"
+              stroke-width="0.2" stroke="#595959" />
           </svg>
         </div>
         <div id="recommended-right" aria-label="Scroll Right" class="recommended-buttons">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
-            <path fill="#171515" d="M9.293 18.707a1 1 0 0 1 0-1.414L14.586 12L9.293 6.707a1 1 0 0 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414 0" stroke-width="0.2" stroke="#595959" />
+            <path fill="#171515"
+              d="M9.293 18.707a1 1 0 0 1 0-1.414L14.586 12L9.293 6.707a1 1 0 0 1 1.414-1.414l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414 0"
+              stroke-width="0.2" stroke="#595959" />
           </svg>
         </div>
 
@@ -110,7 +122,7 @@
             <img src="/images/logo.png">
           </div>
         </div>
-  
+
         <div class="footer" id="socmed">
           <h4>Social Media</h4>
           <div id="socmed-icons">
@@ -119,7 +131,7 @@
             <div id="insta"></div>
           </div>
         </div>
-  
+
         <div class="footer" id="contact-info">
           <h4>Contact Information</h4>
           <p>Phone: +1 (800) 123-4567</p>
@@ -134,15 +146,16 @@
     <a class="product-card" href="#">
       <div class="image-container">
         <div class="loader"></div>
-        <img class="product-image" src=""/>
+        <img class="product-image" src="" />
       </div>
       <p class="product-title"></p>
       <p class="product-price"></p>
     </a>
   </template>
-  
+
 </body>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <script src="/js/dashboard.js" type="module"></script>
+<script src="../js/header.js" type="module"></script>
 
 </html>
