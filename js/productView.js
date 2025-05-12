@@ -104,7 +104,6 @@ const addToCart = async () => {
     const currentUser = localStorage.getItem("currentUser");
 
     if (!quantity || quantity < 1) {
-        alert("Please enter a valid quantity.");
         return;
     }
 
@@ -121,7 +120,6 @@ const addToCart = async () => {
 
     localStorage.setItem(`${currentUser}-cart`, JSON.stringify(existingCart));
 
-    alert("Product added to cart!");
     modal.style.display = "none";
     quantityInput.value = 1;
 };

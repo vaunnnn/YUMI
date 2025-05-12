@@ -166,17 +166,18 @@ body {
 
 .modal-content button {
     /* Styles the button with id="added-to-cart" */
-    background-color: #4caf50;
+    background-color: black;
     color: white;
     padding: 0.6rem 1.2rem;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1rem;
+    transition: background 0.3s ease;
 }
 
 .modal-content button:hover {
-    background-color: #45a049;
+    background-color: #616161;
 }
 
 @keyframes fadeIn {

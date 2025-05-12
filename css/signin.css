@@ -93,13 +93,13 @@ html {
 }
 
 .form input:focus {
-    border-color: #1abc9c;
+    border-color: black;
     background: #fff;
 }
 
 
 button[type="submit"] {
-    background: #1abc9c;
+    background: black;
     color: white;
     border: none;
     padding: 12px;
@@ -111,11 +111,11 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background: #16a085;
+    background: #616161;
 }
 
 a {
-    color: #1abc9c;
+    color: black;
     font-size: 14px;
     margin-top: 15px;
     text-decoration: none;
@@ -123,7 +123,7 @@ a {
 }
 
 a:hover {
-    color: #16a085;
+    color: #616161;
     text-decoration: underline;
 }
 

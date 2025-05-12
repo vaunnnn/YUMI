@@ -106,7 +106,7 @@ function initProfilePage() {
         }
 
         const suffixes = [
-            "profile", "address", "profile-pic", "cart", "wishlist", "recently-viewed", "checkoutData"
+            "profile", "address", "profile-pic", "cart", "wishlist", "recently-viewed", "checkoutData", "history"
         ];
 
         suffixes.forEach(suffix => {
