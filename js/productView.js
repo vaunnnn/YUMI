@@ -46,7 +46,7 @@ const displaySimilarProducts = async (currentProduct) => {
     const similarProducts = allProductsInCategory.filter(product => product.id !== currentProductId);
 
     const shuffledProducts = similarProducts.sort(() => 0.5 - Math.random());
-    const productsToDisplay = shuffledProducts.slice(0, 5);
+    const productsToDisplay = shuffledProducts.slice(0, 4);
 
     if (productsToDisplay.length === 0) {
         similarProductsSection.innerHTML += "<p>No similar products found in this category.</p>";
