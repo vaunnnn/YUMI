@@ -65,54 +65,36 @@ YUMI leverages the DummyJSON REST API, which provides functionality for authenti
 ![image](https://github.com/user-attachments/assets/da8d55bd-f1c2-4470-8aac-526c5b6e4c90)
 Signin / Signup
 
-
-
 ![image](https://github.com/user-attachments/assets/60f392fe-e4b4-4dd1-af6b-498c83906ad9)
 ![image](https://github.com/user-attachments/assets/15814485-b034-4ebb-8dc0-abbedca64313)
 ![image](https://github.com/user-attachments/assets/24e12828-8040-4375-b5db-7545e58c0367)
 Dashboard
 
-
-
 ![image](https://github.com/user-attachments/assets/99de0992-50c4-4612-a690-aadddd382b22)
 Categories
-
-
 
 ![image](https://github.com/user-attachments/assets/a351db29-7491-4b03-a8a0-d0027db66361)
 ![image](https://github.com/user-attachments/assets/381a74ce-0ef8-4e9c-ae9f-e0de952a4677)
 ![image](https://github.com/user-attachments/assets/f882c844-c5af-498a-83bb-09f4d91e8e77)
 Product
 
-
-
 ![image](https://github.com/user-attachments/assets/c40893fa-2d54-45db-af72-2b2301399f7e)
 ![image](https://github.com/user-attachments/assets/509a2ed5-49d1-4a2c-ba2c-d7d77f001f43)
 Profile Settings
 
-
-
 ![image](https://github.com/user-attachments/assets/aab459c2-255b-4b4b-97fa-a9ec8fb96f5a)
 Recently Viewed
-
-
 
 ![image](https://github.com/user-attachments/assets/b3a52691-295c-4f5f-8750-d529060f58d0)
 Order History
 
-
-
 ![image](https://github.com/user-attachments/assets/f8a4ba27-dbed-4af5-b0b5-70a710399057)
 Wishlist
-
-
 
 ![image](https://github.com/user-attachments/assets/71494692-1dd6-4c7b-b674-a05dbb22dfcc)
 Cart
 
-
-
-![image]checkout
+![image](https://github.com/user-attachments/assets/b662a153-43a4-4aea-818e-edb3db31bf97)
 Checkout
 
 
