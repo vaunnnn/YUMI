@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f7f7f7;
     color: #333;
 }
@@ -15,9 +15,12 @@ body::-webkit-scrollbar {
     width: 0px;
     background: transparent;
 }
-h1, h4 {
+
+h1,
+h4 {
     font-weight: bold;
 }
+
 /* === Header === */
 #header {
     display: flex;
@@ -27,12 +30,14 @@ h1, h4 {
     padding: 15px 30px;
     width: 100%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 0;
     z-index: 1000;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
 }
 
-/* === Branding === */
+/* === YUMI Branding === */
 #yumi {
     display: flex;
     align-items: center;
@@ -42,7 +47,7 @@ h1, h4 {
 #logo {
     width: 40px;
     height: 40px;
-    background: url('/images/sia.jpg') no-repeat center center/cover;
+    background: url('/images/logo.png') no-repeat center center/cover;
     border-radius: 50%;
 }
 
@@ -51,36 +56,6 @@ h1, h4 {
     font-weight: 700;
     color: #222;
     letter-spacing: 2px;
-}
-
-/* === Search Bar === */
-#search-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #ddd;
-    border-radius: 30px;
-    padding: 5px 15px;
-    background: #f0f0f0;
-    transition: all 0.3s ease;
-}
-
-#search-bar:focus-within {
-    border-color: #222;
-    background: #fff;
-}
-
-.search-icon svg {
-    fill: #888;
-}
-
-.search {
-    border: none;
-    background: transparent;
-    outline: none;
-    font-size: 0.95rem;
-    padding: 8px;
-    width: 180px;
 }
 
 /* === Header Icons === */
@@ -129,6 +104,7 @@ h1, h4 {
     gap: 20px;
     padding: 20px;
     margin-inline: 120px;
+    margin-top: 70px;
 }
 
 /* === Cart Section === */
@@ -211,16 +187,19 @@ h1, h4 {
     margin-top: 20px;
     padding: 12px;
     font-size: 16px;
+    font-weight: 500;
     background: black;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 #checkout-button:hover {
-    background: #616161;
+    background: white;
+    color: black;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* === Cart Item Template === */
@@ -267,7 +246,7 @@ h1, h4 {
 
 .quantity {
     min-width: 20px;
-    
+
 }
 
 .total {
