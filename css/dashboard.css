@@ -667,6 +667,28 @@ body::-webkit-scrollbar-track {
   background-image: url(/images/insta.png);
 }
 
+@media (max-width: 996px) {
+
+    html,
+    body {
+        overflow: auto;
+    }
+
+    /*=== Header ===*/
+    #header {
+        padding: 15px;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+    }
+
+    #icons .view {
+        margin-left: 0;
+        padding: 8px;
+    }
+}
+
+
 @media (max-width: 768px) {
   /*=== Categories ===*/
   #category-links {
@@ -748,60 +770,59 @@ body::-webkit-scrollbar-track {
 }
 
 @media (max-width: 510px) {
-  /*=== Header ===*/
-  #header {
-    padding: 15px 15px;
-    flex-wrap: wrap;
-  }
+    #header {
+        padding: 15px 15px;
+        flex-wrap: wrap;
+    }
 
-  #yumi {
-    gap: 6px;
-  }
+    #yumi {
+        gap: 6px;
+    }
 
-  #title {
-    font-size: 1rem;
-  }
+    #title {
+        font-size: 1rem;
+    }
 
-  #logo {
-    width: 30px;
-    height: 30px;
-  }
+    #logo {
+        width: 30px;
+        height: 30px;
+    }
 
-  #icons .view svg {
-    width: 14px;
-    height: 14px;
-  }
+    #icons .view svg {
+        width: 14px;
+        height: 14px;
+    }
 
-  #toggle-categories,
-  #category-list a {
-    font-size: 14px;
-  }
+    #footer-container {
+        gap: 0.7rem;
+    }
 
-  /*=== Footer ===*/
-  #footer-logo {
-    justify-content: left;
-  }
+    .footer {
+        margin-bottom: 10px;
+    }
 
-  #socmed-icons {
-    justify-content: flex-start;
-  }
+    #footer-logo {
+        justify-content: left;
+    }
 
-  #logo-group h3 {
-    font-size: 15px;
-    margin-bottom: 8px;
-  }
+    #socmed-icons {
+        justify-content: flex-start;
+    }
 
-  #logo-group img {
-    width: 50px;
-    height: 50px;
-  }
+    #logo-group h3 {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
 
-  .footer {
-    margin-bottom: 10px;
-  }
-
-  #footer-container {
-    gap: .7rem;
-  }
+    #logo-group img {
+        width: 50px;
+        height: 50px;
+    }
 }
 
+@media (max-width: 262px) {
+    #header {
+        display: flex;
+        justify-content: center;
+    }
+}
